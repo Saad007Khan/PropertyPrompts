@@ -80,24 +80,21 @@ Rank features by **investment impact**:
 ## OUTPUT FORMAT
 
 ```
-KEY FEATURES: [Location Name, State/Region, Country]
-
-[City name] offers [Feature 1 with specific metric], [Feature 2 with specific metric], and [Feature 3 with specific metric], making it ideal for [target investor profile] seeking [investment goal].
-
-1. [Feature Name] - [One sentence with specific numbers/distance/benefit]
-2. [Feature Name] - [One sentence with specific numbers/distance/benefit]
-3. [Feature Name] - [One sentence with specific numbers/distance/benefit]
+Top Features: [Feature 1] · [Feature 2] · [Feature 3]
 ```
 
 **Example:**
 ```
-KEY FEATURES: Dubai Marina, Dubai, UAE
+Top Features: Waterfront Living (3km Marina Walk) · Metro Connectivity (15-min to Downtown) · DMCC Free Zone (21,000+ Companies)
+```
 
-Dubai Marina offers waterfront living with 3km Marina Walk promenade commanding 20-30% price premiums, dual metro stations providing 15-minute access to Downtown Dubai, and DMCC free zone tax benefits with 21,000+ companies driving consistent rental demand, making it ideal for international investors seeking 6.5-7% yields in a premium location.
+**Alternative formats (choose based on features):**
+```
+Top Features: Beach Access (1-3km) · Digital Nomad Hub (15+ Co-working Spaces) · New Airport (15km, Opened 2023)
+```
 
-1. Waterfront Access - Direct promenade and marina views create 20-30% property value premium
-2. Metro Connectivity - Two stations enable 15-min Downtown access, 10-15% rental premium within 500m
-3. DMCC Free Zone - 21,000+ companies and 0% income tax drive stable corporate rental demand
+```
+Top Features: IT Hub Proximity (Whitefield 5km) · Metro Connected (Phase 2 Opening 2025) · International Schools (3 Within 2km)
 ```
 
 ---
