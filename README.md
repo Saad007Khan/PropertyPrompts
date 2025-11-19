@@ -158,132 +158,36 @@ Net Yield = (30,000 - 6,500) / 400,000 × 100 = 5.9%
 ## OUTPUT FORMAT
 
 ```
-RENTAL YIELD ANALYSIS: [Location Name]
-Property Type: [Studio/1BR/2BR/Villa/City-wide Average]
-Analysis Date: [Date]
+STRICT OUTPUT RULES (MANDATORY)
 
----
-YIELD SUMMARY
+The model must output exactly two lines, nothing else (no headings, no explanations, no code fences, no JSON, no metadata, no extra whitespace lines).
 
-Gross Rental Yield: [X.X%] or [X.X% - Y.Y% range]
-Net Rental Yield: [X.X%] or [X.X% - Y.Y% range]
+Line 1 label: Gross Rental Yield:
 
-Confidence: [HIGH/MEDIUM/LOW]
-Data Source: [Published reports / Manual calculation]
+Line 2 label: Net Rental Yield:
 
----
-CALCULATION BREAKDOWN
+Each line must show the percentage with the % symbol. Round to one decimal place (use a range if applicable — see example).
 
-Property Price Data:
-   Source 1: [Portal/Report] - [Currency][XXX,XXX]
-   Source 2: [Portal/Report] - [Currency][XXX,XXX]
-   Source 3: [Portal/Report] - [Currency][XXX,XXX]
-   Median Property Price: [Currency][XXX,XXX]
+Use the phrase "Gross Rental Yield" and "Net Rental Yield" (these are SEO-friendly keywords).
 
-Rental Rate Data:
-   Source 1: [Portal] - [Currency][X,XXX]/month
-   Source 2: [Portal] - [Currency][X,XXX]/month
-   Source 3: [Portal] - [Currency][X,XXX]/month
-   Median Monthly Rent: [Currency][X,XXX]
-   Annual Rent: [Currency][XX,XXX] (×12 months)
+Do not include location, confidence, sources, calculations, or any other text.
 
-Gross Yield Calculation:
-   ([Annual Rent] / [Property Price]) × 100 = [X.X%]
+ALLOWED OUTPUT EXAMPLES
 
----
-EXPENSE BREAKDOWN (for Net Yield)
+Gross Rental Yield: 7.5%
+Net Rental Yield: 5.9%
 
-Annual Expenses:
-   • Property Management (8%): [Currency][X,XXX]
-   • Maintenance (2%): [Currency][X,XXX]
-   • Service Charges: [Currency][X,XXX]
-   • Vacancy Cost (10%): [Currency][X,XXX]
-   • Insurance (0.5%): [Currency][XXX]
-   • Other Costs (0.5%): [Currency][XXX]
-   
-   Total Annual Expenses: [Currency][XX,XXX]
-   
-Net Yield Calculation:
-   ([Annual Rent] - [Total Expenses]) / [Property Price] × 100 = [X.X%]
 
----
-YIELD BY PROPERTY TYPE (if data available)
+or (if a range is needed)
 
-Studio: Gross [X.X%] | Net [X.X%]
-1-Bedroom: Gross [X.X%] | Net [X.X%]
-2-Bedroom: Gross [X.X%] | Net [X.X%]
-3-Bedroom: Gross [X.X%] | Net [X.X%]
-Villa/House: Gross [X.X%] | Net [X.X%]
+Gross Rental Yield: 6.2% - 7.4%
+Net Rental Yield: 4.1% - 5.3%
 
-Highest Yield: [Property type] at [X.X%] gross
-Best Value: [Explanation of which property type offers best returns]
 
----
-RENTAL MARKET CHARACTERISTICS
+NON-NEGOTIABLE: if the model cannot compute yields because of insufficient data, output zeros in the required format:
 
-Demand Profile: [Long-term residential / Short-term vacation / Corporate / Student / Mixed]
-Occupancy Rate: [XX%] annually (if available)
-Seasonality: [Year-round / Seasonal peaks / Business cycle dependent]
-Tenant Type: [Families / Young professionals / Expats / Tourists / Students]
-Rental Trends: [Increasing / Stable / Decreasing] - [X.X%] YoY change
-
-Supply Dynamics:
-   • Current rental inventory: [High / Medium / Low]
-   • Competition level: [High / Moderate / Low]
-   • New supply pipeline: [Significant / Moderate / Limited]
-
----
-COMPARATIVE ANALYSIS (if available)
-
-City Average: [X.X%] gross yield
-This Location: [X.X%] gross yield
-Difference: [+/- X.X%] vs city average
-
-National/Regional Average: [X.X%] gross yield
-International Benchmark: [Similar cities globally: X.X% - Y.Y%]
-
-Performance Ranking: [Top quartile / Above average / Average / Below average]
-
----
-INVESTMENT CONSIDERATIONS
-
-Strengths:
-   • [e.g., "High occupancy rates year-round"]
-   • [e.g., "Strong tenant demand from expat professionals"]
-   • [e.g., "Limited new supply keeping rents stable"]
-
-Risks:
-   • [e.g., "Seasonal vacancy during summer months"]
-   • [e.g., "High service charges reduce net yield"]
-   • [e.g., "Rent control regulations may cap increases"]
-
-Optimal Strategy:
-   [Short-term rental / Long-term rental / Corporate leasing / Vacation rental]
-   [Explanation of why this strategy suits the location]
-
----
-DATA QUALITY ASSESSMENT
-
-Confidence: [HIGH/MEDIUM/LOW]
-Data Sources: [List all sources used]
-Sample Size: [XX properties analyzed per source]
-Data Recency: [Most recent: Source, Date]
-Limitations: [Any gaps or caveats]
-
-Currency: [Local currency + USD equivalent]
-Exchange Rate: [X.XX] (as of [Date])
-
----
-ASSUMPTIONS USED
-
-[List any assumptions made in calculations, such as:]
-   • Occupancy rate assumed at 90% (10% vacancy)
-   • Property management fee: 8%
-   • Maintenance: 2% of property value annually
-   • [Any other assumptions]
-
-DISCLAIMER: Yields are estimates based on current market data. Actual returns may vary based on property condition, location specifics, management quality, and market conditions. Expenses are estimates and should be verified with local service providers.
-```
+Gross Rental Yield: 0.0%
+Net Rental Yield: 0.0%
 
 ---
 
