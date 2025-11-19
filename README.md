@@ -185,14 +185,13 @@ Net Rental Yield: 4.1% - 5.3%
 
 
 NON-NEGOTIABLE: if the model cannot compute yields because of insufficient data, output zeros in the required format:
-
-Gross Rental Yield: 0.0%
+Gross Rental Yield: 0.0%  
 Net Rental Yield: 0.0%
 
 ---
 
 ## CRITICAL RULES
-```
+
 ### 1. Always Calculate BOTH Gross and Net Yields
 - Gross yield alone is misleading
 - Net yield shows actual investor returns
