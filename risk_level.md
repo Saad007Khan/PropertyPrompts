@@ -255,176 +255,25 @@ Location: **City, State/Region, Country**
 ## OUTPUT FORMAT
 
 ```
-RISK LEVEL ASSESSMENT: [Location Name]
-Country: [Country] | Analysis Date: [Date]
+Risk Level: [Very Low/Low/Moderate/High/Very High] — Crime: [Very Safe/Safe/Moderate/Concerning/Dangerous], Governance: [Very Stable/Stable/Moderately Stable/Unstable], Disaster: [Minimal/Low/Moderate/High/Very High], Regulation: [Excellent/Good/Fair/Poor], Economic: [Very Stable/Stable/Moderately Stable/Unstable]
+```
 
-===================================
-OVERALL RISK LEVEL
-===================================
+**Examples:**
 
-Total Risk Score: [XX/100]
-Risk Classification: [VERY LOW / LOW / MODERATE / HIGH / VERY HIGH]
+```
+Risk Level: Very Low — Crime: Very Safe, Governance: Very Stable, Disaster: Minimal, Regulation: Excellent, Economic: Very Stable
+```
 
-Investment Recommendation: [Excellent/Good/Acceptable/Caution/Avoid]
+```
+Risk Level: Low — Crime: Safe, Governance: Stable, Disaster: Low, Regulation: Good, Economic: Stable
+```
 
-===================================
-COMPONENT BREAKDOWN
-===================================
+```
+Risk Level: Moderate — Crime: Moderate, Governance: Moderately Stable, Disaster: Moderate, Regulation: Fair, Economic: Stable
+```
 
-1. CRIME & SAFETY: [XX/30 points]
-   Risk Level: [Very Safe/Safe/Moderate/Concerning/Dangerous]
-   
-   Crime Statistics:
-      • Overall Crime Rate: [XXX per 100,000 population]
-      • Safety Index: [XX.X] (Numbeo)
-      • Crime Index: [XX.X] (Numbeo)
-      • Violent Crime Rate: [Low/Moderate/High]
-      • Property Crime Rate: [Low/Moderate/High]
-   
-   Key Indicators:
-      • Murder Rate: [X.X per 100,000]
-      • Women's Safety: [Safe/Moderate/Unsafe]
-      • Tourist Safety: [Excellent/Good/Fair/Poor]
-      • Night Safety: [Safe/Moderate/Unsafe]
-   
-   Recent Trends: [Improving/Stable/Deteriorating]
-   
-   Sources: [List sources with dates]
-   Confidence: [HIGH/MEDIUM/LOW]
-
----
-
-2. GOVERNANCE & POLITICAL STABILITY: [XX/25 points]
-   Risk Level: [Very Stable/Stable/Moderately Stable/Unstable/Very Unstable]
-   
-   Governance Indicators:
-      • Political Stability Index: [XX.X/100]
-      • Government Effectiveness: [XX.X/100]
-      • Rule of Law: [XX.X/100]
-      • Corruption Perception Index: [XX/100] (Rank: [XX])
-      • Regulatory Quality: [XX.X/100]
-   
-   Key Factors:
-      • Political System: [Democracy/Monarchy/etc.]
-      • Recent Political Events: [Stable/Elections/Unrest]
-      • Policy Consistency: [High/Medium/Low]
-      • Bureaucratic Efficiency: [High/Medium/Low]
-   
-   Concerns (if any): [List specific concerns or state "None significant"]
-   
-   Sources: [World Bank WGI, Transparency International, etc.]
-   Confidence: [HIGH/MEDIUM/LOW]
-
----
-
-3. NATURAL DISASTER RISK: [XX/20 points]
-   Risk Level: [Minimal/Low/Moderate/High/Very High]
-   
-   Disaster Exposure:
-      • Earthquake Risk: [Zone X] - [Minimal/Low/Moderate/High/Severe]
-      • Flood Risk: [Minimal/Low/Moderate/High/Severe]
-      • Cyclone/Hurricane Risk: [Minimal/Low/Moderate/High/Severe]
-      • Tsunami Risk: [Minimal/Low/Moderate/High] (coastal areas only)
-      • Volcanic Activity: [None/Low/Moderate/High] (if applicable)
-      • Other Hazards: [Landslides/Drought/Wildfires - if applicable]
-   
-   Historical Events (Last 10 years):
-      • Major disasters: [X events]
-      • Impact level: [Minimal/Moderate/Severe]
-      • Recovery capability: [Strong/Moderate/Weak]
-   
-   Mitigation Factors:
-      • Building codes: [Strict/Moderate/Weak]
-      • Early warning systems: [Yes/No]
-      • Insurance availability: [Widely available/Limited/None]
-   
-   Sources: [NDMA, INFORM, World Risk Index, etc.]
-   Confidence: [HIGH/MEDIUM/LOW]
-
----
-
-4. REGULATORY ENVIRONMENT: [XX/15 points]
-   Risk Level: [Excellent/Good/Fair/Poor/Very Poor]
-   
-   Property Rights:
-      • Foreign Ownership: [Allowed/Restricted/Prohibited]
-      • Legal Framework: [Strong/Moderate/Weak]
-      • RERA Protection: [Yes/No] (India)
-      • Title Security: [High/Medium/Low]
-      • Contract Enforcement: [Strong/Moderate/Weak]
-   
-   Taxation:
-      • Property Tax: [X%] annually
-      • Capital Gains Tax: [X%] or [None]
-      • Rental Income Tax: [X%]
-      • Stamp Duty: [X%]
-      • Overall Tax Burden: [Low/Moderate/High]
-   
-   Regulations:
-      • Rent Control: [Yes/No]
-      • STR Restrictions: [None/Moderate/Strict]
-      • Ease of Transaction: [Easy/Moderate/Complex]
-      • Time to Register: [X days]
-   
-   Investor Friendliness: [Very High/High/Moderate/Low/Very Low]
-   
-   Sources: [Government websites, World Bank, local regulations]
-   Confidence: [HIGH/MEDIUM/LOW]
-
----
-
-5. ECONOMIC & MARKET STABILITY: [XX/10 points]
-   Risk Level: [Very Stable/Stable/Moderately Stable/Unstable/Very Unstable]
-   
-   Economic Indicators:
-      • GDP Growth: [X.X%] (last 3-year average)
-      • Inflation Rate: [X.X%] (current)
-      • Currency Stability: [Stable/Moderate/Volatile]
-      • Unemployment: [X.X%]
-   
-   Market Conditions:
-      • Real Estate Cycle: [Growth/Peak/Correction/Recovery]
-      • Market Liquidity: [High/Medium/Low]
-      • Price Volatility: [Low/Moderate/High]
-      • Banking Sector: [Strong/Stable/Weak]
-   
-   Economic Diversification: [High/Moderate/Low]
-   External Dependencies: [List if significant]
-   
-   Sources: [World Bank, IMF, Central Bank, Trading Economics]
-   Confidence: [HIGH/MEDIUM/LOW]
-
-===================================
-RISK SUMMARY
-===================================
-
-Overall Assessment:
-[2-3 sentence summary of the overall risk profile, highlighting the main strengths and concerns]
-
-Top Risk Factors:
-   1. [Highest risk concern]
-   2. [Second highest concern]
-   3. [Third highest concern]
-
-Risk Mitigation Strategies:
-   • [Suggestion 1]
-   • [Suggestion 2]
-   • [Suggestion 3]
-
-Best Suited For: [Conservative investors/Balanced investors/Risk-tolerant investors]
-
-Red Flags (if any): [List critical issues or state "None identified"]
-
-===================================
-DATA QUALITY
-===================================
-
-Overall Confidence: [HIGH/MEDIUM/LOW]
-Data Sources: [Count] sources used
-Most Recent Data: [Source, Date]
-Data Gaps: [List any missing information]
-
-DISCLAIMER: Risk assessments are based on current available data and historical trends. Actual risks may change due to unforeseen events. This is not financial or legal advice. Conduct independent due diligence before investment decisions.
+```
+Risk Level: High — Crime: Concerning, Governance: Moderately Stable, Disaster: High, Regulation: Fair, Economic: Moderately Stable
 ```
 
 ---
