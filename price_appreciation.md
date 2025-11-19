@@ -89,10 +89,26 @@ Location: **City, State/Region, Country**
 
 ---
 
-### TIER 2 & TIER 3: Secondary/Small Cities
+### TIER 2 & TIER 3: Secondary/Small Cities (All Countries)
 **Method**: Real Estate Portal Historical Price Analysis
 
-**Portals**: MagicBricks, 99acres, Housing.com, Sulekha, PropertyWala, NoBroker
+**INDIA**: MagicBricks, 99acres, Housing.com, Sulekha, PropertyWala, NoBroker
+
+**UAE**: PropertyFinder, Bayut, Dubizzle Property
+
+**SINGAPORE**: PropertyGuru, 99.co, EdgeProp Singapore
+
+**INDONESIA**: Rumah123, Lamudi Indonesia, OLX Property, 99.co Indonesia
+
+**THAILAND**: DDProperty, Thai Property, Hipflat, PropertyScout
+
+**MALAYSIA**: PropertyGuru Malaysia, iProperty, EdgeProp Malaysia, Mudah.my
+
+**UK**: Rightmove, Zoopla, OnTheMarket
+
+**USA**: Zillow, Redfin, Realtor.com, Trulia
+
+**GLOBAL**: Knight Frank country reports, CBRE regional reports, JLL market research
 
 ### Step-by-Step Calculation:
 
@@ -149,91 +165,55 @@ Report as: 9.2% ± 0.4% (8.8% - 9.6%)
 ## OUTPUT FORMAT
 
 ```
-PRICE APPRECIATION: [Location Name]
-City Tier: [1/2/3] | Analysis Date: [Date]
+Price Appreciation: [X.X%] YoY | [X.X%] 3Y CAGR | [X.X%] 5Y CAGR
+Trend: [Accelerating/Steady/Decelerating/Declining]
+Source: [NHB RESIDEX / Knight Frank / Portal Avg] | Confidence: [HIGH/MEDIUM/LOW]
+```
 
----
-TIER 1 (if NHB RESIDEX available):
+**Examples:**
 
-NHB RESIDEX Data:
-   Base Period: [Quarter Year] - Index: [XXX]
-   Latest Period: [Quarter Year] - Index: [XXX]
-   
-1-YEAR Appreciation: [X.X%]
-   Calculation: [(Latest Index - Previous Year Index) / Previous Year Index × 100]
-   Source: NHB RESIDEX [Quarter Year]
-   Confidence: HIGH
+**Tier 1 with Official Data:**
+```
+Price Appreciation: 5.6% YoY | 6.2% 3Y CAGR | 7.1% 5Y CAGR
+Trend: Steadily accelerating
+Source: NHB RESIDEX Q3 2024 | Confidence: HIGH
+```
 
-3-YEAR CAGR: [X.X%]
-   Calculation: [(Latest/3-Year-Ago)^(1/3) - 1 × 100]
-   Source: NHB RESIDEX
-   Confidence: HIGH
+**Tier 2/3 with Portal Data:**
+```
+Price Appreciation: 8.9% YoY | 8.4% 3Y CAGR | N/A 5Y
+Trend: Stable growth
+Source: Portal Avg (MagicBricks 9.2%, 99acres 8.5%, Housing.com 9.1%) | Confidence: MEDIUM
+```
 
-5-YEAR CAGR: [X.X%]
-   Source: NHB RESIDEX
-   Confidence: HIGH
+**International Market:**
+```
+Price Appreciation: 4.2% YoY | 3.8% 3Y CAGR | 4.5% 5Y CAGR
+Trend: Steady
+Source: DLD Price Index Q4 2024 | Confidence: HIGH
+```
 
-Quarterly Trend:
-   Q1 [Year]: Index [XXX] ([X.X%] YoY)
-   Q2 [Year]: Index [XXX] ([X.X%] YoY)
-   Q3 [Year]: Index [XXX] ([X.X%] YoY)
-   Q4 [Year]: Index [XXX] ([X.X%] YoY)
-   Trend: [Accelerating/Stable/Decelerating]
-
----
-TIER 2/3 (Portal-Based Calculation):
-
-Historical Price Data:
-   [Year 1]: ₹[XXXX]/sqft (Source: [Portal names])
-   [Year 2]: ₹[XXXX]/sqft (Source: [Portal names])
-   [Year 3]: ₹[XXXX]/sqft (Source: [Portal names])
-
-1-YEAR Appreciation: [X.X%]
-   Calculation: ([Year 3] - [Year 2]) / [Year 2] × 100
-   Sources: [Portal 1: X.X%], [Portal 2: X.X%], [Portal 3: X.X%]
-   Average: [X.X%] ± [X.X%]
-   Confidence: [MEDIUM/LOW]
-
-3-YEAR CAGR: [X.X%]
-   Calculation: ([Year 3] / [Year 1])^(1/3) - 1 × 100
-   Sources: [Portal 1: X.X%], [Portal 2: X.X%], [Portal 3: X.X%]
-   Average: [X.X%] ± [X.X%]
-   Confidence: [MEDIUM/LOW]
-
-Portal Comparison:
-   MagicBricks: [X.X%] YoY
-   99acres: [X.X%] YoY
-   Housing.com: [X.X%] YoY
-   Variance: [X.X percentage points]
-
-Sample Size: [XX-XX listings per portal per year]
-Property Type: [2BHK apartments / independent houses / etc.]
-Locality: [Specific area if available / city-wide]
-
----
-DATA QUALITY:
-
-Confidence: [HIGH/MEDIUM/LOW]
-Data Source: [NHB RESIDEX / Portal aggregation]
-Most Recent: [Source, Date]
-Limitations: [List any gaps or caveats]
-
-Reliability Factors:
-   ✓/✗ Official government data (NHB RESIDEX)
-   ✓/✗ Multiple portal cross-verification
-   ✓/✗ Sufficient sample size (>20 listings/year)
-   ✓/✗ Data recency (<12 months)
+**Insufficient Data:**
+```
+Price Appreciation: Insufficient data
+Reason: [Only 8 listings / No historical data / New market]
+Alternative: Use [Nearby City] as proxy: [X.X%] YoY
+Confidence: LOW
 ```
 
 ---
 
 ## CRITICAL RULES
 
-### 1. NHB RESIDEX Priority for Tier 1
-- **ALWAYS check NHB RESIDEX first** for Indian Tier 1 cities
-- If available, use NHB data exclusively
-- Do NOT mix NHB data with portal data
-- Only use portals if NHB doesn't cover the city
+### 1. Official Index Priority (International)
+- **ALWAYS check official government indices first** for international cities
+- Priority order:
+  1. Government index (URA, Land Registry, DLD, NAPIC, S&P Case-Shiller)
+  2. Established portal indices (Zillow ZHVI, PropertyFinder, Rightmove)
+  3. International consultancy reports (Knight Frank, CBRE, JLL)
+  4. Portal historical price method (if no index available)
+- If official index available, use exclusively
+- Do NOT mix official index with portal data
 
 ### 2. Portal Data Collection Standards (Tier 2/3)
 - Minimum 3 portals required
@@ -249,7 +229,7 @@ Reliability Factors:
 - Calculate and report standard deviation
 
 ### 4. Confidence Assignment
-- **HIGH**: NHB RESIDEX data (Tier 1) or authoritative international index
+- **HIGH**: Official government index (NHB RESIDEX, URA, Land Registry, DLD, NAPIC, S&P Case-Shiller) OR established portal index (Zillow, PropertyFinder, Rightmove) with data <6 months old
 - **MEDIUM**: 3+ portals, variance <2%, sample size >30 per year
 - **LOW**: <3 portals, variance >2%, sample size <20, or data >18 months old
 
@@ -266,12 +246,17 @@ Reliability Factors:
 
 ## EDGE CASES
 
-### NHB RESIDEX Unavailable (Tier 1 City)
+### Official Index Unavailable (Tier 1 City)
 ```
-NHB RESIDEX: Not available for [City]
-Falling back to: Knight Frank [Report Name, Date]
+Official Index: Not available for [City]
+Falling back to: [Knight Frank / PropertyFinder / Zillow] [Report Name, Date]
 Reported Appreciation: [X.X%]
 Confidence: HIGH (authoritative source, data <6 months old)
+
+OR
+
+Official Index: Not available - using portal method
+[Follow Tier 2/3 portal calculation process]
 ```
 
 ### Insufficient Portal Data (Tier 2/3)
@@ -315,12 +300,13 @@ Recommendation:
 
 ## VALIDATION CHECKLIST
 
-**For Tier 1 (NHB RESIDEX):**
-- [ ] Checked NHB RESIDEX database first
-- [ ] Cited index values and periods
+**For Tier 1 (Official Index):**
+- [ ] Checked official government/established index first
+- [ ] Cited index name, values and periods
 - [ ] Calculated appreciation correctly
 - [ ] Included quarterly trend if available
 - [ ] Confidence marked as HIGH
+- [ ] Currency specified with USD equivalent if applicable
 
 **For Tier 2/3 (Portal Method):**
 - [ ] Collected data from minimum 3 portals
