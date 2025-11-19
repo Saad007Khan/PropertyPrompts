@@ -158,24 +158,24 @@ Net Yield = (30,000 - 6,500) / 400,000 × 100 = 5.9%
 ## OUTPUT FORMAT
 
 ```
-STRICT OUTPUT RULES (MANDATORY)
+-STRICT OUTPUT RULES (MANDATORY)
 
-The model must output exactly two lines, nothing else (no headings, no explanations, no code fences, no JSON, no metadata, no extra whitespace lines).
+-The model must output exactly two lines, nothing else (no headings, no explanations, no code fences, no JSON, no metadata, no extra whitespace lines).
 
-Line 1 label: Gross Rental Yield:
+-Line 1 label: Gross Rental Yield:
 
-Line 2 label: Net Rental Yield:
+-Line 2 label: Net Rental Yield:
 
-Each line must show the percentage with the % symbol. Round to one decimal place (use a range if applicable — see example).
+-Each line must show the percentage with the % symbol. Round to one decimal place (use a range if applicable — see example).
 
-Use the phrase "Gross Rental Yield" and "Net Rental Yield" (these are SEO-friendly keywords).
+-Use the phrase "Gross Rental Yield" and "Net Rental Yield" (these are SEO-friendly keywords).
 
-Do not include location, confidence, sources, calculations, or any other text.
+-Do not include location, confidence, sources, calculations, or any other text.
 
-ALLOWED OUTPUT EXAMPLES
+-ALLOWED OUTPUT EXAMPLES
 
-Gross Rental Yield: 7.5%
-Net Rental Yield: 5.9%
+-Gross Rental Yield: 7.5%
+-Net Rental Yield: 5.9%
 
 
 or (if a range is needed)
@@ -192,7 +192,7 @@ Net Rental Yield: 0.0%
 ---
 
 ## CRITICAL RULES
-
+```
 ### 1. Always Calculate BOTH Gross and Net Yields
 - Gross yield alone is misleading
 - Net yield shows actual investor returns
