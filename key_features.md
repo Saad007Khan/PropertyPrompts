@@ -80,46 +80,24 @@ Rank features by **investment impact**:
 ## OUTPUT FORMAT
 
 ```
-KEY FEATURES: [Location Name]
+KEY FEATURES: [Location Name, State/Region, Country]
 
-TOP 3 INVESTMENT HIGHLIGHTS
-============================
+[City name] offers [Feature 1 with specific metric], [Feature 2 with specific metric], and [Feature 3 with specific metric], making it ideal for [target investor profile] seeking [investment goal].
 
-1. [Feature Name]
-   Type: [Location/Infrastructure/Lifestyle/Economic/Unique]
-   Description: [2-3 sentence explanation of the feature and why it matters]
-   Investment Impact: [High/Medium/Supporting]
-   Specifics: [Distance/timeframe/numbers if applicable]
-   
-   Example: "500m to Beach Road metro station" NOT "Good connectivity"
+1. [Feature Name] - [One sentence with specific numbers/distance/benefit]
+2. [Feature Name] - [One sentence with specific numbers/distance/benefit]
+3. [Feature Name] - [One sentence with specific numbers/distance/benefit]
+```
 
----
+**Example:**
+```
+KEY FEATURES: Dubai Marina, Dubai, UAE
 
-2. [Feature Name]
-   Type: [Location/Infrastructure/Lifestyle/Economic/Unique]
-   Description: [2-3 sentence explanation]
-   Investment Impact: [High/Medium/Supporting]
-   Specifics: [Quantifiable details]
+Dubai Marina offers waterfront living with 3km Marina Walk promenade commanding 20-30% price premiums, dual metro stations providing 15-minute access to Downtown Dubai, and DMCC free zone tax benefits with 21,000+ companies driving consistent rental demand, making it ideal for international investors seeking 6.5-7% yields in a premium location.
 
----
-
-3. [Feature Name]
-   Type: [Location/Infrastructure/Lifestyle/Economic/Unique]
-   Description: [2-3 sentence explanation]
-   Investment Impact: [High/Medium/Supporting]
-   Specifics: [Quantifiable details]
-
-============================
-TARGET INVESTOR PROFILE
-============================
-
-Best Suited For: [End-users/Investors/Both]
-Primary Appeal: [Families/Young professionals/Retirees/Expats/Tourists]
-Investment Strategy: [Long-term appreciation/Rental yield/Vacation rental/Resale]
-
-============================
-
-Sources: [List sources used to identify features]
+1. Waterfront Access - Direct promenade and marina views create 20-30% property value premium
+2. Metro Connectivity - Two stations enable 15-min Downtown access, 10-15% rental premium within 500m
+3. DMCC Free Zone - 21,000+ companies and 0% income tax drive stable corporate rental demand
 ```
 
 ---
