@@ -207,7 +207,7 @@ Location Highlight: [Location Name]
 
 [2-3 compelling sentences following the HOOK + PROOF + TARGET structure, incorporating specific data points, unique features, and target investor profile]
 
-Word Count: [XX words]
+
 ```
 
 ---
