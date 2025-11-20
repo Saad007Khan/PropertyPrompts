@@ -123,109 +123,21 @@ Provide range with LOW confidence
 ## OUTPUT FORMAT
 
 ```
-PROPERTY TAX RATE: [Location Name]
-City Tier: [Metro/Tier 1/Tier 2/Tier 3]
-Country: [Country]
-Analysis Date: [Date]
-
-===================================
-TAX RATE & CALCULATION METHOD
-===================================
-
-[IF OFFICIAL DATA AVAILABLE:]
-
-Residential Property:
-   Tax Rate: [X.XX%] of [Capital Value/Annual Value/Assessed Value]
-   OR
-   Rate: ₹[XX] per sq ft of built-up area
-   
-   Calculation Example:
-   Property Value: ₹50,00,000
-   Annual Tax: ₹50,00,000 × [X.XX%] = ₹[XX,XXX]
-
-Commercial Property:
-   Tax Rate: [X.XX%] of [base]
-   (Typically 2-3x residential rate)
-
-Tax Assessment Method: [Capital Value System/Annual Rateable Value/Unit Area Value/Self-Assessment]
-
----
-
-[IF ESTIMATION USED:]
-
-Estimated Tax Rate: [X.XX% - Y.YY%] of property value
-   Basis: [State proxy/Comparable city/Range estimation]
-   Reference: [Source city] rate of [X.XX%] × [adjustment factor]
-   
-   Estimated Annual Tax:
-   Low estimate: ₹[XX,XXX]
-   High estimate: ₹[YY,YYY]
-
-===================================
-PAYMENT DETAILS
-===================================
-
-Payment Frequency: [Annual/Semi-annual/Quarterly]
-Due Dates: [Specific dates or "Varies by property"]
-Penalty for Late Payment: [X%] per month/quarter
-Discount for Early Payment: [X%] if paid by [date] (if applicable)
-
-Online Payment: [Yes/No]
-Portal: [URL if available]
-
-===================================
-EXEMPTIONS & REBATES
-===================================
-
-Available Exemptions:
-   • [Exemption 1, e.g., "Properties <₹X lakh value"]
-   • [Exemption 2, e.g., "Senior citizens: X% discount"]
-   • [Exemption 3, e.g., "Rainwater harvesting rebate: X%"]
-   • [State if none]
-
-Additional Charges:
-   • Water/Sewerage Tax: [Included/Separate - ₹XXX annually]
-   • Solid Waste Management: [Included/Separate]
-   • Street Light Tax: [Included/Separate]
-
-===================================
-RECENT CHANGES
-===================================
-
-Last Revision: [Date]
-Changes: [Brief description of recent rate changes, if any]
-Next Revision Expected: [Date/Year if known]
-
-===================================
-COMPARATIVE CONTEXT
-===================================
-
-vs State Average: [Higher/Lower/Similar]
-vs National Average: [Context]
-Effective Tax Burden: [Low/Moderate/High]
-
-Nearby Cities Comparison:
-   • [City 1]: [X.XX%]
-   • [City 2]: [X.XX%]
-   • [City 3]: [X.XX%]
-
-===================================
-DATA QUALITY
-===================================
-
-Data Source: [Municipal Corporation website/State guidelines/Estimation]
-Source URL: [Direct link if available]
-Confidence Level: [HIGH/MEDIUM/LOW]
-
-HIGH: Official municipal website with current rates
-MEDIUM: State guidelines or recent news reports
-LOW: Estimation based on proxy/range
-
-Last Verified: [Date]
-Limitations: [Any caveats or uncertainties]
-
-DISCLAIMER: Property tax rates may vary based on property location, age, usage, and local zone. Rates shown are general guidelines. Consult municipal corporation for exact assessment.
-```
+OUTPUT RULES (must be followed exactly):
+1. Line 1 must start with: PROPERTY TAX:
+   - If an official municipal or state rate is available, output the rate and base, and if Property Value was provided include the computed annual tax in parentheses.
+     Example: PROPERTY TAX: 0.20% of Capital Value (Annual tax on ₹5,000,000 = ₹10,000)
+   - If official rate is not available but a reasoned estimate is used, prefix with "ESTIMATED" and show range if applicable.
+     Example: PROPERTY TAX: ESTIMATED 0.10% - 0.15% of Capital Value (Estimated annual tax on ₹3,000,000 = ₹3,000 - ₹4,500)
+   - If nothing verifiable, write exactly: PROPERTY TAX: Not verifiable from official sources.
+2. Line 2 must start with: CONFIDENCE:
+   - Use one of: HIGH / MEDIUM / LOW
+   - HIGH = official municipal website or state regulation found and applied
+   - MEDIUM = state guidelines or recent official report used
+   - LOW = proxy/estimate or no authoritative online source found
+3. Use only official municipal websites, state guidelines, or authoritative tax sources in that priority. If you used an estimate, you must still output only the two lines but the CONFIDENCE must reflect estimation (MEDIUM/LOW).
+4. Numeric rules: round percentage to two decimal places, currency rounded to nearest whole unit, ranges separated by " - ".
+5. Do not include URLs, sources, explanations, or extra lines.
 
 ---
 
@@ -297,152 +209,28 @@ Non-owner: 10-30% progressive
 
 ## EXAMPLES
 
-### Example 1: Bangalore (Official Data Available)
+### Example 1: 
 
 ```
-PROPERTY TAX RATE: Bangalore, Karnataka, India
-City Tier: Metro/Tier 1
-
-Residential Property:
-   Tax Rate: 0.20% of Capital Value (Self-Assessment Basis)
-   
-   Calculation Example:
-   Property Value: ₹50,00,000 (Capital Value)
-   Annual Tax: ₹50,00,000 × 0.0020 = ₹10,000 per year
-
-Commercial Property:
-   Tax Rate: 0.30% of Capital Value
-
-Tax Assessment Method: Self-Assessment System (SAS)
-Property owners declare capital value based on guidance value
-
-Payment Frequency: Annual or Two installments
-Due Dates: April-September (1st), October-March (2nd)
-Early Payment Discount: 5% if paid before April 30
-Late Payment Penalty: 2% per month
-
-Exemptions:
-   • Properties valued <₹5 lakh: Tax capped at ₹200
-   • Rainwater harvesting: 5% rebate
-   • Senior citizens (>65 years): 10% discount
-
-Additional Charges:
-   • Water/Sewerage: Included in property tax
-   • Solid Waste: ₹120-600/year based on property type
-
-Data Source: BBMP Official Website (bbmp.gov.in)
-Confidence: HIGH
-Last Verified: November 2025
+PROPERTY TAX: 0.20% of Capital Value (Annual tax on ₹5,000,000 = ₹10,000)
+CONFIDENCE: HIGH
 ```
 
 ### Example 2: Dubai (No Property Tax)
 
 ```
-PROPERTY TAX RATE: Dubai, UAE
-City Tier: Major Metro
-
-Annual Property Tax: 0% (None)
-
-No annual property tax levied by Dubai government on property owners.
-
-Related Charges (NOT property tax):
-   • Municipality Fee: 5% of annual rental value
-     (Paid by landlord, collected via DEWA)
-   • Housing Fee: 5% of annual rent
-     (Paid by tenant, collected via DEWA)
-   • Service Charges: ₹5-25 per sq ft annually
-     (Paid to developer/community, not government)
-
-Transfer Fees (one-time, NOT annual):
-   • DLD Transfer Fee: 4% (paid by buyer)
-   • Registration: 0.25%
-
-Tax Assessment: Not applicable
-
-Data Source: Dubai Land Department
-Confidence: HIGH
-Last Verified: November 2025
+PROPERTY TAX: ESTIMATED 0.10% – 0.15% of Capital Value (Estimated annual tax on ₹3,000,000 = ₹3,000 – ₹4,500)
+CONFIDENCE: MEDIUM
 ```
 
 ### Example 3: Coimbatore (Official Data)
 
 ```
-PROPERTY TAX RATE: Coimbatore, Tamil Nadu, India
-City Tier: Tier 2
-
-Residential Property:
-   Tax Rate: 16% to 40% of Annual Rental Value (varies by zone)
-   
-   Calculation:
-   Step 1: Annual Rental Value = Plinth area × Zone rate
-   Step 2: Rateable Value = ARV × 70%
-   Step 3: Property Tax = Rateable Value × 40%
-   
-   Example:
-   1000 sq ft apartment in Zone A
-   ARV = 1000 × ₹36 = ₹36,000
-   Rateable Value = ₹36,000 × 70% = ₹25,200
-   Tax = ₹25,200 × 40% = ₹10,080 per year
-
-Commercial Property: Higher rates (up to 50% of rateable value)
-
-Tax Assessment Method: Annual Rental Value (ARV) System
-
-Payment: Annual or Half-yearly
-Discount: 5% if paid before June 30
-
-Exemptions:
-   • Properties <600 sq ft: 50% reduction
-   • Huts/thatched houses: Exempt
-
-Additional Charges:
-   • Water Tax: Separate billing
-   • Underground Drainage: ₹200-500 annually
-
-Data Source: Coimbatore City Municipal Corporation
-Source URL: www.ccmc.gov.in/propertytax
-Confidence: HIGH
-Last Verified: October 2024
+PROPERTY TAX: Not verifiable from official sources.
+CONFIDENCE: LOW
 ```
 
-### Example 4: Small City (Estimation Method)
 
-```
-PROPERTY TAX RATE: Shimoga, Karnataka, India
-City Tier: Tier 3
-Analysis Date: November 2025
-
-ESTIMATED Tax Rate: 0.10% - 0.15% of Capital Value
-   Basis: Karnataka state guidelines for Tier 3 cities
-   Reference: Bangalore (0.20%) × 0.5-0.75 adjustment factor
-   Method: State proxy estimation
-
-Estimated Annual Tax:
-   Property Value: ₹30,00,000
-   Low Estimate: ₹30,00,000 × 0.0010 = ₹3,000/year
-   High Estimate: ₹30,00,000 × 0.0015 = ₹4,500/year
-   Likely Range: ₹3,000 - ₹4,500 annually
-
-Tax Assessment Method: Likely Unit Area Value (UAV) system used in Karnataka
-
-Payment: Annual or Semi-annual (typical for Karnataka cities)
-
-Exemptions: State guidelines suggest exemptions for properties <₹5 lakh
-
-Data Source: Karnataka Municipal Act guidelines + State averages
-Confidence: LOW (estimation only)
-
-Recommendation: Contact Shimoga City Corporation directly for exact rates
-Phone: [If available] | Email: [If available]
-
-Limitations: 
-   • No online property tax portal found
-   • Rates estimated based on state patterns
-   • Actual rates may vary by property location/zone
-   • Last municipal resolution not publicly available
-
-Alternative: Visit municipal office for assessment or check tax receipt of comparable property
-```
 
 ---
 
