@@ -99,199 +99,33 @@ When direct price data limited, assess growth through:
 ## OUTPUT FORMAT
 
 ```
-MARKET GROWTH ASSESSMENT: [Location Name]
-Country: [Country] | Analysis Date: [Date]
+Market Growth (YoY): [+/-X.X%] — [Quarter/Year] [YYYY]
+```
 
-===================================
-GROWTH OVERVIEW
-===================================
+**Examples:**
 
-Current Growth Phase: [Early Growth / Mid Growth / Peak / Plateau / Correction / Recovery]
-Growth Momentum: [Strong / Moderate / Weak / Stagnant / Declining]
-Overall Growth Rating: [Excellent / Good / Fair / Poor / Negative]
+```
+Market Growth (YoY): +5.6% — Q3 2024
+```
 
-===================================
-HISTORICAL PRICE GROWTH
-===================================
+```
+Market Growth (YoY): +8.9% — 2024 (Annual)
+```
 
-Data Source: [NHB RESIDEX / URA / DLD / Portal Data / Reports]
-Method: [Official Index / Calculated from Listings / Report Data]
+```
+Market Growth (YoY): +4.2% — Q4 2024
+```
 
-1-Year Growth (YoY): [X.X%]
-   Period: [Q3 2024 vs Q3 2023]
-   [If using index: Base Index: XXX, Current Index: XXX]
-   Source: [Specific source with date]
-   Confidence: [HIGH / MEDIUM / LOW]
+```
+Market Growth (YoY): -3.2% — Q2 2024
+```
 
-3-Year CAGR: [X.X%]
-   Period: [2021-2024]
-   Calculation: [(Current/Base)^(1/3) - 1] × 100
-   Source: [Specific source]
-   Confidence: [HIGH / MEDIUM / LOW]
+```
+Market Growth (YoY): +12.5% — H1 2024
+```
 
-5-Year CAGR: [X.X%]
-   Period: [2019-2024]
-   Note: [Includes COVID impact period]
-   Source: [Specific source]
-   Confidence: [HIGH / MEDIUM / LOW]
-
-Quarterly Trend (Last 4 Quarters):
-   Q4 2023: [X.X%] YoY
-   Q1 2024: [X.X%] YoY
-   Q2 2024: [X.X%] YoY
-   Q3 2024: [X.X%] YoY
-   
-Trend Direction: [Accelerating / Stable / Decelerating / Volatile]
-
-Peak Year: [Year] at [X.X%] growth
-Trough Year: [Year] at [X.X%] growth or [-X.X%] decline
-
-===================================
-DEMAND GROWTH DRIVERS
-===================================
-
-1. Population Growth
-   • Annual Growth Rate: [X.X%]
-   • Net Migration: [+/- XXX,XXX] annually
-   • Key Demographics: [Young professionals / Families / Retirees / Expats]
-   • Source: [Census data / Government statistics]
-
-2. Employment & Income Growth
-   • Job Creation: [XXX,XXX] new jobs (last year)
-   • Key Sectors: [IT / Finance / Manufacturing / Tourism]
-   • Income Growth: [X.X%] YoY
-   • Major Employers: [List top 3-5 if relevant]
-   • Source: [Labor department / Economic surveys]
-
-3. Infrastructure Development (Upcoming/Recent)
-   • [Project 1]: [Metro line / Airport] - [Status] - Impact: [High/Medium]
-   • [Project 2]: [Expressway / IT Park] - [Status] - Impact: [High/Medium]
-   • [Project 3]: [Mall / Hospital] - [Status] - Impact: [Medium/Low]
-   • Total Investment: [Currency] [XXX] crores/billion
-   • Timeline: [Completion dates]
-   • Source: [Government announcements / Developer news]
-
-4. Investment Inflows
-   • FDI in Real Estate: [Currency] [XXX] (last year)
-   • Domestic Investment: [Currency] [XXX]
-   • Major Projects: [List significant developments]
-   • Source: [DIPP / Central bank / News reports]
-
-===================================
-SUPPLY DYNAMICS
-===================================
-
-New Project Launches:
-   • Last Year: [XXX] projects / [XX,XXX] units
-   • Current Year (YTD): [XXX] projects / [XX,XXX] units
-   • Growth: [+/- X%] YoY
-   • Source: [RERA / PropTiger / Knight Frank supply reports]
-
-Inventory Levels:
-   • Unsold Inventory: [XX,XXX] units ([X.X] months of supply)
-   • Status: [Undersupplied / Balanced / Oversupplied]
-   • Absorption Rate: [XXX] units/month
-   • Source: [Anarock / CBRE inventory reports]
-
-Under Construction:
-   • Pipeline Supply: [XXX,XXX] units (next 2-3 years)
-   • Delivery Timeline: [Breakdown by year]
-   • Risk: [Supply glut concern / Balanced / Shortage expected]
-
-===================================
-COMPARATIVE ANALYSIS
-===================================
-
-Growth vs City Average: [+/- X.X%]
-Growth vs National Average: [+/- X.X%]
-Growth vs Regional Peers:
-   • [Peer City 1]: [X.X%]
-   • [Peer City 2]: [X.X%]
-   • [Peer City 3]: [X.X%]
-
-Ranking: [Top 5 / Top 10 / Top 20 / Below average]
-Source: [Knight Frank Global Index / National reports]
-
-===================================
-FUTURE GROWTH OUTLOOK (Next 12-24 Months)
-===================================
-
-Projected Growth: [X.X% - Y.Y%]
-Basis: [List 2-3 key factors]
-
-Growth Catalysts:
-   ✓ [Catalyst 1 - e.g., New metro line opening Q1 2025]
-   ✓ [Catalyst 2 - e.g., IT park expansion adding 50,000 jobs]
-   ✓ [Catalyst 3 - e.g., Limited new supply vs rising demand]
-
-Growth Headwinds:
-   ⚠ [Risk 1 - e.g., Interest rate increases affecting affordability]
-   ⚠ [Risk 2 - e.g., Oversupply in luxury segment]
-   ⚠ [Risk 3 - e.g., Economic slowdown concerns]
-
-Most Likely Scenario: [Continued strong growth / Moderation / Plateau / Correction]
-
-Market Cycle Position: [Early expansion / Mid expansion / Late expansion / Peak / Early decline]
-
-===================================
-GROWTH SUSTAINABILITY ASSESSMENT
-===================================
-
-Fundamentals Strength: [Strong / Moderate / Weak]
-
-Evaluation:
-   • Economic Diversification: [High / Medium / Low]
-   • Infrastructure Quality: [Excellent / Good / Fair / Poor]
-   • Governance & Regulation: [Strong / Moderate / Weak]
-   • Long-term Demand Drivers: [Robust / Moderate / Uncertain]
-
-Sustainability Rating: [Highly Sustainable / Sustainable / Moderately Sustainable / Unsustainable]
-
-Red Flags (if any):
-   • [Flag 1 - e.g., Speculative buying driving prices]
-   • [Flag 2 - e.g., Affordability declining rapidly]
-   • [Flag 3 - e.g., Over-reliance on single industry]
-
-===================================
-INVESTMENT IMPLICATIONS
-===================================
-
-Growth Opportunity: [Excellent / Good / Moderate / Limited / Negative]
-
-Best Investment Strategy:
-   • Timing: [Buy now / Wait for correction / Caution advised]
-   • Property Type: [Focus on entry-level / Mid-range / Luxury / All segments]
-   • Hold Period: [Short-term flip / Medium 3-5 years / Long-term 7+ years]
-   • Areas: [Specific neighborhoods with highest growth potential]
-
-Expected Returns:
-   • Capital Appreciation (3 years): [X-Y%] CAGR
-   • Rental Yield: [X.X%]
-   • Total Return: [X.X%] annually
-
-Risk Level: [Low / Moderate / High]
-
-===================================
-DATA QUALITY ASSESSMENT
-===================================
-
-Overall Confidence: [HIGH / MEDIUM / LOW]
-
-Data Sources: [Count] sources used
-   • Official indices: [Yes/No] - [Which ones]
-   • Market reports: [Count] reports
-   • Portal data: [Yes/No]
-   • News sources: [Count] articles
-
-Data Recency:
-   • Price data: [Date of most recent data]
-   • Infrastructure data: [Date]
-   • Economic data: [Date]
-
-Limitations:
-   • [List any data gaps or uncertainties]
-
-DISCLAIMER: Growth projections are based on current trends and announced plans. Actual growth may vary due to economic conditions, policy changes, or unforeseen events. Past performance does not guarantee future results.
+```
+Market Growth (YoY): Insufficient data — [Reason: Limited historical data/New market/Only 6 listings found]
 ```
 
 ---
