@@ -138,7 +138,7 @@ OUTPUT RULES (must be followed exactly):
 3. Use only official municipal websites, state guidelines, or authoritative tax sources in that priority. If you used an estimate, you must still output only the two lines but the CONFIDENCE must reflect estimation (MEDIUM/LOW).
 4. Numeric rules: round percentage to two decimal places, currency rounded to nearest whole unit, ranges separated by " - ".
 5. Do not include URLs, sources, explanations, or extra lines.
-
+```
 ---
 
 ## CRITICAL RULES
