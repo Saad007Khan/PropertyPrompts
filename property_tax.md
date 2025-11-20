@@ -216,14 +216,14 @@ PROPERTY TAX: 0.20% of Capital Value (Annual tax on ₹5,000,000 = ₹10,000)
 CONFIDENCE: HIGH
 ```
 
-### Example 2: Dubai (No Property Tax)
+### Example 2: 
 
 ```
 PROPERTY TAX: ESTIMATED 0.10% – 0.15% of Capital Value (Estimated annual tax on ₹3,000,000 = ₹3,000 – ₹4,500)
 CONFIDENCE: MEDIUM
 ```
 
-### Example 3: Coimbatore (Official Data)
+### Example 3: 
 
 ```
 PROPERTY TAX: Not verifiable from official sources.
