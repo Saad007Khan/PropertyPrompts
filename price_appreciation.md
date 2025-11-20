@@ -1,6 +1,6 @@
-# Price Appreciation Calculator
+# Price Appreciation Calculator (Enhanced)
 
-Calculate **Price Appreciation (%)** for a given location using tiered data sourcing.
+Calculate **Price Appreciation (%)** for a given location using tiered data sourcing with **Reputable Sources First** approach.
 
 ---
 
@@ -9,108 +9,358 @@ Location: **City, State/Region, Country**
 
 ---
 
-## DATA SOURCING BY CITY TIER
+## UNIVERSAL DATA SOURCING HIERARCHY (ALL CITIES)
 
-### TIER 1: Major Metros (India)
-**Cities**: Mumbai, Delhi NCR, Bangalore, Hyderabad, Chennai, Pune, Kolkata, Ahmedabad, Jaipur, Lucknow, Kanpur, Nagpur, Surat, Bhopal, Kochi, Visakhapatnam, Patna, Coimbatore
+### PRIORITY 1: REPUTABLE NEWS SOURCES & MEDIA
+**Apply to ALL cities (Tier 1, 2, 3) - Check First Always**
 
-**PRIMARY SOURCE - NHB RESIDEX (National Housing Bank Residential Price Index)**
+**Global Financial Media:**
+- Reuters Property/Real Estate section
+- Bloomberg Real Estate Reports
+- Financial Times Property & Real Estate
+- Wall Street Journal Real Estate
+- The Economist Real Estate Analysis
+- Financial publications with real estate desks
 
-**Use NHB RESIDEX data ONLY if available:**
-- Official government index tracking residential property prices
-- Covers 50+ cities across India
-- Most reliable source for Tier 1 cities
-- Access: https://nhb.org.in/residex/
+**Regional/National Newspapers (By Country):**
 
-**If NHB RESIDEX data available:**
-- Report index values directly (no aggregation needed)
-- Cite: "per NHB RESIDEX [Quarter] [Year]"
-- Confidence: **HIGH**
+**INDIA:**
+- The Economic Times (Property section)
+- Mint (Real Estate)
+- The Hindu Business Line
+- Business Today
+- Moneycontrol Real Estate
+- Indian Express (Business)
 
-**If NHB RESIDEX not available for specific city:**
-- Use: Knight Frank, CBRE, JLL, Colliers reports
-- Confidence: **HIGH** (if data <6 months old)
+**UAE:**
+- The National (UAE)
+- Gulf News Real Estate
+- Arabian Business
+- Khaleej Times Property
 
-**Do NOT use real estate portals for Tier 1 cities if authoritative sources exist**
+**SINGAPORE:**
+- The Straits Times (Property)
+- Singapore Business Times
+- Today (Singapore)
+
+**THAILAND:**
+- Bangkok Post Property
+- The Nation Thailand
+- Thailand Business News
+
+**MALAYSIA:**
+- The Star (Property section)
+- New Straits Times
+- The Edge Markets Malaysia
+
+**INDONESIA:**
+- Jakarta Post (Property)
+- Kompas (Indonesian leading paper)
+- Bisnis Indonesia
+
+**UK:**
+- The Guardian Property
+- The Telegraph Property
+- Financial Times Property
+- BBC News (Property & Markets)
+
+**USA:**
+- New York Times Real Estate
+- Wall Street Journal Real Estate
+- USA Today (Property/Markets)
+- CNN Business Real Estate
+- CNBC Real Estate
+
+**GLOBAL ACCESS:**
+- Google News (Real Estate section by city/country)
+- News aggregators with editorial standards
+
+**Source Evaluation for Newspapers:**
+- Look for articles citing official indices or surveys
+- Prefer articles with quotes from market analysts
+- Search for annual market reports published by these outlets
+- Check publication dates (prefer data <3 months old)
+- Cross-reference claims with cited sources
 
 ---
 
-### TIER 1: Major Metros (International)
-**Cities**: Dubai, Abu Dhabi, Singapore, London, NYC, LA, Miami, Bali (Indonesia), Bangkok, Kuala Lumpur, etc.
+### PRIORITY 2: OFFICIAL GOVERNMENT INDICES & AGENCIES
 
-**PRIMARY SOURCES - Official Government Indices:**
+**Apply to ALL cities - Tier 1 gets priority, Tier 2/3 uses if available**
 
-**UAE (Dubai/Abu Dhabi)**:
-- Dubai Land Department (DLD) - Official price index and transaction data
-- Property Finder Price Index
-- Bayut Market Reports
-- Access: dubailand.gov.ae, propertyfinder.ae, bayut.com
+**INDIA:**
+- NHB RESIDEX (National Housing Bank Residential Price Index) - Tier 1 cities
+  - Access: https://nhb.org.in/residex/
+  - Coverage: 50+ cities
+  - Frequency: Quarterly
+- Ministry of Housing & Urban Affairs data (if available)
 
-**Singapore**:
-- Urban Redevelopment Authority (URA) Property Price Index (official)
+**UAE (Dubai/Abu Dhabi):**
+- Dubai Land Department (DLD) - Official price index
+- Abu Dhabi Department of Municipalities & Transport (MODON)
+- Access: dubailand.gov.ae
+
+**SINGAPORE:**
+- Urban Redevelopment Authority (URA) Property Price Index
 - Access: ura.gov.sg/property-market-information
+- Official government source
 
-**UK (London)**:
-- HM Land Registry House Price Index (official)
-- Rightmove House Price Index
-- Access: landregistry.gov.uk, rightmove.co.uk
-
-**USA**:
-- S&P CoreLogic Case-Shiller Index (major metros)
-- Zillow Home Value Index (ZHVI)
-- Redfin Data Center
-- Access: spglobal.com, zillow.com, redfin.com
-
-**Indonesia (Bali)**:
-- No official index - use portal method (Tier 2/3 approach)
-- Portals: Rumah123, Lamudi, OLX Property, 99.co Indonesia
-- International: JLL Indonesia Reports
-
-**Thailand (Bangkok/Phuket)**:
-- No comprehensive index - use portal method
-- Portals: DDProperty, Thai Property, Hipflat
-- International: CBRE Thailand, Knight Frank Thailand
-
-**Malaysia (Kuala Lumpur)**:
-- National Property Information Centre (NAPIC) House Price Index (official)
-- Portals: PropertyGuru, iProperty, EdgeProp
+**MALAYSIA:**
+- National Property Information Centre (NAPIC) House Price Index
 - Access: napic.jpph.gov.my
 
-**International Coverage (All Cities)**:
-- Knight Frank Global House Price Index
-- CBRE Global Real Estate Market Reports
-- JLL Global Market Reports
-- Savills World Research
+**UK:**
+- HM Land Registry House Price Index (official)
+- Access: landregistry.gov.uk
+- Office for National Statistics (ONS) Housing Data
 
-**Confidence Levels:**
-- HIGH: Official government index (URA, Land Registry, DLD, NAPIC, S&P Case-Shiller)
-- MEDIUM: Established portal indices (Zillow, Rightmove, PropertyFinder, PropertyGuru)
-- Use Tier 2/3 portal method if no official index exists
+**USA:**
+- S&P CoreLogic Case-Shiller Index (major metros)
+- Federal Reserve Economic Data (FRED)
+- Access: spglobal.com, fred.stlouisfed.org
+
+**THAILAND:**
+- Thai Real Estate Information Center (if available)
+- Bank of Thailand property market data
+
+**INDONESIA:**
+- Central Bureau of Statistics (BPS) property data (if available)
+
+**Confidence Levels for Priority 2:**
+- HIGH: Official government indices with recent data (<3 months)
+- HIGH: Established agencies with transparent methodology
 
 ---
 
-### TIER 2 & TIER 3: Secondary/Small Cities (All Countries)
-**Method**: Real Estate Portal Historical Price Analysis
+### PRIORITY 3: ESTABLISHED INTERNATIONAL CONSULTANCY & RESEARCH FIRMS
 
-**INDIA**: MagicBricks, 99acres, Housing.com, Sulekha, PropertyWala, NoBroker
+**Apply to ALL cities - Tier 1 preferred, Tier 2/3 uses when available**
 
-**UAE**: PropertyFinder, Bayut, Dubizzle Property
+**Tier 1 Consultancies (Global Coverage):**
+- Knight Frank (Global House Price Index & country reports)
+- CBRE Global Real Estate Market Reports
+- JLL Global Market Research
+- Savills World Research
+- Colliers International Reports
 
-**SINGAPORE**: PropertyGuru, 99.co, EdgeProp Singapore
+**Regional/Country-Specific Consultancies:**
+- Knight Frank [Country] Market Reports
+- CBRE [Country] Market Analysis
+- JLL [Country] Investment Reports
+- Local real estate consultancies with published research
 
-**INDONESIA**: Rumah123, Lamudi Indonesia, OLX Property, 99.co Indonesia
+**Source Requirements:**
+- Published market reports (not just listings)
+- Named analysts/authors
+- Dated reports (prefer <6 months old)
+- Quantified data with clear methodology
+- Data from actual transactions (not speculative)
 
-**THAILAND**: DDProperty, Thai Property, Hipflat, PropertyScout
+**Confidence Levels for Priority 3:**
+- HIGH: Data <6 months old from Tier 1 consultancies
+- MEDIUM: Data 6-12 months old
+- LOW: Data >12 months old
 
-**MALAYSIA**: PropertyGuru Malaysia, iProperty, EdgeProp Malaysia, Mudah.my
+---
 
-**UK**: Rightmove, Zoopla, OnTheMarket
+### PRIORITY 4: ESTABLISHED REAL ESTATE PORTALS (INDICES)
 
-**USA**: Zillow, Redfin, Realtor.com, Trulia
+**Apply to ALL cities after exhausting Priorities 1-3**
 
-**GLOBAL**: Knight Frank country reports, CBRE regional reports, JLL market research
+**When to use Portal Indices:**
+- Official index not available
+- Newspaper data insufficient
+- Consultancy reports not recent
+- Need supplementary validation
 
-### Step-by-Step Calculation:
+**Tier 1 Portal Indices (High Reliability):**
+- Zillow Home Value Index (ZHVI) - USA
+- Rightmove House Price Index - UK
+- PropertyFinder Price Index - UAE
+- PropertyGuru Index - Singapore, Malaysia
+- Bayut Market Reports - UAE
+- 99.co - Singapore, Indonesia
+
+**Other Established Portals (By Region):**
+
+**INDIA:**
+- MagicBricks (established, large database)
+- 99acres
+- Housing.com
+- Sulekha (regional)
+- PropertyWala
+- NoBroker
+
+**UAE:**
+- PropertyFinder
+- Bayut
+- Dubizzle Property
+
+**SINGAPORE:**
+- PropertyGuru
+- 99.co
+- EdgeProp Singapore
+
+**INDONESIA:**
+- Rumah123
+- Lamudi Indonesia
+- 99.co Indonesia
+- OLX Property
+
+**THAILAND:**
+- DDProperty
+- Thai Property
+- Hipflat
+- PropertyScout
+
+**MALAYSIA:**
+- PropertyGuru Malaysia
+- iProperty
+- EdgeProp Malaysia
+- Mudah.my
+
+**UK:**
+- Rightmove
+- Zoopla
+- OnTheMarket
+
+**Portal Index Requirements:**
+- Minimum 3 different portals (mandatory)
+- Published indices with historical data
+- Transparent methodology
+- Data <6 months old (HIGH confidence)
+
+---
+
+## DATA SOURCING BY CITY TIER (UPDATED HIERARCHY)
+
+### ALL TIERS: UNIVERSAL SEARCH SEQUENCE
+
+**Step 1: Check Reputable Newspapers** (Priority 1)
+- Search "[City] real estate market report [current year]"
+- Search "[City] property prices [latest quarter]"
+- Search "[City] housing market analysis newspaper"
+- Check if newspaper articles cite official indices or surveys
+
+**Step 2: Check Official Indices** (Priority 2)
+- Verify if official government index available
+- Access through official government websites
+- Document index values and time periods
+
+**Step 3: Check Consultancy Reports** (Priority 3)
+- Search Knight Frank/CBRE/JLL [City] reports
+- Look for recent published market analyses
+- Document report date and data source
+
+**Step 4: Portal Historical Analysis** (Priority 4 - Fallback)
+- Only if Priorities 1-3 insufficient
+- Follow portal methodology below
+
+---
+
+### TIER 1: MAJOR METROS (INDIA)
+**Cities**: Mumbai, Delhi NCR, Bangalore, Hyderabad, Chennai, Pune, Kolkata, Ahmedabad, Jaipur, Lucknow, Kanpur, Nagpur, Surat, Bhopal, Kochi, Visakhapatnam, Patna, Coimbatore
+
+**Search Sequence:**
+1. Economic Times, Mint, Hindu Business Line property articles
+2. NHB RESIDEX (official)
+3. Knight Frank India, CBRE India, JLL India reports
+4. Portal indices (MagicBricks, 99acres, Housing.com) if needed
+
+**Data Requirements:**
+- Quarterly or annual appreciation data
+- Specific locality performance (if available)
+- Confidence minimum: MEDIUM
+
+---
+
+### TIER 1: MAJOR METROS (INTERNATIONAL)
+
+**UAE (Dubai/Abu Dhabi):**
+1. The National, Gulf News property sections
+2. DLD Price Index (official)
+3. Knight Frank UAE, CBRE UAE reports
+4. PropertyFinder Index (if needed)
+
+**SINGAPORE:**
+1. Straits Times property section
+2. URA Property Price Index (official)
+3. Knight Frank Singapore reports
+4. PropertyGuru Index (if needed)
+
+**UK (London/Major Cities):**
+1. Financial Times, Guardian, Telegraph property coverage
+2. HM Land Registry (official)
+3. Knight Frank UK reports
+4. Rightmove Index (if needed)
+
+**USA (NYC, LA, Miami, etc.):**
+1. Wall Street Journal, New York Times, CNBC real estate coverage
+2. S&P Case-Shiller Index (official)
+3. CBRE, Savills USA reports
+4. Zillow ZHVI (if needed)
+
+**THAILAND (Bangkok):**
+1. Bangkok Post property section
+2. Official Thai Real Estate data (if available)
+3. Knight Frank Thailand reports
+4. Portal method (DDProperty, Thai Property)
+
+**MALAYSIA (Kuala Lumpur):**
+1. The Star, Edge Markets property coverage
+2. NAPIC House Price Index (official)
+3. Knight Frank Malaysia reports
+4. PropertyGuru Index (if needed)
+
+**INDONESIA (Jakarta, Bali):**
+1. Jakarta Post business section
+2. Central Bureau of Statistics data
+3. JLL Indonesia reports
+4. Portal method (Rumah123, Lamudi)
+
+---
+
+### TIER 2 & TIER 3: SECONDARY/SMALL CITIES (ALL COUNTRIES)
+
+**Search Sequence:**
+1. Regional newspaper property sections or market reports
+2. Official index data (if Tier 1 city in that region)
+3. Regional consultancy reports
+4. Multi-portal historical analysis (minimum 3 portals)
+
+**Regional Newspaper Sources:**
+- Major newspapers covering regions (e.g., Deccan Herald for Karnataka cities)
+- Business newspapers (economic/financial focus)
+- Local news outlets with business sections
+
+**Portal Method (When Required):**
+- Collect from minimum 3 portals
+- Calculate historical price per sqft
+- Follow calculations in sections below
+
+---
+
+## STEP-BY-STEP CALCULATION METHODOLOGY
+
+### For Newspaper & Consultancy Data:
+```
+1. Extract appreciation percentage directly from source
+2. Verify time period (YoY, 3Y, 5Y CAGR, etc.)
+3. Note source attribution
+4. Cross-check against another Priority 1-3 source if possible
+5. Assign confidence based on source recency and authority
+```
+
+### For Official Index Data:
+```
+1. Collect index values for multiple time periods
+2. Calculate Year-over-Year: [(Current Period - Prior Period) / Prior Period] × 100
+3. Calculate Multi-Year CAGR: [(Ending Value / Beginning Value)^(1/Years)] - 1
+4. Document time periods explicitly
+5. Confidence: HIGH
+```
+
+### For Portal Historical Analysis (Tier 2/3 Fallback):
 
 **1. Collect Historical Listing Data (2-3 years)**
    - Gather average price per sq ft for each year
@@ -167,240 +417,85 @@ Report as: 9.2% ± 0.4% (8.8% - 9.6%)
 ```
 Price Appreciation: [X.X%] YoY | [X.X%] 3Y CAGR | [X.X%] 5Y CAGR
 Trend: [Accelerating/Steady/Decelerating/Declining]
-Source: [NHB RESIDEX / Knight Frank / Portal Avg] | Confidence: [HIGH/MEDIUM/LOW]
-```
-
-**Examples:**
-
-**Tier 1 with Official Data:**
-```
-Price Appreciation: 5.6% YoY | 6.2% 3Y CAGR | 7.1% 5Y CAGR
-Trend: Steadily accelerating
-Source: NHB RESIDEX Q3 2024 | Confidence: HIGH
-```
-
-**Tier 2/3 with Portal Data:**
-```
-Price Appreciation: 8.9% YoY | 8.4% 3Y CAGR | N/A 5Y
-Trend: Stable growth
-Source: Portal Avg (MagicBricks 9.2%, 99acres 8.5%, Housing.com 9.1%) | Confidence: MEDIUM
-```
-
-**International Market:**
-```
-Price Appreciation: 4.2% YoY | 3.8% 3Y CAGR | 4.5% 5Y CAGR
-Trend: Steady
-Source: DLD Price Index Q4 2024 | Confidence: HIGH
-```
-
-**Insufficient Data:**
-```
-Price Appreciation: Insufficient data
-Reason: [Only 8 listings / No historical data / New market]
-Alternative: Use [Nearby City] as proxy: [X.X%] YoY
-Confidence: LOW
+Source Priority: [Newspaper/Official Index/Consultancy/Portal Avg]
+Primary Source: [Specific source name and date]
+Confidence: [HIGH/MEDIUM/LOW]
 ```
 
 ---
 
-## CRITICAL RULES
+## CRITICAL RULES (UPDATED)
 
-### 1. Official Index Priority (International)
-- **ALWAYS check official government indices first** for international cities
-- Priority order:
-  1. Government index (URA, Land Registry, DLD, NAPIC, S&P Case-Shiller)
-  2. Established portal indices (Zillow ZHVI, PropertyFinder, Rightmove)
-  3. International consultancy reports (Knight Frank, CBRE, JLL)
-  4. Portal historical price method (if no index available)
-- If official index available, use exclusively
+### 1. Reputable Sources Priority (ALL CITIES)
+- **ALWAYS check reputable newspapers first** for all cities (Tier 1, 2, 3)
+- **ALWAYS check official indices second** if available
+- **ALWAYS check consultancy reports third** before portals
+- **ONLY use portal method if Priorities 1-3 insufficient**
+
+### 2. Newspaper Source Criteria
+- Established financial/business publications
+- Articles with quoted analysts or cited surveys
+- Data from official indices or primary sources within article
+- Publication date critical (prefer <3 months old)
+- Avoid opinion pieces without supporting data
+
+### 3. Official Index Priority
+- Government indices supersede all other sources
+- Use exclusively if available
 - Do NOT mix official index with portal data
+- Document index values and methodology
 
-### 2. Portal Data Collection Standards (Tier 2/3)
+### 4. Consultancy Report Standards
+- Published market reports with analyst attribution
+- Transparent data sources and methodology
+- Recent publication (prefer <6 months)
+- From Tier 1 firms (Knight Frank, CBRE, JLL, Savills)
+
+### 5. Portal Data Collection Standards (Tier 2/3 Only)
 - Minimum 3 portals required
 - Minimum 20 listings per portal per year (if available)
 - Same property type across all portals
 - Remove outliers (top/bottom 10%)
-- Use median, not mean (reduces skew from luxury properties)
+- Use median, not mean
 
-### 3. Calculation Transparency
-- Show raw price data: "2023: ₹4,200/sqft, 2024: ₹4,600/sqft"
-- Display formula: "(4600-4200)/4200 × 100 = 9.5%"
-- Show individual portal results before averaging
+### 6. Calculation Transparency
+- Show data source hierarchy used
+- Display raw price data if using portals
+- Show calculation formula with numbers
+- Display individual portal results before averaging
 - Calculate and report standard deviation
+- Cite newspaper/consultancy quotes or data points
 
-### 4. Confidence Assignment
-- **HIGH**: Official government index (NHB RESIDEX, URA, Land Registry, DLD, NAPIC, S&P Case-Shiller) OR established portal index (Zillow, PropertyFinder, Rightmove) with data <6 months old
-- **MEDIUM**: 3+ portals, variance <2%, sample size >30 per year
-- **LOW**: <3 portals, variance >2%, sample size <20, or data >18 months old
+### 7. Confidence Assignment
+- **HIGH**: Official government index with data <3 months old OR newspaper/consultancy from Tier 1 source <3 months old
+- **MEDIUM**: 3+ portals with variance <2% OR consultancy data 3-6 months old OR newspaper article with dated data
+- **LOW**: <3 portals, variance >2%, or data >6 months old, or insufficient newspaper/consultancy coverage
 
-### 5. Handle Missing Data Honestly
-- If quarterly data not available: State "Annual data only"
-- If insufficient listings: State "Sample size too small ([X] listings)"
-- If no historical data: State "Historical data not available - use proxy"
+### 8. Handle Missing Data Honestly
+- If no newspaper coverage: State "Insufficient media coverage"
+- If official index unavailable: State "No official index available"
+- If consultancy reports not found: State "Limited analyst coverage"
+- If portal data insufficient: State "Sample size too small ([X] listings)"
 
-### 6. Report Negative Appreciation
+### 9. Report Negative Appreciation
 - Don't hide market declines
 - Report as: "-3.2% (market decline)" not "slow growth"
 
 ---
 
-## EDGE CASES
-
-### Official Index Unavailable (Tier 1 City)
-```
-Official Index: Not available for [City]
-Falling back to: [Knight Frank / PropertyFinder / Zillow] [Report Name, Date]
-Reported Appreciation: [X.X%]
-Confidence: HIGH (authoritative source, data <6 months old)
-
-OR
-
-Official Index: Not available - using portal method
-[Follow Tier 2/3 portal calculation process]
-```
-
-### Insufficient Portal Data (Tier 2/3)
-```
-Portal data insufficient for [City]
-Reason: [Only 8 listings found across portals / No historical data >1 year]
-Alternative: Use regional proxy [Nearby City] appreciation: [X.X%]
-Adjustment: ±1-2% for local market differences
-Confidence: LOW
-```
-
-### High Variance Between Portals
-```
-VARIANCE WARNING: Portals differ significantly
-   MagicBricks: 12.5% YoY
-   99acres: 6.8% YoY
-   Housing.com: 9.2% YoY
-   Variance: 5.7 percentage points
-
-Possible Reasons:
-   - Different property segments
-   - Sample size differences
-   - Geographic scope differences
-
-Recommendation: Report as range 6.8% - 12.5%
-Confidence: LOW (high variance)
-```
-
-### Archived Listings Not Available
-```
-Historical listings not accessible for [City]
-Current available: 2024 data only
-Cannot calculate YoY appreciation without 2023 baseline
-Recommendation: 
-   - Wait 12 months to establish trend
-   - Use comparable city data as proxy
-   - Check NHB RESIDEX (if Tier 1)
-```
-
----
-
 ## VALIDATION CHECKLIST
 
-**For Tier 1 (Official Index):**
-- [ ] Checked official government/established index first
-- [ ] Cited index name, values and periods
-- [ ] Calculated appreciation correctly
-- [ ] Included quarterly trend if available
-- [ ] Confidence marked as HIGH
+- [ ] Searched reputable newspapers/financial media (Priority 1)
+- [ ] Checked official government indices (Priority 2)
+- [ ] Researched consultancy reports (Priority 3)
+- [ ] Used portal method only if Priorities 1-3 insufficient
+- [ ] Cited specific source with publication date
+- [ ] Showed calculation methodology
+- [ ] Included raw data when applicable
+- [ ] Reported confidence level with justification
+- [ ] Cross-verified with multiple sources when possible
+- [ ] Flagged high variance or data limitations
 - [ ] Currency specified with USD equivalent if applicable
-
-**For Tier 2/3 (Portal Method):**
-- [ ] Collected data from minimum 3 portals
-- [ ] Calculated price per sq ft for each year
-- [ ] Showed calculation formula
-- [ ] Displayed individual portal results
-- [ ] Calculated average and standard deviation
-- [ ] Reported sample sizes
-- [ ] Specified property type and locality
-- [ ] Confidence level justified
-- [ ] Flagged high variance if >2%
-
----
-
-## EXAMPLE OUTPUT - TIER 1
-
-```
-PRICE APPRECIATION: Bangalore, Karnataka, India
-City Tier: 1 | Analysis Date: November 18, 2025
-
-NHB RESIDEX Data:
-   Base Period: Q4 2023 - Index: 285
-   Latest Period: Q3 2024 - Index: 301
-
-1-YEAR Appreciation: 5.6%
-   Calculation: (301 - 285) / 285 × 100 = 5.6%
-   Source: NHB RESIDEX Q3 2024
-   Confidence: HIGH
-
-3-YEAR CAGR: 6.2%
-   Calculation: Q3 2024 (301) vs Q3 2021 (252)
-   (301/252)^(1/3) - 1 = 6.2%
-   Source: NHB RESIDEX
-   Confidence: HIGH
-
-Quarterly Trend:
-   Q4 2023: 285 (4.8% YoY)
-   Q1 2024: 291 (5.2% YoY)
-   Q2 2024: 296 (5.4% YoY)
-   Q3 2024: 301 (5.6% YoY)
-   Trend: Stable growth, gradually accelerating
-
-Data Quality:
-   Confidence: HIGH
-   Source: NHB RESIDEX (National Housing Bank)
-   Most Recent: Q3 2024
-   Limitations: City-wide index; specific localities may vary ±2-3%
-```
-
----
-
-## EXAMPLE OUTPUT - TIER 2
-
-```
-PRICE APPRECIATION: Coimbatore, Tamil Nadu, India
-City Tier: 2 | Analysis Date: November 18, 2025
-
-Historical Price Data (City-wide, 2BHK Apartments):
-   2022: ₹3,850/sqft
-   2023: ₹4,150/sqft
-   2024: ₹4,520/sqft
-
-1-YEAR Appreciation: 8.9%
-   Calculation: (4520 - 4150) / 4150 × 100 = 8.9%
-   Portal Results:
-      MagicBricks: 9.2% YoY (42 listings analyzed)
-      99acres: 8.5% YoY (38 listings analyzed)
-      Housing.com: 9.1% YoY (35 listings analyzed)
-   Average: 8.9% ± 0.4%
-   Confidence: MEDIUM
-
-3-YEAR CAGR: 8.4%
-   Calculation: (4520/3850)^(1/2) - 1 × 100 = 8.4%
-   Portal Results:
-      MagicBricks: 8.6%
-      99acres: 8.0%
-      Housing.com: 8.6%
-   Average: 8.4% ± 0.3%
-   Confidence: MEDIUM
-
-Portal Comparison:
-   MagicBricks: 9.2% YoY | Sample: 42 listings
-   99acres: 8.5% YoY | Sample: 38 listings
-   Housing.com: 9.1% YoY | Sample: 35 listings
-   Variance: 0.7 percentage points (low)
-
-Data Quality:
-   Confidence: MEDIUM
-   Sample Size: 35-42 listings per portal
-   Property Type: 2BHK apartments (800-1200 sqft)
-   Locality: City-wide average
-   Most Recent: October 2024
-   Limitations: Listing prices (not transaction prices); limited sample in some localities
-```
 
 ---
 
