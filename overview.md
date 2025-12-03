@@ -4,8 +4,6 @@ Output must follow this exact template and nothing else:
 
 Overview
 <1–3 concise sentences describing location, notable history/cultural points, and primary draw for visitors/residents.>
-
-The Lifestyle
-<1–3 concise sentences describing typical local lifestyle, community mix (locals/expats/tourists), main leisure/cultural activities, and overall vibe.>
+<1–3 concise sentences describing typical local lifestyle, community mix (locals/expats/tourists), main leisure/cultural activities, and overall vibe and end the note with how some scope of properties, property yeild, rental yeild etc .>
 
 Keep language neutral, factual, and concise.
