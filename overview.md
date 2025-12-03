@@ -7,3 +7,5 @@ Overview
 <1–3 concise sentences describing typical local lifestyle, community mix (locals/expats/tourists), main leisure/cultural activities, and overall vibe and end the note with how some scope of properties, property yeild, rental yeild etc .>
 
 Keep language neutral, factual, and concise.
+
+Output must be in both json and text format, two seperate output formats
