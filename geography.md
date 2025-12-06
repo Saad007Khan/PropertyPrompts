@@ -13,6 +13,8 @@ Location: **City/Area, State/Region, Country**
 
 ## OUTPUT FORMAT
 
+### TEXT FORMAT
+
 ```
 Geography: [Location Name, State/Region, Country]
 
@@ -23,6 +25,18 @@ Topography: [Terrain characteristics — key physical features]
 Altitude: [X meters/feet above sea level OR range if applicable]
 
 Flora & Fauna: [Brief biodiversity description — notable species/ecosystems]
+```
+
+### JSON FORMAT
+
+```json
+{
+  "geography": "[Location Name, State/Region, Country]",
+  "soil": "[Soil type/composition — brief practical description]",
+  "topography": "[Terrain characteristics — key physical features]",
+  "altitude": "[X meters/feet above sea level OR range if applicable]",
+  "flora_and_fauna": "[Brief biodiversity description — notable species/ecosystems]"
+}
 ```
 
 ---
@@ -166,6 +180,13 @@ For well-known regions, mention characteristic features:
 - **Plains**: Mention agricultural suitability, river systems
 - **Desert regions**: Note arid conditions, sparse vegetation
 
+### 7. Output Format Compliance
+- **ALWAYS** provide both TEXT and JSON formats
+- **TEXT format**: Field labels on separate lines
+- **JSON format**: Use exact field names (geography, soil, topography, altitude, flora_and_fauna)
+- **Both formats must match exactly** (same content, different structure)
+- **NO** extra commentary outside the five fields
+
 ---
 
 ## GROUNDING RULES (ANTI-HALLUCINATION)
@@ -295,6 +316,9 @@ Before outputting, verify:
 - [ ] All estimates marked as such
 - [ ] Data gaps acknowledged
 - [ ] Sources can be cited if challenged
+- [ ] **Provided TEXT format output**
+- [ ] **Provided JSON format output**
+- [ ] **Both formats match exactly**
 
 ---
 
@@ -325,6 +349,8 @@ Flora & Fauna: Typical for region — specific biodiversity survey not available
 ## EXAMPLES
 
 ### Example 1: Coastal Area (Anjuna, Goa)
+
+**TEXT FORMAT:**
 ```
 Geography: Anjuna, North Goa, India
 
@@ -337,7 +363,22 @@ Altitude: Approximately 5 meters above sea level
 Flora & Fauna: Rich biodiversity with tropical trees, various bird species including kingfishers, and diverse marine life along the coastline
 ```
 
+**JSON FORMAT:**
+```json
+{
+  "geography": "Anjuna, North Goa, India",
+  "soil": "Primarily lateritic, suitable for plantation crops and coconut cultivation",
+  "topography": "Sandy beaches, rocky cliffs, and coconut groves characterize the coastal terrain",
+  "altitude": "Approximately 5 meters above sea level",
+  "flora_and_fauna": "Rich biodiversity with tropical trees, various bird species including kingfishers, and diverse marine life along the coastline"
+}
+```
+
+---
+
 ### Example 2: Urban Metro (Bangalore)
+
+**TEXT FORMAT:**
 ```
 Geography: Bangalore, Karnataka, India
 
@@ -350,7 +391,22 @@ Altitude: Approximately 920 meters above sea level
 Flora & Fauna: Urban biodiversity with introduced ornamental trees, garden birds including mynas and parakeets, and park ecosystems
 ```
 
+**JSON FORMAT:**
+```json
+{
+  "geography": "Bangalore, Karnataka, India",
+  "soil": "Red lateritic soil with good drainage, suitable for construction and garden vegetation",
+  "topography": "Gently undulating plateau terrain with numerous lakes and parks",
+  "altitude": "Approximately 920 meters above sea level",
+  "flora_and_fauna": "Urban biodiversity with introduced ornamental trees, garden birds including mynas and parakeets, and park ecosystems"
+}
+```
+
+---
+
 ### Example 3: Hill Station (Shimla)
+
+**TEXT FORMAT:**
 ```
 Geography: Shimla, Himachal Pradesh, India
 
@@ -363,7 +419,22 @@ Altitude: 2,200 meters above sea level (city center), ranging 1,800-2,500m
 Flora & Fauna: Temperate forest ecosystem with pine, deodar, and oak trees; wildlife includes Himalayan langurs, leopards, and various pheasant species
 ```
 
+**JSON FORMAT:**
+```json
+{
+  "geography": "Shimla, Himachal Pradesh, India",
+  "soil": "Mountain soil with rocky substrate, suitable for pine and deodar forests",
+  "topography": "Steep Himalayan slopes with ridges, valleys, and forested hillsides",
+  "altitude": "2,200 meters above sea level (city center), ranging 1,800-2,500m",
+  "flora_and_fauna": "Temperate forest ecosystem with pine, deodar, and oak trees; wildlife includes Himalayan langurs, leopards, and various pheasant species"
+}
+```
+
+---
+
 ### Example 4: Desert Region (Dubai)
+
+**TEXT FORMAT:**
 ```
 Geography: Dubai, UAE
 
@@ -376,7 +447,22 @@ Altitude: 0-5 meters above sea level (coastal), up to 300m (inland desert)
 Flora & Fauna: Arid desert ecosystem with date palms and drought-resistant plants; wildlife includes Arabian oryx, desert foxes, and migratory birds
 ```
 
+**JSON FORMAT:**
+```json
+{
+  "geography": "Dubai, UAE",
+  "soil": "Sandy desert soil with minimal organic content, requires irrigation for vegetation",
+  "topography": "Flat coastal plain transitioning to inland desert dunes",
+  "altitude": "0-5 meters above sea level (coastal), up to 300m (inland desert)",
+  "flora_and_fauna": "Arid desert ecosystem with date palms and drought-resistant plants; wildlife includes Arabian oryx, desert foxes, and migratory birds"
+}
+```
+
+---
+
 ### Example 5: Island City (Singapore)
+
+**TEXT FORMAT:**
 ```
 Geography: Singapore
 
@@ -389,11 +475,24 @@ Altitude: 0-15 meters above sea level (most areas), highest point 164m (Bukit Ti
 Flora & Fauna: Tropical urban ecosystem with extensive parks and nature reserves; notable wildlife includes macaques, monitor lizards, and over 400 bird species
 ```
 
+**JSON FORMAT:**
+```json
+{
+  "geography": "Singapore",
+  "soil": "Varied — coastal sandy soils and inland clay-rich soils, extensively modified for urban development",
+  "topography": "Low-lying island with gentle hills, heavily urbanized with reclaimed coastal land",
+  "altitude": "0-15 meters above sea level (most areas), highest point 164m (Bukit Timah Hill)",
+  "flora_and_fauna": "Tropical urban ecosystem with extensive parks and nature reserves; notable wildlife includes macaques, monitor lizards, and over 400 bird species"
+}
+```
+
 ---
 
 ## EDGE CASES
 
 ### Highly Urbanized Area (Limited Natural Features)
+
+**TEXT FORMAT:**
 ```
 Geography: Mumbai, Maharashtra, India
 
@@ -406,7 +505,22 @@ Altitude: 0-14 meters above sea level
 Flora & Fauna: Limited urban biodiversity — mangroves in protected areas, city-adapted birds like crows and pigeons, marine life in coastal waters
 ```
 
+**JSON FORMAT:**
+```json
+{
+  "geography": "Mumbai, Maharashtra, India",
+  "soil": "Coastal alluvial and reclaimed land, extensively modified for urban construction",
+  "topography": "Low-lying coastal peninsula with seven islands merged through reclamation",
+  "altitude": "0-14 meters above sea level",
+  "flora_and_fauna": "Limited urban biodiversity — mangroves in protected areas, city-adapted birds like crows and pigeons, marine life in coastal waters"
+}
+```
+
+---
+
 ### Data Unavailable (Small Town/Village)
+
+**TEXT FORMAT:**
 ```
 Geography: [Small Town], [State], India
 
@@ -419,7 +533,22 @@ Altitude: Approximately [X]m above sea level (estimated from regional topography
 Flora & Fauna: Typical [regional] biodiversity — [general vegetation types and common wildlife for the region]
 ```
 
+**JSON FORMAT:**
+```json
+{
+  "geography": "[Small Town], [State], India",
+  "soil": "Data not available — typical for region is lateritic/alluvial soil",
+  "topography": "[Use general regional characteristics if specific data unavailable]",
+  "altitude": "Approximately [X]m above sea level (estimated from regional topography)",
+  "flora_and_fauna": "Typical [regional] biodiversity — [general vegetation types and common wildlife for the region]"
+}
+```
+
+---
+
 ### Mountain Area with High Variation
+
+**TEXT FORMAT:**
 ```
 Geography: Manali, Himachal Pradesh, India
 
@@ -432,11 +561,22 @@ Altitude: 2,050 meters (town center), surrounding areas range 1,500-4,500m
 Flora & Fauna: Alpine and sub-alpine ecosystems with deodar forests, rhododendrons at higher altitudes; wildlife includes snow leopards, Himalayan black bears, and musk deer
 ```
 
+**JSON FORMAT:**
+```json
+{
+  "geography": "Manali, Himachal Pradesh, India",
+  "soil": "Mountain soil ranging from rocky substrate at high elevations to alluvial in valleys",
+  "topography": "Dramatic Himalayan terrain with steep valleys, glacier-fed rivers, and snow-capped peaks",
+  "altitude": "2,050 meters (town center), surrounding areas range 1,500-4,500m",
+  "flora_and_fauna": "Alpine and sub-alpine ecosystems with deodar forests, rhododendrons at higher altitudes; wildlife includes snow leopards, Himalayan black bears, and musk deer"
+}
+```
+
 ---
 
 ## VALIDATION CHECKLIST
 
-- [ ] All 4 components provided (Soil, Topography, Altitude, Flora & Fauna)
+- [ ] All 5 components provided (Geography, Soil, Topography, Altitude, Flora & Fauna)
 - [ ] Each component is 1-2 sentences (concise)
 - [ ] Altitude includes specific number(s)
 - [ ] Soil type specified (not just "good" or "poor")
@@ -445,6 +585,9 @@ Flora & Fauna: Alpine and sub-alpine ecosystems with deodar forests, rhododendro
 - [ ] Information is factual (not promotional)
 - [ ] Data gaps noted if information unavailable
 - [ ] Relevant to location understanding (not overly technical)
+- [ ] **Provided TEXT format output**
+- [ ] **Provided JSON format output**
+- [ ] **Both formats match exactly** (same content, different structure)
 
 ---
 
