@@ -23,6 +23,33 @@ Tags should be:
 
 ---
 
+## OUTPUT FORMAT
+
+### TEXT FORMAT
+
+```
+Tags: [Tag 1], [Tag 2], [Tag 3], [Tag 4], [Tag 5], [Tag 6], [Tag 7], [Tag 8]
+```
+
+### JSON FORMAT
+
+```json
+{
+  "tags": [
+    "Tag 1",
+    "Tag 2",
+    "Tag 3",
+    "Tag 4",
+    "Tag 5",
+    "Tag 6",
+    "Tag 7",
+    "Tag 8"
+  ]
+}
+```
+
+---
+
 ## TAG CATEGORIES (Select 6-10 relevant tags)
 
 ### 1. CONNECTIVITY & TRANSPORT
@@ -76,29 +103,137 @@ Tags should be:
 
 ---
 
-## OUTPUT FORMAT
+## EXAMPLES
 
-```
-Tags: [Tag 1], [Tag 2], [Tag 3], [Tag 4], [Tag 5], [Tag 6], [Tag 7], [Tag 8]
-```
+### Example 1: Coastal Beach Town (Anjuna, Goa)
 
-**Examples:**
-
+**TEXT FORMAT:**
 ```
-Tags: Beachfront, Digital Nomad Hub, Near Airport, High Rental Yield, Tourist Hotspot, Co-working Spaces
+Tags: Beachfront, Digital Nomad Hub, Tourist Hotspot, High Rental Yield, Near Airport, Co-working Spaces, Nightlife, Seasonal Demand
 ```
 
-```
-Tags: Metro Connected, IT Hub, Gated Community, International Schools, Investment Hotspot, Rapid Growth
+**JSON FORMAT:**
+```json
+{
+  "tags": [
+    "Beachfront",
+    "Digital Nomad Hub",
+    "Tourist Hotspot",
+    "High Rental Yield",
+    "Near Airport",
+    "Co-working Spaces",
+    "Nightlife",
+    "Seasonal Demand"
+  ]
+}
 ```
 
+**Why:** Beach access (primary), remote worker trend, tourism driver, rental income, new airport, lifestyle amenities
+
+---
+
+### Example 2: IT Hub Metro (Whitefield, Bangalore)
+
+**TEXT FORMAT:**
 ```
-Tags: Waterfront, Free Zone, Near Airport, Luxury Segment, Marina Access, Tax Benefits
+Tags: IT Hub, Metro Connected, Tech Park Adjacent, International Schools, Investment Hotspot, Gated Community, High Growth
 ```
 
+**JSON FORMAT:**
+```json
+{
+  "tags": [
+    "IT Hub",
+    "Metro Connected",
+    "Tech Park Adjacent",
+    "International Schools",
+    "Investment Hotspot",
+    "Gated Community",
+    "High Growth"
+  ]
+}
 ```
-Tags: Hill Station, Scenic Views, Retirement Destination, Low Pollution, Green Belt, Cool Climate
+
+**Why:** IT employment, metro access, schools for professionals, strong appreciation, secure housing
+
+---
+
+### Example 3: Waterfront Luxury (Dubai Marina)
+
+**TEXT FORMAT:**
 ```
+Tags: Waterfront, Marina Access, Metro Connected, Luxury Segment, Near Beach, Free Zone, Tax Benefits, High ROI
+```
+
+**JSON FORMAT:**
+```json
+{
+  "tags": [
+    "Waterfront",
+    "Marina Access",
+    "Metro Connected",
+    "Luxury Segment",
+    "Near Beach",
+    "Free Zone",
+    "Tax Benefits",
+    "High ROI"
+  ]
+}
+```
+
+**Why:** Unique location, connectivity, premium market, DMCC proximity, zero taxes
+
+---
+
+### Example 4: Hill Station (Shimla)
+
+**TEXT FORMAT:**
+```
+Tags: Hill Station, Cool Climate, Scenic Views, Retirement Destination, Tourist Hotspot, Low Pollution, Green Belt
+```
+
+**JSON FORMAT:**
+```json
+{
+  "tags": [
+    "Hill Station",
+    "Cool Climate",
+    "Scenic Views",
+    "Retirement Destination",
+    "Tourist Hotspot",
+    "Low Pollution",
+    "Green Belt"
+  ]
+}
+```
+
+**Why:** Elevation, weather advantage, natural beauty, retiree appeal, tourism
+
+---
+
+### Example 5: Emerging Suburb (Tier 2 City)
+
+**TEXT FORMAT:**
+```
+Tags: Emerging Area, Affordable Housing, Rapid Growth, Metro Upcoming, Near Highway, Investment Opportunity, RERA Approved
+```
+
+**JSON FORMAT:**
+```json
+{
+  "tags": [
+    "Emerging Area",
+    "Affordable Housing",
+    "Rapid Growth",
+    "Metro Upcoming",
+    "Near Highway",
+    "Investment Opportunity",
+    "RERA Approved"
+  ]
+}
+```
+
+**Why:** Development phase, price point, infrastructure projects, accessibility, investor interest
 
 ---
 
@@ -147,6 +282,12 @@ Always include the location's unique selling point:
 - Hill Station (mountain locations)
 - Free Zone (Dubai DMCC, Jebel Ali)
 - Heritage Area (historic districts)
+
+### 9. Output Format Compliance
+- **ALWAYS** provide both TEXT and JSON formats
+- **TEXT format:** Comma-separated tag list
+- **JSON format:** Array of strings
+- **Both formats must match exactly** (same tags, same order)
 
 ---
 
@@ -206,40 +347,6 @@ Use conservative estimates:
 
 ---
 
-## EXAMPLES BY LOCATION TYPE
-
-### Coastal Beach Town (Anjuna, Goa)
-```
-Tags: Beachfront, Digital Nomad Hub, Tourist Hotspot, High Rental Yield, Near Airport, Co-working Spaces, Nightlife, Seasonal Demand
-```
-**Why:** Beach access (primary), remote worker trend, tourism driver, rental income, new airport, lifestyle amenities
-
-### IT Hub Metro (Whitefield, Bangalore)
-```
-Tags: IT Hub, Metro Connected, Tech Park Adjacent, International Schools, Investment Hotspot, Gated Community, High Growth
-```
-**Why:** IT employment, metro access, schools for professionals, strong appreciation, secure housing
-
-### Waterfront Luxury (Dubai Marina)
-```
-Tags: Waterfront, Marina Access, Metro Connected, Luxury Segment, Near Beach, Free Zone, Tax Benefits, High ROI
-```
-**Why:** Unique location, connectivity, premium market, DMCC proximity, zero taxes
-
-### Hill Station (Shimla)
-```
-Tags: Hill Station, Cool Climate, Scenic Views, Retirement Destination, Tourist Hotspot, Low Pollution, Green Belt
-```
-**Why:** Elevation, weather advantage, natural beauty, retiree appeal, tourism
-
-### Emerging Suburb (Tier 2 City)
-```
-Tags: Emerging Area, Affordable Housing, Rapid Growth, Metro Upcoming, Near Highway, Investment Opportunity, RERA Approved
-```
-**Why:** Development phase, price point, infrastructure projects, accessibility, investor interest
-
----
-
 ## TAG SELECTION STRATEGY
 
 ### Step 1: Identify Primary Feature (1-2 tags)
@@ -277,7 +384,10 @@ Any unique attributes?
 - [ ] Distance/proximity claims verified
 - [ ] No generic tags ("Good Location", "Nice Area")
 - [ ] All tags are searchable terms (match user search patterns)
-- [ ] Tags separated by commas (readable format)
+- [ ] Tags separated by commas in TEXT format
+- [ ] **Provided TEXT format output**
+- [ ] **Provided JSON format output**
+- [ ] **Both formats match exactly** (same tags, same order)
 
 ---
 
