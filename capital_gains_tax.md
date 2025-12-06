@@ -18,6 +18,8 @@ Holding Period (optional): **Short-term (<X years) / Long-term (≥X years)**
 
 ## OUTPUT FORMAT
 
+### TEXT FORMAT
+
 ```
 CAPITAL GAINS TAX: [Location]
 Country: [Country]
@@ -40,9 +42,34 @@ EXEMPTIONS & CONDITIONS:
 CITIZEN vs FOREIGNER:
    Citizens: [Rate/conditions]
    Foreigners: [Rate/conditions if different]
+```
 
-Sources: [Tax authority, date]
-Last Updated: [Date]
+### JSON FORMAT
+
+```json
+{
+  "location": "[City, Country]",
+  "country": "[Country]",
+  "short_term_capital_gains": {
+    "holding_period": "[Less than X years/months]",
+    "tax_rate": "[X%]",
+    "taxed_as": "[Income slab / Flat rate]"
+  },
+  "long_term_capital_gains": {
+    "holding_period": "[X years or more]",
+    "tax_rate": "[X%] or [Exempt]",
+    "indexation_benefit": "[Yes/No]"
+  },
+  "exemptions_and_conditions": [
+    "[Exemption 1]",
+    "[Exemption 2]",
+    "[Condition 1]"
+  ],
+  "citizen_vs_foreigner": {
+    "citizens": "[Rate/conditions]",
+    "foreigners": "[Rate/conditions if different]"
+  }
+}
 ```
 
 ---
@@ -174,8 +201,14 @@ Note if rates differ for foreign investors
 - Thailand: Revenue Department
 - Indonesia: DJP (Directorate General of Taxes)
 
-### 7. Provide Date
-Tax laws change - always include "as of [date]"
+### 7. Use Official Sources for Research
+Use official tax authority websites and documents for accurate information, but DO NOT include "Sources:" or "Last Updated:" fields in the output
+
+### 8. Output Format Compliance
+- **ALWAYS** provide both TEXT and JSON formats
+- **NEVER** include "Sources:" field in output
+- **NEVER** include "Last Updated:" field in output
+- Keep all other information comprehensive and accurate
 
 ---
 
@@ -183,8 +216,10 @@ Tax laws change - always include "as of [date]"
 
 ### Example 1: Mumbai, India
 
+**TEXT FORMAT:**
 ```
 CAPITAL GAINS TAX: Mumbai, Maharashtra, India
+Country: India
 
 SHORT-TERM CAPITAL GAINS (STCG):
    Holding Period: Less than 2 years
@@ -205,59 +240,146 @@ EXEMPTIONS & CONDITIONS:
 CITIZEN vs FOREIGNER:
    Citizens: Same rates apply
    Foreigners: Same rates, but TDS @ 20% on LTCG
+```
 
-Sources: Income Tax Act 1961, Section 112; CBDT
-Last Updated: April 2024 (Budget provisions)
+**JSON FORMAT:**
+```json
+{
+  "location": "Mumbai, Maharashtra, India",
+  "country": "India",
+  "short_term_capital_gains": {
+    "holding_period": "Less than 2 years",
+    "tax_rate": "Per income tax slab (10%, 20%, 30% + 4% cess)",
+    "taxed_as": "Added to total income"
+  },
+  "long_term_capital_gains": {
+    "holding_period": "2 years or more",
+    "tax_rate": "20% with indexation OR 12.5% without indexation",
+    "indexation_benefit": "Yes (Cost Inflation Index applied)"
+  },
+  "exemptions_and_conditions": [
+    "Section 54: Full exemption if reinvested in residential property within 2 years",
+    "Section 54EC: Up to ₹50 lakh if invested in specified bonds within 6 months",
+    "Section 54F: For sale of non-residential property",
+    "Primary residence exemption for seniors (age 80+, certain conditions)"
+  ],
+  "citizen_vs_foreigner": {
+    "citizens": "Same rates apply",
+    "foreigners": "Same rates, but TDS @ 20% on LTCG"
+  }
+}
 ```
 
 ### Example 2: Dubai, UAE
 
+**TEXT FORMAT:**
 ```
 CAPITAL GAINS TAX: Dubai, UAE
+Country: UAE
 
-SHORT-TERM CAPITAL GAINS: 0%
-LONG-TERM CAPITAL GAINS: 0%
+SHORT-TERM CAPITAL GAINS (STCG):
+   Holding Period: No minimum requirement
+   Tax Rate: 0%
+   Taxed As: Exempt
+
+LONG-TERM CAPITAL GAINS (LTCG):
+   Holding Period: No minimum requirement
+   Tax Rate: 0%
+   Indexation Benefit: N/A
 
 EXEMPTIONS & CONDITIONS:
    • No capital gains tax for individuals on property sales
    • No holding period requirement
    • Applies to all property types (residential, commercial, land)
+   • Only transfer fees apply (4% DLD fee typically for buyer)
 
 CITIZEN vs FOREIGNER:
    Citizens: 0% CGT
    Foreigners: 0% CGT
+```
 
-Note: Only transfer fees apply (4% DLD fee for buyer, typically)
-
-Sources: UAE Federal Tax Authority
-Last Updated: November 2025
+**JSON FORMAT:**
+```json
+{
+  "location": "Dubai, UAE",
+  "country": "UAE",
+  "short_term_capital_gains": {
+    "holding_period": "No minimum requirement",
+    "tax_rate": "0%",
+    "taxed_as": "Exempt"
+  },
+  "long_term_capital_gains": {
+    "holding_period": "No minimum requirement",
+    "tax_rate": "0%",
+    "indexation_benefit": "N/A"
+  },
+  "exemptions_and_conditions": [
+    "No capital gains tax for individuals on property sales",
+    "No holding period requirement",
+    "Applies to all property types (residential, commercial, land)",
+    "Only transfer fees apply (4% DLD fee typically for buyer)"
+  ],
+  "citizen_vs_foreigner": {
+    "citizens": "0% CGT",
+    "foreigners": "0% CGT"
+  }
+}
 ```
 
 ### Example 3: Singapore
 
+**TEXT FORMAT:**
 ```
 CAPITAL GAINS TAX: Singapore
+Country: Singapore
 
-SHORT-TERM CAPITAL GAINS: 0%
-LONG-TERM CAPITAL GAINS: 0%
+SHORT-TERM CAPITAL GAINS (STCG):
+   Holding Period: No specific period
+   Tax Rate: 0%
+   Taxed As: Exempt (unless deemed property trading)
+
+LONG-TERM CAPITAL GAINS (LTCG):
+   Holding Period: No specific period
+   Tax Rate: 0%
+   Indexation Benefit: N/A
 
 EXEMPTIONS & CONDITIONS:
    • No CGT for individuals on property investment
    • If deemed property trading business → Income tax applies
    • Investment holding: No tax
-
-SELLER'S STAMP DUTY (SSD) - Separate from CGT:
-   • <1 year: 12% of sale price or market value
-   • 1-2 years: 8%
-   • 2-3 years: 4%
-   • ≥3 years: 0%
+   • Seller's Stamp Duty (SSD) applies separately: <1yr: 12%, 1-2yr: 8%, 2-3yr: 4%, ≥3yr: 0%
 
 CITIZEN vs FOREIGNER:
-   All individuals: 0% CGT
-   SSD: Same rates for all
+   Citizens: 0% CGT (SSD same rates)
+   Foreigners: 0% CGT (SSD same rates)
+```
 
-Sources: IRAS (Inland Revenue Authority of Singapore)
-Last Updated: November 2025
+**JSON FORMAT:**
+```json
+{
+  "location": "Singapore",
+  "country": "Singapore",
+  "short_term_capital_gains": {
+    "holding_period": "No specific period",
+    "tax_rate": "0%",
+    "taxed_as": "Exempt (unless deemed property trading)"
+  },
+  "long_term_capital_gains": {
+    "holding_period": "No specific period",
+    "tax_rate": "0%",
+    "indexation_benefit": "N/A"
+  },
+  "exemptions_and_conditions": [
+    "No CGT for individuals on property investment",
+    "If deemed property trading business → Income tax applies",
+    "Investment holding: No tax",
+    "Seller's Stamp Duty (SSD) applies separately: <1yr: 12%, 1-2yr: 8%, 2-3yr: 4%, ≥3yr: 0%"
+  ],
+  "citizen_vs_foreigner": {
+    "citizens": "0% CGT (SSD same rates)",
+    "foreigners": "0% CGT (SSD same rates)"
+  }
+}
 ```
 
 ---
@@ -300,10 +422,12 @@ NRI must file return to claim refund if actual tax lower
 - [ ] Indexation benefit noted (if applicable)
 - [ ] Major exemptions listed
 - [ ] Citizen vs foreigner differences noted
-- [ ] Tax authority source cited
-- [ ] Last updated date included
 - [ ] Distinguished from stamp duty/property tax
 - [ ] 0% rate explicitly stated (if applicable)
+- [ ] **Provided TEXT format output**
+- [ ] **Provided JSON format output**
+- [ ] **Did NOT include "Sources:" field in output**
+- [ ] **Did NOT include "Last Updated:" field in output**
 
 ---
 
