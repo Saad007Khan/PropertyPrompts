@@ -127,7 +127,6 @@ Your overview paragraph must contain **exactly 6 sentences** in this specific or
 **Priority 3: Never Invent Facts**
 - ❌ Don't make up population numbers
 - ❌ Don't invent amenities that don't exist
-- ❌ Don't fabricate price ranges
 - ✅ Use broader, verifiable statements if specific data unavailable
 
 **Research Sources (Use But Don't Cite):**
@@ -291,12 +290,6 @@ Bad: 145 words with excessive detail
 Good: 110-120 words, concise and focused
 ```
 
-### ❌ MISTAKE 4: Vague Property Info
-```
-Bad: "Properties are available at various price points with good investment potential."
-
-Good: "Apartments range from ₹50L to ₹1.5Cr ($60k to $180k) with strong rental demand from IT professionals, providing yields of 3-4%."
-```
 
 ### ❌ MISTAKE 5: Promotional Tone
 ```
@@ -339,7 +332,7 @@ Good: "Visitors and residents enjoy beach clubs, yoga studios, cafes, and the ac
 ### Step 5: Verify Facts
 - Cross-check population numbers
 - Confirm distances and locations
-- Validate price ranges
+
 
 **Remember: Never cite sources in output, but ensure all facts are verifiable**
 
