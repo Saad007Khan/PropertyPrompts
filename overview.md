@@ -55,13 +55,7 @@ Your overview paragraph must contain **exactly 6 sentences** in this specific or
 - Cultural venues and entertainment options, OR
 - Recreation and lifestyle amenities
 
-**Sentence 5: Property Market**
-- Property types available (villas, apartments, farmland)
-- Price range (use local currency with USD equivalent)
-- Rental yields or investment appeal
-- Market characteristics (emerging, established, luxury)
-
-**Sentence 6: Atmosphere & Vibe**
+**Sentence 5 and Sentence 6: Atmosphere & Vibe**
 - Overall feel and character of the place
 - What it's like to live/invest there
 - Emotional/subjective impression
@@ -148,11 +142,6 @@ Your overview paragraph must contain **exactly 6 sentences** in this specific or
 
 ### 5. CURRENCY & NUMBERS FORMATTING
 
-**Property Prices:**
-- Use local currency first, USD in parentheses
-- India: ₹25L - ₹50L ($30k - $60k)
-- UAE: AED 500k - AED 1M ($136k - $272k)
-- Use approximate ranges, not exact figures
 
 **Population:**
 - Round to reasonable precision
@@ -228,13 +217,13 @@ Before finalizing output, verify:
 ```
 Overview
 
-Anjuna is a coastal village in North Goa, India, with a population of around 10,000 residents. The beach stretches 2km and is famous for its Wednesday flea market and trance music culture. The area attracts a mix of long-term expats, digital nomads, and seasonal tourists, creating an international community. Visitors and residents enjoy beach clubs, yoga studios, cafes, and the active nightlife scene. Property prices range from ₹25L to ₹80L ($30k to $96k) for apartments and villas, with rental yields around 6-8% during peak season. The vibe is relaxed and bohemian with a strong creative and alternative culture.
+Anjuna is a coastal village in North Goa, India, with a population of around 10,000 residents. The beach stretches 2km and is famous for its Wednesday flea market and trance music culture. The area attracts a mix of long-term expats, digital nomads, and seasonal tourists, creating an international community. Visitors and residents enjoy beach clubs, yoga studios, cafes, and the active nightlife scene. The vibe is relaxed and bohemian with a strong creative and alternative culture.
 ```
 
 **JSON FORMAT:**
 ```json
 {
-  "overview": "Anjuna is a coastal village in North Goa, India, with a population of around 10,000 residents. The beach stretches 2km and is famous for its Wednesday flea market and trance music culture. The area attracts a mix of long-term expats, digital nomads, and seasonal tourists, creating an international community. Visitors and residents enjoy beach clubs, yoga studios, cafes, and the active nightlife scene. Property prices range from ₹25L to ₹80L ($30k to $96k) for apartments and villas, with rental yields around 6-8% during peak season. The vibe is relaxed and bohemian with a strong creative and alternative culture."
+  "overview": "Anjuna is a coastal village in North Goa, India, with a population of around 10,000 residents. The beach stretches 2km and is famous for its Wednesday flea market and trance music culture. The area attracts a mix of long-term expats, digital nomads, and seasonal tourists, creating an international community. Visitors and residents enjoy beach clubs, yoga studios, cafes, and the active nightlife scene. The vibe is relaxed and bohemian with a strong creative and alternative culture."
 }
 ```
 
@@ -249,19 +238,22 @@ Anjuna is a coastal village in North Goa, India, with a population of around 10,
 
 ---
 
-### Example 2: Whitefield, Bangalore, India
+### Example 2: Baradesh, India
 
 **TEXT FORMAT:**
 ```
 Overview
+Historically known as 'Bara-desh' (twelve lands), Bardez was a crucial territory of Goa, famed for its fertile lands. It came under Portuguese rule in the 16th century, which left an indelible mark on its architecture, culture, and cuisine, evident in the charming churches and colonial-era mansions that dot the landscape. In the 1960s and 70s, it became a haven for the global hippie movement, establishing places like Anjuna as counter-culture icons. This history has shaped Bardez into a unique melting pot, blending traditional Goan heritage with a cosmopolitan, modern vibe, which is central to its appeal today.
 
-Whitefield is a suburb in East Bangalore, Karnataka, India, and home to over 300,000 residents. This area has become the IT hub of Bangalore with major tech parks including ITPL and several multinational companies. The population consists mainly of working professionals and young families, many employed in the technology sector. Residents have access to malls, international schools, restaurants, and the metro system that connects to the city center. Apartments range from ₹50L to ₹1.5Cr ($60k to $180k) with strong rental demand from IT professionals, providing yields of 3-4%. The atmosphere is modern and fast-paced with excellent infrastructure but heavy traffic during peak hours.
+
 ```
 
 **JSON FORMAT:**
 ```json
 {
-  "overview": "Whitefield is a suburb in East Bangalore, Karnataka, India, and home to over 300,000 residents. This area has become the IT hub of Bangalore with major tech parks including ITPL and several multinational companies. The population consists mainly of working professionals and young families, many employed in the technology sector. Residents have access to malls, international schools, restaurants, and the metro system that connects to the city center. Apartments range from ₹50L to ₹1.5Cr ($60k to $180k) with strong rental demand from IT professionals, providing yields of 3-4%. The atmosphere is modern and fast-paced with excellent infrastructure but heavy traffic during peak hours."
+  "overview": Historically known as 'Bara-desh' (twelve lands), Bardez was a crucial territory of Goa, famed for its fertile lands. It came under Portuguese rule in the 16th century, which left an indelible mark on its architecture, culture, and cuisine, evident in the charming churches and colonial-era mansions that dot the landscape. In the 1960s and 70s, it became a haven for the global hippie movement, establishing places like Anjuna as counter-culture icons. This history has shaped Bardez into a unique melting pot, blending traditional Goan heritage with a cosmopolitan, modern vibe, which is central to its appeal today.
+
+."
 }
 ```
 
@@ -270,42 +262,6 @@ Whitefield is a suburb in East Bangalore, Karnataka, India, and home to over 300
 
 ---
 
-### Example 3: Dubai Marina, UAE
-
-**TEXT FORMAT:**
-```
-Overview
-
-Dubai Marina is a waterfront district in Dubai, UAE, with a population of approximately 55,000 residents. The area is built around an artificial canal and is famous for its skyscrapers, marina, and beachfront. Most residents are expatriates from around the world, creating a truly international community. The district has hundreds of restaurants, beach clubs, the Marina Walk promenade, and yacht facilities. Properties range from AED 1M to AED 10M ($272k to $2.7M) for apartments and penthouses, with rental yields of 5-7% annually. The vibe is upscale and cosmopolitan with a lively atmosphere day and night.
-```
-
-**JSON FORMAT:**
-```json
-{
-  "overview": "Dubai Marina is a waterfront district in Dubai, UAE, with a population of approximately 55,000 residents. The area is built around an artificial canal and is famous for its skyscrapers, marina, and beachfront. Most residents are expatriates from around the world, creating a truly international community. The district has hundreds of restaurants, beach clubs, the Marina Walk promenade, and yacht facilities. Properties range from AED 1M to AED 10M ($272k to $2.7M) for apartments and penthouses, with rental yields of 5-7% annually. The vibe is upscale and cosmopolitan with a lively atmosphere day and night."
-}
-```
-
-**Word Count:** 108 words ✓
-**Sentence Count:** 6 sentences ✓
-
----
-
-### Example 4: Coorg, Karnataka, India
-
-**TEXT FORMAT:**
-```
-Overview
-
-Coorg (Kodagu) is a hill station district in Karnataka, India, with a population of around 550,000 spread across towns and villages. The region is known for coffee plantations, misty hills, and waterfalls at elevations of 900-1700 meters. The area has a mix of local Kodava people, plantation workers, and an increasing number of tourists and second-home owners. Visitors enjoy trekking, plantation tours, wildlife viewing at Nagarhole National Park, and the annual Kaveri river festival. Property options include farmland, plantation estates, and villas ranging from ₹40L to ₹2Cr ($48k to $240k) with growing investment interest. The atmosphere is peaceful and green with cool weather year-round.
-```
-
-**JSON FORMAT:**
-```json
-{
-  "overview": "Coorg (Kodagu) is a hill station district in Karnataka, India, with a population of around 550,000 spread across towns and villages. The region is known for coffee plantations, misty hills, and waterfalls at elevations of 900-1700 meters. The area has a mix of local Kodava people, plantation workers, and an increasing number of tourists and second-home owners. Visitors enjoy trekking, plantation tours, wildlife viewing at Nagarhole National Park, and the annual Kaveri river festival. Property options include farmland, plantation estates, and villas ranging from ₹40L to ₹2Cr ($48k to $240k) with growing investment interest. The atmosphere is peaceful and green with cool weather year-round."
-}
-```
 
 **Word Count:** 120 words ✓
 **Sentence Count:** 6 sentences ✓
