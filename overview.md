@@ -116,7 +116,7 @@ Your overview paragraph must contain **exactly 6 sentences** in this specific or
 **Priority 1: Use Specific Data When Available**
 - Population numbers
 - Distance measurements
-- Price ranges
+  
 - Specific amenities (number of schools, hospitals)
 
 **Priority 2: Use Regional Data If Location-Specific Unavailable**
@@ -186,8 +186,7 @@ Before finalizing output, verify:
 - [ ] Sentence 2: Primary feature/attraction
 - [ ] Sentence 3: Demographics/lifestyle
 - [ ] Sentence 4: Activities/culture
-- [ ] Sentence 5: Property market details
-- [ ] Sentence 6: Atmosphere/vibe
+- [ ] Sentence 5 and 6:  Atmosphere/vibe
 
 **Language Quality:**
 - [ ] No banned AI words (Overall, Primarily, Notably, etc.)
