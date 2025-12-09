@@ -127,34 +127,83 @@ Air Quality
 
 ### PRIORITY 3: AIR QUALITY DATA SOURCES
 
-**Global Air Quality Monitoring:**
-- **IQAir** (iqair.com)
-  - Real-time and historical AQI data
-  - Global coverage
-  - City-level annual averages
-- **World Air Quality Index Project** (waqi.info)
-  - Real-time monitoring stations
-  - Historical data
-- **Copernicus Atmosphere Monitoring Service** (atmosphere.copernicus.eu)
-  - European air quality data
-  - Global atmospheric composition
+**PRIORITY A: Official Government Networks (Highest Reliability)**
 
-**National Air Quality Monitoring:**
+**Global:**
+- **WHO Global Air Quality Database** (who.int/data/gho)
+  - Most comprehensive official compilation
+  - Ground-based measurements from 6,000+ cities
+  - Annual mean PM2.5 and PM10 data
+  - Updated regularly
 
 **INDIA:**
-- Central Pollution Control Board (CPCB) - cpcb.nic.in
-- State Pollution Control Boards
-- National Air Quality Index
+- **AQI.in** (aqi.in) - PRIMARY SOURCE FOR INDIA
+  - Official CPCB data aggregator
+  - Neighborhood-level granularity
+  - Historical annual averages
+  - Real-time monitoring
+  - Example: aqi.in/dashboard/india/goa/panaji/anjuna
+- **Central Pollution Control Board (CPCB)** - cpcb.nic.in
+  - Official government monitoring network
+  - National Air Quality Index
+  - For verification/cross-checking
 
 **USA:**
-- EPA AirNow - airnow.gov
-- State air quality agencies
+- **EPA AirNow** (airnow.gov)
+  - Official US government AQI
+  - Real-time and historical data
+
+**UAE:**
+- **National Center of Meteorology** (ncm.ae)
+  - Official air quality monitoring
+  - Dubai and Abu Dhabi data
+
+**SINGAPORE:**
+- **National Environment Agency (NEA)** (nea.gov.sg)
+  - Official PSI (Pollutant Standards Index)
+  - Real-time and historical data
 
 **EUROPE:**
-- European Environment Agency (EEA)
-- National environmental agencies
+- **European Environment Agency (EEA)** (eea.europa.eu)
+  - Official EU air quality data
+  - National environmental agencies
 
-**Confidence Level:** HIGH - Official monitoring networks
+**Confidence Level:** HIGHEST - Official government monitoring networks
+
+---
+
+**PRIORITY B: Verified Global Aggregators (High Reliability)**
+
+- **IQAir** (iqair.com)
+  - Industry-standard global coverage
+  - City-level annual averages
+  - Real-time and historical AQI data
+  - Good for cross-verification
+
+- **World Air Quality Index Project** (waqi.info)
+  - Real-time monitoring stations worldwide
+  - Historical data access
+  - Community-verified
+
+**Confidence Level:** HIGH - Aggregated from official sources
+
+---
+
+**PRIORITY C: Satellite/Remote Sensing (Backup for areas without ground stations)**
+
+- **Copernicus Atmosphere Monitoring Service** (atmosphere.copernicus.eu)
+  - European satellite + ground data
+  - Global atmospheric composition
+
+- **NASA Earth Observatory**
+  - Global air quality tracking
+  - Satellite-based measurements
+
+- **Sentinel-5P/TROPOMI**
+  - European satellite monitoring
+  - NO2, CO, aerosol data
+
+**Confidence Level:** MEDIUM-HIGH - Satellite estimates, less precise than ground stations
 
 ---
 
@@ -268,14 +317,26 @@ Example:
 
 ### Step 5: Air Quality Index (AQI)
 
-**Data Sources:**
-1. IQAir annual city averages
-2. National pollution control boards (CPCB for India, EPA for US)
-3. World Air Quality Index Project
-4. Copernicus atmospheric data
+**Data Sources (Priority Order):**
+
+**For India:**
+1. **AQI.in** (aqi.in) - PRIMARY SOURCE
+   - Navigate to: aqi.in/dashboard/india/[state]/[city]/[neighborhood]
+   - Use annual average AQI
+   - Neighborhood-level data preferred
+2. CPCB (cpcb.nic.in) - For verification
+3. IQAir - Cross-verification
+
+**For Other Countries:**
+1. WHO Global Air Quality Database
+2. National pollution control boards (EPA, NEA, NCM, etc.)
+3. IQAir - For global coverage
+4. World Air Quality Index Project
 
 **Calculation:**
 - Use latest annual average AQI
+- For India: Extract directly from aqi.in annual average
+- For other countries: Use official monitoring network data
 - Round to nearest whole number
 - Include air quality category
 
@@ -337,6 +398,7 @@ Example:
 
 ### 6. Location Specificity
 - Prioritize data for the specific neighborhood/area if available
+- **For India:** Use aqi.in for neighborhood-level AQI data (e.g., Anjuna, not just Goa)
 - If only city-level data available, use city data and note "city-level data"
 - If only regional data available, use regional data and note "regional data"
 - Never use data from different climate zones
@@ -392,21 +454,33 @@ Example:
 
 ### For Air Quality:
 
-1. **Check IQAir:**
+1. **For India - Check AQI.in FIRST:**
+   - Go to aqi.in
+   - Navigate to specific location (state → city → neighborhood)
+   - Find annual average AQI
+   - Note data year and monitoring station
+
+2. **For Global - Check WHO Database:**
+   - Search WHO Global Air Quality Database
+   - Find city-level PM2.5/PM10 annual means
+   - Convert to AQI if needed
+
+3. **Check IQAir (Cross-verification):**
    - Search "[City] air quality" on iqair.com
    - Find annual average AQI
-   - Note data year
+   - Verify against official sources
 
-2. **Check National Pollution Control Board:**
-   - For India: CPCB website
+4. **Check National Pollution Control Boards:**
+   - For India: CPCB website (verification)
    - For US: EPA AirNow
+   - For UAE: NCM air quality data
+   - For Singapore: NEA PSI data
    - For Europe: EEA data
-   - Verify AQI values
 
-3. **Check World Air Quality Index:**
+5. **Check World Air Quality Index:**
    - Search waqi.info for location
    - Check historical annual averages
-   - Cross-verify with IQAir
+   - Use as backup verification
 
 ---
 
@@ -518,7 +592,8 @@ Not verifiable from preferred air quality sources.
 - [ ] Seasonal patterns verified from climate data (specific month ranges)
 - [ ] Rainfall data from 30-year normals (or noted if different baseline)
 - [ ] Temperature data from official climate averages
-- [ ] AQI data from verified air quality monitoring sources
+- [ ] AQI data from verified sources (aqi.in for India, WHO/official networks for others)
+- [ ] For Indian locations: Checked aqi.in for neighborhood-level AQI data
 - [ ] All units in metric (°C, mm)
 - [ ] Temperature rounded to nearest whole °C
 - [ ] Rainfall rounded to nearest 10 mm
