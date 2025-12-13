@@ -344,20 +344,35 @@ Location: **City, State/Region, Country**
 
 ### For Newspaper & Consultancy Data:
 ```
-1. Extract appreciation percentage directly from source
-2. Verify time period (YoY, 3Y, 5Y CAGR, etc.)
+1. Extract appreciation percentages directly from source
+2. Verify time periods (YoY and/or 5Y CAGR)
 3. Note source attribution
 4. Cross-check against another Priority 1-3 source if possible
 5. Assign confidence based on source recency and authority
+6. If only YoY available, note inability to assess long-term trend
 ```
 
 ### For Official Index Data:
 ```
 1. Collect index values for multiple time periods
 2. Calculate Year-over-Year: [(Current Period - Prior Period) / Prior Period] × 100
-3. Calculate Multi-Year CAGR: [(Ending Value / Beginning Value)^(1/Years)] - 1
+3. Calculate 5-Year CAGR: [(Ending Value / Beginning Value)^(1/5)] - 1
 4. Document time periods explicitly
-5. Confidence: HIGH
+5. Compare 5Y CAGR vs YoY to identify trend
+6. Confidence: HIGH
+```
+
+**Example Official Index Calculation:**
+```
+Index Values:
+- Q4 2019: 100.0
+- Q4 2023: 115.0
+- Q4 2024: 125.0
+
+5Y CAGR = [(125/100)^(1/5)] - 1 = 4.6%
+YoY = (125 - 115) / 115 × 100 = 8.7%
+
+Interpretation: YoY (8.7%) > 5Y CAGR (4.6%) = Accelerating market
 ```
 
 ### For Portal Historical Analysis (Tier 2/3 Fallback):
@@ -383,15 +398,28 @@ Example:
 Appreciation = (4600 - 4200) / 4200 × 100 = 9.5% YoY
 ```
 
-**4. Multi-Year CAGR Calculation**
+**4. Multi-Year CAGR Calculation (5-Year)**
 
 ```
-CAGR = [(Ending Price / Beginning Price)^(1/Years)] - 1
+5Y CAGR = [(Ending Price / Beginning Price)^(1/5)] - 1
 
 Example:
-2022: ₹3,800/sqft
-2024: ₹4,600/sqft (2 years)
-CAGR = [(4600/3800)^(1/2)] - 1 = 9.9%
+2019: ₹3,500/sqft
+2024: ₹4,600/sqft (5 years)
+5Y CAGR = [(4600/3500)^(1/5)] - 1 = 5.6%
+
+YoY:
+2023: ₹4,200/sqft
+2024: ₹4,600/sqft
+YoY = (4600 - 4200) / 4200 × 100 = 9.5%
+
+Interpretation: YoY (9.5%) > 5Y CAGR (5.6%) = Recent acceleration
+```
+
+**If only 1-2 years of data available:**
+```
+Report YoY only, mark 5Y CAGR as "Data not available"
+Note in primary source: "Insufficient historical data for 5Y CAGR"
 ```
 
 **5. Cross-Verify with Multiple Portals**
@@ -414,12 +442,322 @@ Report as: 9.2% ± 0.4% (8.8% - 9.6%)
 
 ## OUTPUT FORMAT
 
+### TEXT FORMAT
+
 ```
-Price Appreciation: [X.X%] YoY | [X.X%] 3Y CAGR | [X.X%] 5Y CAGR
+Price Appreciation: [X.X%] 5Y CAGR | [X.X%] YoY
 Trend: [Accelerating/Steady/Decelerating/Declining]
 Source Priority: [Newspaper/Official Index/Consultancy/Portal Avg]
 Primary Source: [Specific source name and date]
 Confidence: [HIGH/MEDIUM/LOW]
+```
+
+### JSON FORMAT
+
+```json
+{
+  "price_appreciation": {
+    "5y_cagr": "X.X%",
+    "yoy": "X.X%"
+  },
+  "trend": "Accelerating/Steady/Decelerating/Declining",
+  "source_priority": "Newspaper/Official Index/Consultancy/Portal Avg",
+  "primary_source": "Specific source name and date",
+  "confidence": "HIGH/MEDIUM/LOW"
+}
+```
+
+**Priority Logic:**
+- **Preferred:** Show 5Y CAGR (long-term trend) + YoY (short-term signal)
+- **If 5Y CAGR unavailable:** Show YoY only
+- **If both available:** Compare to identify trend (5Y CAGR > YoY = recent deceleration)
+
+**If only YoY available:**
+
+### TEXT FORMAT
+```
+Price Appreciation: Data not available (5Y CAGR) | 5.2% YoY
+Trend: Unable to assess long-term trend
+Source Priority: Consultancy
+Primary Source: Knight Frank India Q3 2024 Report
+Confidence: MEDIUM
+```
+
+### JSON FORMAT
+```json
+{
+  "price_appreciation": {
+    "5y_cagr": "Data not available",
+    "yoy": "5.2%"
+  },
+  "trend": "Unable to assess long-term trend",
+  "source_priority": "Consultancy",
+  "primary_source": "Knight Frank India Q3 2024 Report",
+  "confidence": "MEDIUM"
+}
+```
+
+**If all data unavailable:**
+
+### TEXT FORMAT
+```
+Price Appreciation: Data not available (5Y CAGR) | Data not available (YoY)
+Trend: Unable to determine
+Source Priority: N/A
+Primary Source: Insufficient data
+Confidence: N/A
+```
+
+### JSON FORMAT
+```json
+{
+  "price_appreciation": {
+    "5y_cagr": "Data not available",
+    "yoy": "Data not available"
+  },
+  "trend": "Unable to determine",
+  "source_priority": "N/A",
+  "primary_source": "Insufficient data",
+  "confidence": "N/A"
+}
+```
+
+---
+
+## EXAMPLES
+
+### Example 1: Dubai Marina, UAE
+
+**TEXT FORMAT:**
+```
+Price Appreciation: 4.8% 5Y CAGR | 8.5% YoY
+Trend: Accelerating (short-term surge)
+Source Priority: Official Index
+Primary Source: Dubai Land Department Price Index Q3 2024
+Confidence: HIGH
+```
+
+**JSON FORMAT:**
+```json
+{
+  "price_appreciation": {
+    "5y_cagr": "4.8%",
+    "yoy": "8.5%"
+  },
+  "trend": "Accelerating (short-term surge)",
+  "source_priority": "Official Index",
+  "primary_source": "Dubai Land Department Price Index Q3 2024",
+  "confidence": "HIGH"
+}
+```
+
+**Analysis:** YoY (8.5%) > 5Y CAGR (4.8%) indicates recent acceleration in price appreciation
+
+---
+
+### Example 2: Bangalore (Whitefield), India
+
+**TEXT FORMAT:**
+```
+Price Appreciation: 4.5% 5Y CAGR | 7.2% YoY
+Trend: Accelerating (recent surge)
+Source Priority: Newspaper
+Primary Source: Economic Times Real Estate Report November 2024
+Confidence: HIGH
+```
+
+**JSON FORMAT:**
+```json
+{
+  "price_appreciation": {
+    "5y_cagr": "4.5%",
+    "yoy": "7.2%"
+  },
+  "trend": "Accelerating (recent surge)",
+  "source_priority": "Newspaper",
+  "primary_source": "Economic Times Real Estate Report November 2024",
+  "confidence": "HIGH"
+}
+```
+
+**Analysis:** YoY (7.2%) > 5Y CAGR (4.5%) indicates strong recent acceleration
+
+---
+
+### Example 3: Coorg (Madikeri), Karnataka, India
+
+**TEXT FORMAT:**
+```
+Price Appreciation: Data not available (5Y CAGR) | 6.8% YoY
+Trend: Unable to assess long-term trend
+Source Priority: Portal Avg
+Primary Source: Multi-portal analysis (MagicBricks, 99acres, Housing.com)
+Confidence: MEDIUM
+```
+
+**JSON FORMAT:**
+```json
+{
+  "price_appreciation": {
+    "5y_cagr": "Data not available",
+    "yoy": "6.8%"
+  },
+  "trend": "Unable to assess long-term trend",
+  "source_priority": "Portal Avg",
+  "primary_source": "Multi-portal analysis (MagicBricks, 99acres, Housing.com)",
+  "confidence": "MEDIUM"
+}
+```
+
+**Methodology:**
+- Collected data from 3 portals
+- MagicBricks: 7.2% YoY (₹3,800/sqft → ₹4,073/sqft)
+- 99acres: 6.5% YoY (₹3,750/sqft → ₹3,994/sqft)
+- Housing.com: 6.7% YoY (₹3,820/sqft → ₹4,076/sqft)
+- Average: 6.8% YoY
+- Insufficient historical data for 5Y CAGR
+
+---
+
+### Example 4: Singapore City Center
+
+**TEXT FORMAT:**
+```
+Price Appreciation: 2.5% 5Y CAGR | 2.8% YoY
+Trend: Steady
+Source Priority: Official Index
+Primary Source: URA Property Price Index Q4 2024
+Confidence: HIGH
+```
+
+**JSON FORMAT:**
+```json
+{
+  "price_appreciation": {
+    "5y_cagr": "2.5%",
+    "yoy": "2.8%"
+  },
+  "trend": "Steady",
+  "source_priority": "Official Index",
+  "primary_source": "URA Property Price Index Q4 2024",
+  "confidence": "HIGH"
+}
+```
+
+**Analysis:** YoY (2.8%) ≈ 5Y CAGR (2.5%) indicates consistent, stable appreciation
+
+---
+
+### Example 5: Ubud, Bali, Indonesia
+
+**TEXT FORMAT:**
+```
+Price Appreciation: Data not available (5Y CAGR) | 9.5% YoY
+Trend: Unable to assess long-term trend (strong short-term growth)
+Source Priority: Consultancy
+Primary Source: JLL Indonesia Property Market Report Q2 2024
+Confidence: HIGH
+```
+
+**JSON FORMAT:**
+```json
+{
+  "price_appreciation": {
+    "5y_cagr": "Data not available",
+    "yoy": "9.5%"
+  },
+  "trend": "Unable to assess long-term trend (strong short-term growth)",
+  "source_priority": "Consultancy",
+  "primary_source": "JLL Indonesia Property Market Report Q2 2024",
+  "confidence": "HIGH"
+}
+```
+
+**Note:** 5Y CAGR data not available in consultancy report; strong YoY suggests recent market strength
+
+---
+
+### Example 6: London (Zone 2), UK
+
+**TEXT FORMAT:**
+```
+Price Appreciation: 3.8% 5Y CAGR | -1.5% YoY
+Trend: Declining (recent downturn)
+Source Priority: Official Index
+Primary Source: HM Land Registry House Price Index November 2024
+Confidence: HIGH
+```
+
+**JSON FORMAT:**
+```json
+{
+  "price_appreciation": {
+    "5y_cagr": "3.8%",
+    "yoy": "-1.5%"
+  },
+  "trend": "Declining (recent downturn)",
+  "source_priority": "Official Index",
+  "primary_source": "HM Land Registry House Price Index November 2024",
+  "confidence": "HIGH"
+}
+```
+
+**Analysis:** 5Y CAGR (3.8%) > YoY (-1.5%) indicates strong recent deceleration/decline after years of growth
+
+---
+
+### Example 7: High Variance Location
+
+**TEXT FORMAT:**
+```
+Price Appreciation: Data not available (5Y CAGR) | 5.8% ± 1.2% YoY (range: 4.6% - 7.0%)
+Trend: Unable to assess long-term trend
+Source Priority: Portal Avg
+Primary Source: Multi-portal analysis with high variance
+Confidence: LOW
+```
+
+**JSON FORMAT:**
+```json
+{
+  "price_appreciation": {
+    "5y_cagr": "Data not available",
+    "yoy": "5.8% ± 1.2% (range: 4.6% - 7.0%)"
+  },
+  "trend": "Unable to assess long-term trend",
+  "source_priority": "Portal Avg",
+  "primary_source": "Multi-portal analysis with high variance",
+  "confidence": "LOW"
+}
+```
+
+**Note:** High variance across portals suggests data quality concerns; insufficient historical data for 5Y CAGR
+
+---
+
+### Example 8: Insufficient Data
+
+**TEXT FORMAT:**
+```
+Price Appreciation: Data not available (5Y CAGR) | Data not available (YoY)
+Trend: Unable to determine
+Source Priority: N/A
+Primary Source: Insufficient data - less than 10 comparable listings found
+Confidence: N/A
+```
+
+**JSON FORMAT:**
+```json
+{
+  "price_appreciation": {
+    "5y_cagr": "Data not available",
+    "yoy": "Data not available"
+  },
+  "trend": "Unable to determine",
+  "source_priority": "N/A",
+  "primary_source": "Insufficient data - less than 10 comparable listings found",
+  "confidence": "N/A"
+}
 ```
 
 ---
@@ -476,10 +814,55 @@ Confidence: [HIGH/MEDIUM/LOW]
 - If official index unavailable: State "No official index available"
 - If consultancy reports not found: State "Limited analyst coverage"
 - If portal data insufficient: State "Sample size too small ([X] listings)"
+- For missing time periods: Use "Data not available" in that field
 
 ### 9. Report Negative Appreciation
 - Don't hide market declines
-- Report as: "-3.2% (market decline)" not "slow growth"
+- Report as: "-3.2%" not "slow growth"
+- Include negative values in both TEXT and JSON formats
+
+### 10. Output Format Compliance
+- **ALWAYS** provide both TEXT and JSON formats
+- **Both formats must match exactly**
+- Use "Data not available" for missing time periods
+- Maintain consistent structure across all outputs
+- No explanations or additional commentary in output formats
+
+---
+
+## TREND CLASSIFICATION
+
+### Accelerating (Recent Surge)
+- **YoY > 5Y CAGR** (significantly higher)
+- Example: 4.8% 5Y CAGR | 8.5% YoY
+- **Interpretation:** Short-term appreciation exceeding long-term trend = recent acceleration
+
+### Steady
+- **YoY ≈ 5Y CAGR** (within ±1%)
+- Example: 2.5% 5Y CAGR | 2.8% YoY
+- **Interpretation:** Consistent, stable appreciation over time
+
+### Decelerating (Recent Slowdown)
+- **YoY < 5Y CAGR** (but YoY still positive)
+- Example: 7.5% 5Y CAGR | 3.2% YoY
+- **Interpretation:** Short-term appreciation below long-term trend = recent deceleration
+
+### Declining (Recent Downturn)
+- **Negative YoY** appreciation
+- Example: 3.8% 5Y CAGR | -1.5% YoY
+- **Interpretation:** Recent price decline after period of growth
+
+### Unable to determine
+- **Only one metric available** (either 5Y CAGR or YoY, not both)
+- **Insufficient data** for trend analysis
+- Example: Data not available (5Y CAGR) | 6.8% YoY
+- **Interpretation:** Can't assess trend without long-term comparison
+
+**Key Insight:**
+When both 5Y CAGR and YoY are available:
+- **5Y CAGR** shows the long-term trend (smoothed over 5 years)
+- **YoY** shows the current short-term momentum
+- **Comparing them** reveals if the market is accelerating, steady, or decelerating
 
 ---
 
@@ -492,11 +875,74 @@ Confidence: [HIGH/MEDIUM/LOW]
 - [ ] Cited specific source with publication date
 - [ ] Showed calculation methodology
 - [ ] Included raw data when applicable
+- [ ] Calculated 5Y CAGR (if 5+ years data available)
+- [ ] Calculated YoY (if 1+ years data available)
+- [ ] Compared 5Y CAGR vs YoY to determine trend
 - [ ] Reported confidence level with justification
 - [ ] Cross-verified with multiple sources when possible
 - [ ] Flagged high variance or data limitations
 - [ ] Currency specified with USD equivalent if applicable
+- [ ] **Provided TEXT format output (5Y CAGR | YoY)**
+- [ ] **Provided JSON format output (5Y CAGR | YoY)**
+- [ ] **Both formats match exactly**
+- [ ] **Used "Data not available" for missing metrics**
+
+---
+
+## ADDITIONAL NOTES
+
+### Time Period Definitions:
+- **5Y CAGR (5-Year Compound Annual Growth Rate):** Long-term trend over 5 years - PRIORITIZED for analysis
+- **YoY (Year-over-Year):** Short-term trend comparing current period vs. same period 1 year ago
+
+### Data Priority Logic:
+1. **Ideal:** Both 5Y CAGR + YoY available → Compare to identify trend
+2. **Fallback:** Only YoY available → Report YoY with note about missing long-term data
+3. **Rare:** Only 5Y CAGR available → Report 5Y CAGR with note about missing short-term signal
+
+### When Historical Data Limited:
+- **If only 1-year data:** Report YoY only, mark 5Y CAGR as "Data not available"
+- **If 2-4 years data:** Calculate available CAGR (2Y, 3Y, 4Y) but still mark 5Y as "Data not available"
+- **If 5+ years data:** Calculate full 5Y CAGR and YoY
+
+### Interpretation Guide:
+- **YoY > 5Y CAGR:** Market accelerating (recent surge)
+- **YoY ≈ 5Y CAGR:** Market steady (consistent growth)
+- **YoY < 5Y CAGR:** Market decelerating (recent slowdown)
+- **YoY negative:** Market declining (prices dropping)
+- **Only YoY available:** Cannot assess long-term trend
+
+### Source Priority Designation:
+- **Newspaper:** Data from Priority 1 sources
+- **Official Index:** Data from Priority 2 sources
+- **Consultancy:** Data from Priority 3 sources
+- **Portal Avg:** Data from Priority 4 sources (multi-portal average)
+
+### Variance Reporting:
+- **Low variance (<1%):** Report single value
+- **Medium variance (1-2%):** Report with ± notation
+- **High variance (>2%):** Report with range and flag LOW confidence
 
 ---
 
 **NOW PROVIDE THE LOCATION FOR ANALYSIS.**
+
+**You will calculate and return:**
+1. **Price Appreciation** (5Y CAGR + YoY)
+   - **Prioritize:** 5Y CAGR for long-term trend
+   - **Include:** YoY for short-term signal
+   - **If unavailable:** Report "Data not available" for missing metric
+2. **Trend** (Accelerating/Steady/Decelerating/Declining)
+   - Based on comparison of 5Y CAGR vs YoY
+   - If only one metric: "Unable to assess long-term trend"
+3. **Source Priority** (which tier of sources was used)
+4. **Primary Source** (specific source name and date)
+5. **Confidence Level** (HIGH/MEDIUM/LOW)
+
+**In both TEXT and JSON formats as specified above.**
+
+**Key Analysis:**
+- If **YoY > 5Y CAGR**: Recent acceleration (short-term surge)
+- If **YoY ≈ 5Y CAGR**: Steady market (consistent growth)
+- If **YoY < 5Y CAGR**: Recent deceleration (slowdown)
+- If **YoY negative**: Market decline (prices falling)
