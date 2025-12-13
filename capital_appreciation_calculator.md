@@ -597,6 +597,20 @@ Bangalore: 8.2% vs India National Average: 6.5%
 - Simplified output: one line appreciation, one line confidence
 - Use exact format: "Capital Appreciation: X.X%" and "Confidence: High/Medium/Low"
 
+### 13. Discrepancy Check (Cross-Source Validation)
+- **MANDATORY**: If the difference between Source A and Source B is greater than 3 percentage points (e.g., 2% vs 5%), you **MUST** mention this divergence in the 'Detailed Analysis' under 'Investment Notes'
+- **Do NOT simply discard** the higher or lower value without explanation
+- **Explain the likely cause** of the discrepancy, such as:
+  - "Official index lags market reality by 1-2 quarters"
+  - "Consultancy report focuses on luxury segment while official index covers all segments"
+  - "Portal data reflects asking prices while official index uses transaction prices"
+  - "Different time periods covered (Q2 vs Q3 data)"
+  - "Geographic coverage differences (city-wide vs specific localities)"
+  - "Methodology differences (hedonic index vs median price)"
+- **Example discrepancy note**: "NHB RESIDEX shows 5.2% YoY while Knight Frank reports 8.5% YoY (3.3 percentage point difference). This divergence likely reflects Knight Frank's focus on premium segment properties which have outperformed the broader market captured in RESIDEX."
+- **Report both values** when significant discrepancy exists, with the primary value based on source priority and the secondary value noted for context
+- **Adjust confidence level** if high discrepancy exists (reduce to Medium even with high-quality sources)
+
 ---
 
 ## INVESTMENT-SPECIFIC CONSIDERATIONS
@@ -629,6 +643,8 @@ Bangalore: 8.2% vs India National Average: 6.5%
 - [ ] Included raw data (index values or prices)
 - [ ] Reported confidence level with justification
 - [ ] Cross-verified with multiple sources when possible
+- [ ] **Checked for discrepancies >3 percentage points between sources**
+- [ ] **If discrepancy exists, explained likely cause in Investment Notes**
 - [ ] Flagged high variance or data limitations
 - [ ] Provided investment context and market drivers
 - [ ] Included segment analysis if data available
@@ -661,6 +677,66 @@ Bangalore: 8.2% vs India National Average: 6.5%
 3. Access DLD official index
 4. Search Knight Frank UAE Dubai report
 5. PropertyFinder/Bayut indices (if needed)
+
+---
+
+## EXAMPLE WITH DISCREPANCY
+
+**Example: Bangalore Capital Appreciation with Source Discrepancy**
+
+```
+Capital Appreciation: 7.8%
+Confidence: Medium
+
+{
+  "capital_appreciation": "7.8%",
+  "confidence": "Medium"
+}
+
+DETAILED ANALYSIS:
+Capital Appreciation: 7.8% YoY | 7.2% 3Y CAGR | 6.5% 5Y CAGR
+Property Type: Residential
+Investment Segment: Mixed (All segments)
+Trend: Steady
+Source Priority: Official Index (Primary), Consultancy (Secondary)
+Primary Source: NHB RESIDEX Q3 2024
+Secondary Sources: Knight Frank India Report Q3 2024
+Confidence: Medium
+
+Investment Context:
+Bangalore residential market continues to show robust appreciation driven by strong IT sector fundamentals, infrastructure projects (Metro Phase 2, Peripheral Ring Road), and sustained demand from end-users and investors. Market remains supply-constrained in premium localities.
+
+Methodology:
+Primary data from NHB RESIDEX official quarterly index. Cross-verified with Knight Frank India Q3 2024 market report. YoY calculated from Q3 2024 vs Q3 2023. Multi-year CAGR from quarterly index values.
+
+Raw Data:
+- NHB RESIDEX Q3 2024: 285.4
+- NHB RESIDEX Q3 2023: 264.8
+- NHB RESIDEX Q3 2021: 245.2
+- NHB RESIDEX Q3 2019: 218.1
+
+Segment Analysis:
+- Apartments (2-3 BHK): 7.8% YoY (per RESIDEX)
+- Premium segment: 10.5% YoY (per Knight Frank)
+- Affordable segment: 6.2% YoY (estimated)
+
+Investment Notes:
+**DISCREPANCY IDENTIFIED**: NHB RESIDEX reports 7.8% YoY while Knight Frank India reports 10.5% YoY for Bangalore residential market (2.7 percentage point difference). This divergence likely reflects:
+
+1. **Segment Focus**: Knight Frank's report emphasizes premium properties (₹1Cr+) which have significantly outperformed the broader market. Premium localities like Koramangala, Indiranagar, and Whitefield saw 10-12% appreciation.
+
+2. **Geographic Coverage**: RESIDEX covers city-wide data including all segments and peripheral areas, while Knight Frank data is weighted toward established premium localities.
+
+3. **Methodology**: RESIDEX uses hedonic price index methodology with broader property mix, while Knight Frank's analysis focuses on transaction data from premium developments.
+
+**Conclusion**: We report 7.8% (RESIDEX) as primary figure due to broader market coverage and official source status. However, investors targeting premium segment properties should note the 10.5% appreciation potential in that specific segment. Confidence downgraded to Medium due to this significant cross-source variance.
+
+Market remains supply-constrained in core areas. Official data is current (<1 month old). Strong institutional alignment on positive market sentiment despite numerical variance.
+
+Comparative Performance:
+Bangalore: 7.8% (all segments) vs India National Average: 6.3%
+Bangalore Premium: 10.5% vs National Premium: 8.2%
+```
 
 ---
 
