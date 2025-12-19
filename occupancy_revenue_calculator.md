@@ -27,14 +27,6 @@ Average Daily Rate during low-demand season in local currency (location-typical 
 
 ## OUTPUT FORMAT
 
-### TEXT FORMAT
-
-```
-Average Occupancy: XX.X%
-Peak Season ADR: ₹X,XXX or Currency X,XXX
-Off Season ADR: ₹X,XXX or Currency X,XXX
-```
-
 ### JSON FORMAT
 
 ```json
@@ -303,8 +295,7 @@ Typically 40-70% of Peak Season ADR depending on location
 - Never invent numbers without basis
 
 ### 7. Output Format Compliance
-- **ALWAYS** provide both TEXT and JSON formats
-- **Both formats must match exactly**
+- **ALWAYS** provide JSON format only
 - Follow exact format specified
 
 ---
@@ -312,13 +303,6 @@ Typically 40-70% of Peak Season ADR depending on location
 ## EXAMPLES
 
 ### Example 1: Anjuna, North Goa, India
-
-**TEXT FORMAT:**
-```
-Average Occupancy: 68.0%
-Peak Season ADR: ₹8,500
-Off Season ADR: ₹3,800
-```
 
 **JSON FORMAT:**
 ```json
@@ -340,13 +324,6 @@ Off Season ADR: ₹3,800
 
 ### Example 2: Coorg (Madikeri), Karnataka, India
 
-**TEXT FORMAT:**
-```
-Average Occupancy: 58.0%
-Peak Season ADR: ₹5,000
-Off Season ADR: ₹3,000
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -366,13 +343,6 @@ Off Season ADR: ₹3,000
 ---
 
 ### Example 3: Dubai Marina, UAE
-
-**TEXT FORMAT:**
-```
-Average Occupancy: 75.0%
-Peak Season ADR: AED 850
-Off Season ADR: AED 600
-```
 
 **JSON FORMAT:**
 ```json
@@ -394,13 +364,6 @@ Off Season ADR: AED 600
 
 ### Example 4: Ubud, Bali, Indonesia
 
-**TEXT FORMAT:**
-```
-Average Occupancy: 65.0%
-Peak Season ADR: IDR 1,200,000
-Off Season ADR: IDR 650,000
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -421,13 +384,6 @@ Off Season ADR: IDR 650,000
 
 ### Example 5: Shimla, Himachal Pradesh, India
 
-**TEXT FORMAT:**
-```
-Average Occupancy: 52.0%
-Peak Season ADR: ₹4,500
-Off Season ADR: ₹2,800
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -447,13 +403,6 @@ Off Season ADR: ₹2,800
 ---
 
 ### Example 6: Bangkok, Thailand
-
-**TEXT FORMAT:**
-```
-Average Occupancy: 78.0%
-Peak Season ADR: THB 3,500
-Off Season ADR: THB 2,800
-```
 
 **JSON FORMAT:**
 ```json
@@ -477,13 +426,6 @@ Off Season ADR: THB 2,800
 
 ### Case 1: Insufficient Data
 
-**TEXT FORMAT:**
-```
-Average Occupancy: Data not available
-Peak Season ADR: Data not available
-Off Season ADR: Data not available
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -496,13 +438,6 @@ Off Season ADR: Data not available
 ---
 
 ### Case 2: Emerging/New Destination
-
-**TEXT FORMAT:**
-```
-Average Occupancy: 45.0%
-Peak Season ADR: ₹4,000
-Off Season ADR: ₹2,500
-```
 
 **JSON FORMAT:**
 ```json
@@ -518,13 +453,6 @@ Off Season ADR: ₹2,500
 ---
 
 ### Case 3: Year-Round Consistent Demand (City)
-
-**TEXT FORMAT:**
-```
-Average Occupancy: 78.0%
-Peak Season ADR: ₹5,500
-Off Season ADR: ₹4,800
-```
 
 **JSON FORMAT:**
 ```json
@@ -549,9 +477,7 @@ Off Season ADR: ₹4,800
 - [ ] Currency symbol included and correct
 - [ ] Occupancy formatted with 1 decimal place (XX.X%)
 - [ ] ADR rounded appropriately (nearest 50-100)
-- [ ] **Provided TEXT format output**
-- [ ] **Provided JSON format output**
-- [ ] **Both formats match exactly**
+- [ ] **Provided JSON format output only**
 - [ ] Conservative estimates used if uncertain
 
 ---
