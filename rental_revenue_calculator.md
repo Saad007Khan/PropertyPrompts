@@ -465,12 +465,7 @@ Gross Rental Yield: (10,44,300 / 1,20,00,000) × 100 = 8.7%
 
 ### SIMPLIFIED OUTPUT (Required Format)
 
-**Text Format:**
-```
-Revenue (Peak): ₹X,XXX
-Revenue (Off Season): ₹X,XXX
-Confidence: High/Medium/Low
-```
+
 
 **JSON Format:**
 ```json
@@ -552,8 +547,8 @@ Seasonal Events Impact:
 
 ## OUTPUT DELIVERY REQUIREMENTS
 
-1. **Always provide THREE outputs in chat:**
-   - Simplified text format (Revenue Peak + Off Season + Confidence)
+1. **Always provide Two outputs in chat:**
+
    - JSON format
    - Detailed analysis (as text)
 
@@ -563,9 +558,6 @@ Seasonal Events Impact:
 
 **Example Chat Output:**
 ```
-Revenue (Peak): ₹8,500
-Revenue (Off Season): ₹3,800
-Confidence: High
 
 {
   "revenue_peak": "₹8,500",
@@ -777,7 +769,6 @@ Seasonal Events Impact:
 - [ ] Noted expense assumptions if net yield calculated
 - [ ] Flagged special event premiums separately
 - [ ] Provided investment context and market notes
-- [ ] **Provided simplified text output in chat**
 - [ ] **Provided JSON format output in chat**
 - [ ] **Provided detailed analysis in chat as text**
 
