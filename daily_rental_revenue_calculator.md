@@ -24,13 +24,6 @@ Typical daily rental rate during low-demand season for standard properties (2-3 
 
 ## OUTPUT FORMAT
 
-### TEXT FORMAT
-
-```
-Revenue (Peak): ₹X,XXX or Currency X,XXX
-Revenue (Off Season): ₹X,XXX or Currency X,XXX
-```
-
 ### JSON FORMAT
 
 ```json
@@ -235,8 +228,7 @@ Typically 40-70% of Peak Season Revenue
 - Be conservative if uncertain
 
 ### 7. Output Format Compliance
-- **ALWAYS** provide both TEXT and JSON formats
-- **Both formats must match exactly**
+- **ALWAYS** provide JSON format only
 - Follow exact format specified
 
 ---
@@ -244,12 +236,6 @@ Typically 40-70% of Peak Season Revenue
 ## EXAMPLES
 
 ### Example 1: Anjuna, North Goa, India
-
-**TEXT FORMAT:**
-```
-Revenue (Peak): ₹8,500
-Revenue (Off Season): ₹3,800
-```
 
 **JSON FORMAT:**
 ```json
@@ -269,12 +255,6 @@ Revenue (Off Season): ₹3,800
 
 ### Example 2: Madikeri, Coorg, Karnataka, India
 
-**TEXT FORMAT:**
-```
-Revenue (Peak): ₹5,000
-Revenue (Off Season): ₹3,000
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -292,12 +272,6 @@ Revenue (Off Season): ₹3,000
 ---
 
 ### Example 3: Dubai Marina, UAE
-
-**TEXT FORMAT:**
-```
-Revenue (Peak): AED 850
-Revenue (Off Season): AED 600
-```
 
 **JSON FORMAT:**
 ```json
@@ -317,12 +291,6 @@ Revenue (Off Season): AED 600
 
 ### Example 4: Ubud, Bali, Indonesia
 
-**TEXT FORMAT:**
-```
-Revenue (Peak): IDR 1,200,000
-Revenue (Off Season): IDR 650,000
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -340,12 +308,6 @@ Revenue (Off Season): IDR 650,000
 ---
 
 ### Example 5: Shimla, Himachal Pradesh, India
-
-**TEXT FORMAT:**
-```
-Revenue (Peak): ₹4,500
-Revenue (Off Season): ₹2,800
-```
 
 **JSON FORMAT:**
 ```json
@@ -365,12 +327,6 @@ Revenue (Off Season): ₹2,800
 
 ### Example 6: Phuket, Thailand
 
-**TEXT FORMAT:**
-```
-Revenue (Peak): THB 5,500
-Revenue (Off Season): THB 2,800
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -388,12 +344,6 @@ Revenue (Off Season): THB 2,800
 ---
 
 ### Example 7: Bangalore, Karnataka, India (City)
-
-**TEXT FORMAT:**
-```
-Revenue (Peak): ₹4,800
-Revenue (Off Season): ₹4,200
-```
 
 **JSON FORMAT:**
 ```json
@@ -415,12 +365,6 @@ Revenue (Off Season): ₹4,200
 
 ### Case 1: Insufficient Data
 
-**TEXT FORMAT:**
-```
-Revenue (Peak): Data not available
-Revenue (Off Season): Data not available
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -432,12 +376,6 @@ Revenue (Off Season): Data not available
 ---
 
 ### Case 2: Emerging/New Destination
-
-**TEXT FORMAT:**
-```
-Revenue (Peak): ₹4,000
-Revenue (Off Season): ₹2,500
-```
 
 **JSON FORMAT:**
 ```json
@@ -452,12 +390,6 @@ Revenue (Off Season): ₹2,500
 ---
 
 ### Case 3: Year-Round Consistent Demand (City)
-
-**TEXT FORMAT:**
-```
-Revenue (Peak): ₹5,500
-Revenue (Off Season): ₹4,800
-```
 
 **JSON FORMAT:**
 ```json
@@ -480,9 +412,7 @@ Revenue (Off Season): ₹4,800
 - [ ] Peak Revenue > Off Season Revenue (logical check)
 - [ ] Currency symbol included and correct
 - [ ] Rounded to nearest 100 (or 50 for smaller amounts)
-- [ ] **Provided TEXT format output**
-- [ ] **Provided JSON format output**
-- [ ] **Both formats match exactly**
+- [ ] **Provided JSON format output only**
 - [ ] Conservative estimates used if uncertain
 
 ---
