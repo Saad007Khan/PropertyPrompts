@@ -442,15 +442,6 @@ Report as: 9.2% ± 0.4% (8.8% - 9.6%)
 
 ## OUTPUT FORMAT
 
-### TEXT FORMAT
-
-```
-Price Appreciation: [X.X%] 5Y CAGR | [X.X%] YoY
-Trend: [Accelerating/Steady/Decelerating/Declining]
-Source Priority: [Newspaper/Official Index/Consultancy/Portal Avg]
-Primary Source: [Specific source name and date]
-Confidence: [HIGH/MEDIUM/LOW]
-```
 
 ### JSON FORMAT
 
@@ -474,14 +465,7 @@ Confidence: [HIGH/MEDIUM/LOW]
 
 **If only YoY available:**
 
-### TEXT FORMAT
-```
-Price Appreciation: Data not available (5Y CAGR) | 5.2% YoY
-Trend: Unable to assess long-term trend
-Source Priority: Consultancy
-Primary Source: Knight Frank India Q3 2024 Report
-Confidence: MEDIUM
-```
+
 
 ### JSON FORMAT
 ```json
@@ -499,14 +483,7 @@ Confidence: MEDIUM
 
 **If all data unavailable:**
 
-### TEXT FORMAT
-```
-Price Appreciation: Data not available (5Y CAGR) | Data not available (YoY)
-Trend: Unable to determine
-Source Priority: N/A
-Primary Source: Insufficient data
-Confidence: N/A
-```
+
 
 ### JSON FORMAT
 ```json
@@ -528,14 +505,7 @@ Confidence: N/A
 
 ### Example 1: Dubai Marina, UAE
 
-**TEXT FORMAT:**
-```
-Price Appreciation: 4.8% 5Y CAGR | 8.5% YoY
-Trend: Accelerating (short-term surge)
-Source Priority: Official Index
-Primary Source: Dubai Land Department Price Index Q3 2024
-Confidence: HIGH
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -557,14 +527,7 @@ Confidence: HIGH
 
 ### Example 2: Bangalore (Whitefield), India
 
-**TEXT FORMAT:**
-```
-Price Appreciation: 4.5% 5Y CAGR | 7.2% YoY
-Trend: Accelerating (recent surge)
-Source Priority: Newspaper
-Primary Source: Economic Times Real Estate Report November 2024
-Confidence: HIGH
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -586,14 +549,6 @@ Confidence: HIGH
 
 ### Example 3: Coorg (Madikeri), Karnataka, India
 
-**TEXT FORMAT:**
-```
-Price Appreciation: Data not available (5Y CAGR) | 6.8% YoY
-Trend: Unable to assess long-term trend
-Source Priority: Portal Avg
-Primary Source: Multi-portal analysis (MagicBricks, 99acres, Housing.com)
-Confidence: MEDIUM
-```
 
 **JSON FORMAT:**
 ```json
@@ -621,14 +576,7 @@ Confidence: MEDIUM
 
 ### Example 4: Singapore City Center
 
-**TEXT FORMAT:**
-```
-Price Appreciation: 2.5% 5Y CAGR | 2.8% YoY
-Trend: Steady
-Source Priority: Official Index
-Primary Source: URA Property Price Index Q4 2024
-Confidence: HIGH
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -650,14 +598,7 @@ Confidence: HIGH
 
 ### Example 5: Ubud, Bali, Indonesia
 
-**TEXT FORMAT:**
-```
-Price Appreciation: Data not available (5Y CAGR) | 9.5% YoY
-Trend: Unable to assess long-term trend (strong short-term growth)
-Source Priority: Consultancy
-Primary Source: JLL Indonesia Property Market Report Q2 2024
-Confidence: HIGH
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -679,14 +620,7 @@ Confidence: HIGH
 
 ### Example 6: London (Zone 2), UK
 
-**TEXT FORMAT:**
-```
-Price Appreciation: 3.8% 5Y CAGR | -1.5% YoY
-Trend: Declining (recent downturn)
-Source Priority: Official Index
-Primary Source: HM Land Registry House Price Index November 2024
-Confidence: HIGH
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -708,14 +642,7 @@ Confidence: HIGH
 
 ### Example 7: High Variance Location
 
-**TEXT FORMAT:**
-```
-Price Appreciation: Data not available (5Y CAGR) | 5.8% ± 1.2% YoY (range: 4.6% - 7.0%)
-Trend: Unable to assess long-term trend
-Source Priority: Portal Avg
-Primary Source: Multi-portal analysis with high variance
-Confidence: LOW
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -737,14 +664,7 @@ Confidence: LOW
 
 ### Example 8: Insufficient Data
 
-**TEXT FORMAT:**
-```
-Price Appreciation: Data not available (5Y CAGR) | Data not available (YoY)
-Trend: Unable to determine
-Source Priority: N/A
-Primary Source: Insufficient data - less than 10 comparable listings found
-Confidence: N/A
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -819,10 +739,10 @@ Confidence: N/A
 ### 9. Report Negative Appreciation
 - Don't hide market declines
 - Report as: "-3.2%" not "slow growth"
-- Include negative values in both TEXT and JSON formats
+- Include negative values in JSON formats
 
 ### 10. Output Format Compliance
-- **ALWAYS** provide both TEXT and JSON formats
+- **ALWAYS** provide  JSON formats
 - **Both formats must match exactly**
 - Use "Data not available" for missing time periods
 - Maintain consistent structure across all outputs
@@ -882,9 +802,7 @@ When both 5Y CAGR and YoY are available:
 - [ ] Cross-verified with multiple sources when possible
 - [ ] Flagged high variance or data limitations
 - [ ] Currency specified with USD equivalent if applicable
-- [ ] **Provided TEXT format output (5Y CAGR | YoY)**
 - [ ] **Provided JSON format output (5Y CAGR | YoY)**
-- [ ] **Both formats match exactly**
 - [ ] **Used "Data not available" for missing metrics**
 
 ---
@@ -939,7 +857,7 @@ When both 5Y CAGR and YoY are available:
 4. **Primary Source** (specific source name and date)
 5. **Confidence Level** (HIGH/MEDIUM/LOW)
 
-**In both TEXT and JSON formats as specified above.**
+**In JSON formats as specified above.**
 
 **Key Analysis:**
 - If **YoY > 5Y CAGR**: Recent acceleration (short-term surge)
