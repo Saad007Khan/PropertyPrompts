@@ -35,12 +35,6 @@ Property Type (optional): **Studio/1BR/2BR/Apartment/Villa**
 
 ### SIMPLIFIED OUTPUT (Required Format)
 
-**TEXT FORMAT:**
-```
-Min. Investment: [Currency][XX]L
-Confidence: High/Medium/Low
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -428,10 +422,10 @@ By Area:
 - Low: Limited data, high variance
 
 ### 10. Output Format Compliance
-- **ALWAYS** provide all three outputs in chat (simplified text, JSON, detailed analysis)
+- **ALWAYS** provide all outputs in chat (simplified JSON, detailed analysis)
 - **NO file creation required**
-- Simplified output must be concise: one line for investment, one line for confidence
-- Use exact format: "Min. Investment: ₹XXL" and "Confidence: High/Medium/Low"
+- Simplified output must be concise JSON format only
+- Use exact format: "minimum_investment": "₹XXL" and "confidence": "High/Medium/Low"
 
 ---
 
@@ -570,8 +564,7 @@ Confidence: LOW
 - [ ] Ongoing costs listed separately
 - [ ] Foreign buyer restrictions noted (if applicable)
 - [ ] Geographic variations mentioned (if large city)
-- [ ] **Provided simplified text output**
-- [ ] **Provided JSON format output**
+- [ ] **Provided simplified JSON output**
 - [ ] **Provided detailed analysis in chat as text**
 
 ---
@@ -581,12 +574,6 @@ Confidence: LOW
 ### Example 1: Tier 1 City with Good Data (Goa, India)
 
 **SIMPLIFIED OUTPUT:**
-
-**TEXT FORMAT:**
-```
-Min. Investment: ₹25L
-Confidence: High
-```
 
 **JSON FORMAT:**
 ```json
@@ -696,12 +683,6 @@ Limitations: Prices vary by specific beach/area
 
 **SIMPLIFIED OUTPUT:**
 
-**TEXT FORMAT:**
-```
-Min. Investment: ₹40L
-Confidence: Medium
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -809,12 +790,6 @@ Limitations: Limited entry-level inventory; market focuses on larger properties 
 ### Example 3: International Market (Dubai, UAE)
 
 **SIMPLIFIED OUTPUT:**
-
-**TEXT FORMAT:**
-```
-Min. Investment: AED 350k
-Confidence: High
-```
 
 **JSON FORMAT:**
 ```json
@@ -926,12 +901,6 @@ Limitations: None - strong data availability
 
 **SIMPLIFIED OUTPUT:**
 
-**TEXT FORMAT:**
-```
-Min. Investment: ₹1.2Cr
-Confidence: High
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -1020,12 +989,6 @@ Limitations: Central Mumbai prices significantly higher (₹2Cr+ entry)
 ### Example 5: Singapore Market (High Foreign Buyer Tax)
 
 **SIMPLIFIED OUTPUT:**
-
-**TEXT FORMAT:**
-```
-Min. Investment: SGD 1.5M
-Confidence: High
-```
 
 **JSON FORMAT:**
 ```json
@@ -1118,12 +1081,6 @@ Limitations: Foreign buyer restrictions significantly impact entry cost
 
 **SIMPLIFIED OUTPUT:**
 
-**TEXT FORMAT:**
-```
-Min. Investment: THB 2.5M
-Confidence: High
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -1213,9 +1170,8 @@ Limitations: Foreign ownership limited to 49% of building (freehold condos)
 
 ## OUTPUT DELIVERY REQUIREMENTS
 
-1. **Always provide THREE outputs in chat:**
-   - Simplified text format (Min. Investment + Confidence)
-   - JSON format
+1. **Always provide TWO outputs in chat:**
+   - Simplified JSON format (Min. Investment + Confidence)
    - Detailed analysis (as text)
 
 2. **No file creation required**
