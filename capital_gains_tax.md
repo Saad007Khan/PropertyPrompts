@@ -18,32 +18,6 @@ Holding Period (optional): **Short-term (<X years) / Long-term (≥X years)**
 
 ## OUTPUT FORMAT
 
-### TEXT FORMAT
-
-```
-CAPITAL GAINS TAX: [Location]
-Country: [Country]
-
-SHORT-TERM CAPITAL GAINS (STCG):
-   Holding Period: [Less than X years/months]
-   Tax Rate: [X%]
-   Taxed As: [Income slab / Flat rate]
-
-LONG-TERM CAPITAL GAINS (LTCG):
-   Holding Period: [X years or more]
-   Tax Rate: [X%] or [Exempt]
-   Indexation Benefit: [Yes/No]
-
-EXEMPTIONS & CONDITIONS:
-   • [Exemption 1]
-   • [Exemption 2]
-   • [Condition 1]
-
-CITIZEN vs FOREIGNER:
-   Citizens: [Rate/conditions]
-   Foreigners: [Rate/conditions if different]
-```
-
 ### JSON FORMAT
 
 ```json
@@ -205,7 +179,7 @@ Note if rates differ for foreign investors
 Use official tax authority websites and documents for accurate information, but DO NOT include "Sources:" or "Last Updated:" fields in the output
 
 ### 8. Output Format Compliance
-- **ALWAYS** provide both TEXT and JSON formats
+- **ALWAYS** provide JSON format only
 - **NEVER** include "Sources:" field in output
 - **NEVER** include "Last Updated:" field in output
 - Keep all other information comprehensive and accurate
@@ -215,32 +189,6 @@ Use official tax authority websites and documents for accurate information, but 
 ## EXAMPLES
 
 ### Example 1: Mumbai, India
-
-**TEXT FORMAT:**
-```
-CAPITAL GAINS TAX: Mumbai, Maharashtra, India
-Country: India
-
-SHORT-TERM CAPITAL GAINS (STCG):
-   Holding Period: Less than 2 years
-   Tax Rate: Per income tax slab (10%, 20%, 30% + 4% cess)
-   Taxed As: Added to total income
-
-LONG-TERM CAPITAL GAINS (LTCG):
-   Holding Period: 2 years or more
-   Tax Rate: 20% with indexation OR 12.5% without indexation
-   Indexation Benefit: Yes (Cost Inflation Index applied)
-
-EXEMPTIONS & CONDITIONS:
-   • Section 54: Full exemption if reinvested in residential property within 2 years
-   • Section 54EC: Up to ₹50 lakh if invested in specified bonds within 6 months
-   • Section 54F: For sale of non-residential property
-   • Primary residence exemption for seniors (age 80+, certain conditions)
-
-CITIZEN vs FOREIGNER:
-   Citizens: Same rates apply
-   Foreigners: Same rates, but TDS @ 20% on LTCG
-```
 
 **JSON FORMAT:**
 ```json
@@ -272,32 +220,6 @@ CITIZEN vs FOREIGNER:
 
 ### Example 2: Dubai, UAE
 
-**TEXT FORMAT:**
-```
-CAPITAL GAINS TAX: Dubai, UAE
-Country: UAE
-
-SHORT-TERM CAPITAL GAINS (STCG):
-   Holding Period: No minimum requirement
-   Tax Rate: 0%
-   Taxed As: Exempt
-
-LONG-TERM CAPITAL GAINS (LTCG):
-   Holding Period: No minimum requirement
-   Tax Rate: 0%
-   Indexation Benefit: N/A
-
-EXEMPTIONS & CONDITIONS:
-   • No capital gains tax for individuals on property sales
-   • No holding period requirement
-   • Applies to all property types (residential, commercial, land)
-   • Only transfer fees apply (4% DLD fee typically for buyer)
-
-CITIZEN vs FOREIGNER:
-   Citizens: 0% CGT
-   Foreigners: 0% CGT
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -327,32 +249,6 @@ CITIZEN vs FOREIGNER:
 ```
 
 ### Example 3: Singapore
-
-**TEXT FORMAT:**
-```
-CAPITAL GAINS TAX: Singapore
-Country: Singapore
-
-SHORT-TERM CAPITAL GAINS (STCG):
-   Holding Period: No specific period
-   Tax Rate: 0%
-   Taxed As: Exempt (unless deemed property trading)
-
-LONG-TERM CAPITAL GAINS (LTCG):
-   Holding Period: No specific period
-   Tax Rate: 0%
-   Indexation Benefit: N/A
-
-EXEMPTIONS & CONDITIONS:
-   • No CGT for individuals on property investment
-   • If deemed property trading business → Income tax applies
-   • Investment holding: No tax
-   • Seller's Stamp Duty (SSD) applies separately: <1yr: 12%, 1-2yr: 8%, 2-3yr: 4%, ≥3yr: 0%
-
-CITIZEN vs FOREIGNER:
-   Citizens: 0% CGT (SSD same rates)
-   Foreigners: 0% CGT (SSD same rates)
-```
 
 **JSON FORMAT:**
 ```json
@@ -424,8 +320,7 @@ NRI must file return to claim refund if actual tax lower
 - [ ] Citizen vs foreigner differences noted
 - [ ] Distinguished from stamp duty/property tax
 - [ ] 0% rate explicitly stated (if applicable)
-- [ ] **Provided TEXT format output**
-- [ ] **Provided JSON format output**
+- [ ] **Provided JSON format output only**
 - [ ] **Did NOT include "Sources:" field in output**
 - [ ] **Did NOT include "Last Updated:" field in output**
 
