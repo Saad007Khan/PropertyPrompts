@@ -68,15 +68,7 @@ Location: **City, State/Region, Country**
 
 ### SIMPLIFIED OUTPUT (Required Format)
 
-**TEXT FORMAT:**
-```
-Risk Level: [Very Low/Low/Moderate/High/Very High]
-Crime: [Very Safe/Safe/Moderate/Concerning/Dangerous]
-Governance: [Very Stable/Stable/Moderately Stable/Unstable/Very Unstable]
-Disaster: [Minimal/Low/Moderate/High/Very High]
-Regulation: [Excellent/Good/Fair/Poor/Very Poor]
-Economic: [Very Stable/Stable/Moderately Stable/Unstable/Very Unstable]
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -778,7 +770,6 @@ For each component, explicitly state:
 - [ ] Top positive factors identified
 - [ ] Holistic rationale provided
 - [ ] Data recency noted
-- [ ] **Provided simplified text output**
 - [ ] **Provided JSON format output**
 - [ ] **Provided detailed analysis in chat as text**
 
@@ -790,15 +781,7 @@ For each component, explicitly state:
 
 **SIMPLIFIED OUTPUT:**
 
-**TEXT FORMAT:**
-```
-Risk Level: Low
-Crime: Safe
-Governance: Stable
-Disaster: Low
-Regulation: Good
-Economic: Very Stable
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -1077,16 +1060,6 @@ Data Recency:
 
 **SIMPLIFIED OUTPUT:**
 
-**TEXT FORMAT:**
-```
-Risk Level: Very Low
-Crime: Very Safe
-Governance: Very Stable
-Disaster: Minimal
-Regulation: Excellent
-Economic: Very Stable
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -1105,16 +1078,6 @@ Economic: Very Stable
 
 **SIMPLIFIED OUTPUT:**
 
-**TEXT FORMAT:**
-```
-Risk Level: Moderate
-Crime: Moderate
-Governance: Stable
-Disaster: Low
-Regulation: Fair
-Economic: Stable
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -1131,8 +1094,7 @@ Economic: Stable
 
 ## OUTPUT DELIVERY REQUIREMENTS
 
-1. **Always provide THREE outputs in chat:**
-   - Simplified text format (Risk Level + 5 component ratings)
+1. **Always provide Two outputs in chat:**
    - JSON format
    - Detailed analysis (as text)
 
