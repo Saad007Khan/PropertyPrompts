@@ -11,14 +11,6 @@ Location: **City, Country**
 
 ## OUTPUT FORMAT
 
-### TEXT FORMAT
-
-```
-Currency: [Full Currency Name]
-ISO Code: [XXX]
-Symbol: [Currency Symbol]
-Current Exchange Rate: [1 USD = X.XX Local Currency] (as of [Date])
-```
 
 ### JSON FORMAT
 
@@ -67,8 +59,7 @@ Current Exchange Rate: [1 USD = X.XX Local Currency] (as of [Date])
 - Use comma separators for large numbers (e.g., 15,800)
 
 ### 5. Output Format Compliance
-- **ALWAYS** provide both TEXT and JSON formats
-- **Both formats must match exactly**
+- **ALWAYS** jSON formats
 - JSON uses separate fields for exchange_rate and date
 
 ---
@@ -77,13 +68,7 @@ Current Exchange Rate: [1 USD = X.XX Local Currency] (as of [Date])
 
 ### Example 1: Mumbai, India
 
-**TEXT FORMAT:**
-```
-Currency: Indian Rupee
-ISO Code: INR
-Symbol: ₹
-Current Exchange Rate: 1 USD = 83.50 INR (as of Dec 7, 2024)
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -100,13 +85,7 @@ Current Exchange Rate: 1 USD = 83.50 INR (as of Dec 7, 2024)
 
 ### Example 2: Dubai, UAE
 
-**TEXT FORMAT:**
-```
-Currency: United Arab Emirates Dirham
-ISO Code: AED
-Symbol: د.إ (AED)
-Current Exchange Rate: 1 USD = 3.67 AED (as of Dec 7, 2024)
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -123,13 +102,6 @@ Current Exchange Rate: 1 USD = 3.67 AED (as of Dec 7, 2024)
 
 ### Example 3: Singapore
 
-**TEXT FORMAT:**
-```
-Currency: Singapore Dollar
-ISO Code: SGD
-Symbol: S$
-Current Exchange Rate: 1 USD = 1.35 SGD (as of Dec 7, 2024)
-```
 
 **JSON FORMAT:**
 ```json
@@ -146,13 +118,6 @@ Current Exchange Rate: 1 USD = 1.35 SGD (as of Dec 7, 2024)
 
 ### Example 4: Bangkok, Thailand
 
-**TEXT FORMAT:**
-```
-Currency: Thai Baht
-ISO Code: THB
-Symbol: ฿
-Current Exchange Rate: 1 USD = 35.50 THB (as of Dec 7, 2024)
-```
 
 **JSON FORMAT:**
 ```json
@@ -169,13 +134,6 @@ Current Exchange Rate: 1 USD = 35.50 THB (as of Dec 7, 2024)
 
 ### Example 5: Bali, Indonesia
 
-**TEXT FORMAT:**
-```
-Currency: Indonesian Rupiah
-ISO Code: IDR
-Symbol: Rp
-Current Exchange Rate: 1 USD = 15,800 IDR (as of Dec 7, 2024)
-```
 
 **JSON FORMAT:**
 ```json
@@ -192,13 +150,6 @@ Current Exchange Rate: 1 USD = 15,800 IDR (as of Dec 7, 2024)
 
 ### Example 6: Kuala Lumpur, Malaysia
 
-**TEXT FORMAT:**
-```
-Currency: Malaysian Ringgit
-ISO Code: MYR
-Symbol: RM
-Current Exchange Rate: 1 USD = 4.45 MYR (as of Dec 7, 2024)
-```
 
 **JSON FORMAT:**
 ```json
@@ -215,13 +166,6 @@ Current Exchange Rate: 1 USD = 4.45 MYR (as of Dec 7, 2024)
 
 ### Example 7: London, UK
 
-**TEXT FORMAT:**
-```
-Currency: British Pound Sterling
-ISO Code: GBP
-Symbol: £
-Current Exchange Rate: 1 USD = 0.79 GBP (as of Dec 7, 2024)
-```
 
 **JSON FORMAT:**
 ```json
@@ -238,13 +182,7 @@ Current Exchange Rate: 1 USD = 0.79 GBP (as of Dec 7, 2024)
 
 ### Example 8: Paris, France (Euro Zone)
 
-**TEXT FORMAT:**
-```
-Currency: Euro
-ISO Code: EUR
-Symbol: €
-Current Exchange Rate: 1 USD = 0.93 EUR (as of Dec 7, 2024)
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -371,9 +309,7 @@ Some currencies don't have unique symbols and use their ISO code:
 - [ ] Exchange rate in format: 1 USD = X.XX Local Currency
 - [ ] Date of exchange rate provided
 - [ ] Large numbers use comma separators (15,800 not 15800)
-- [ ] **Provided TEXT format output**
 - [ ] **Provided JSON format output**
-- [ ] **Both formats match exactly**
 
 ---
 
