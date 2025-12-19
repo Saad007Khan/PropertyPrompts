@@ -11,13 +11,6 @@ Location: **City, Country**
 
 ## OUTPUT FORMAT
 
-### TEXT FORMAT
-
-```
-Time Zone: [Standard Time Zone Name]
-UTC Offset: [UTC±X] or [UTC±X:XX]
-Daylight Saving Time: [Yes/No] - [Observance details if applicable]
-```
 
 ### JSON FORMAT
 
@@ -63,8 +56,6 @@ Format: UTC±Hours or UTC±Hours:Minutes
 
 **Countries with DST:** If country observes DST, include details:
 ```
-TEXT FORMAT:
-Daylight Saving Time: Yes - Standard Time: UTC+X (Nov-Mar), Daylight Time: UTC+X+1 (Mar-Nov)
 
 JSON FORMAT:
 "daylight_saving_time": "Yes",
@@ -73,8 +64,6 @@ JSON FORMAT:
 
 **Countries without DST:**
 ```
-TEXT FORMAT:
-Daylight Saving Time: No
 
 JSON FORMAT:
 "daylight_saving_time": "No",
@@ -108,10 +97,9 @@ Australia:
 - Some regions within countries may not observe DST (e.g., Arizona in USA)
 
 ### 6. Output Format Compliance
-- **ALWAYS** provide both TEXT and JSON formats
-- **TEXT format:** Field labels on separate lines
+- **ALWAYS** provide JSON formats
 - **JSON format:** Use exact field names (time_zone, utc_offset, daylight_saving_time, dst_details)
-- **Both formats must match exactly** (same content, different structure)
+
 
 ---
 
@@ -119,12 +107,6 @@ Australia:
 
 ### Example 1: Mumbai, India
 
-**TEXT FORMAT:**
-```
-Time Zone: India Standard Time (IST)
-UTC Offset: UTC+5:30
-Daylight Saving Time: No
-```
 
 **JSON FORMAT:**
 ```json
@@ -140,12 +122,7 @@ Daylight Saving Time: No
 
 ### Example 2: Dubai, UAE
 
-**TEXT FORMAT:**
-```
-Time Zone: Gulf Standard Time (GST)
-UTC Offset: UTC+4
-Daylight Saving Time: No
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -161,12 +138,6 @@ Daylight Saving Time: No
 
 ### Example 3: Singapore
 
-**TEXT FORMAT:**
-```
-Time Zone: Singapore Time (SGT)
-UTC Offset: UTC+8
-Daylight Saving Time: No
-```
 
 **JSON FORMAT:**
 ```json
@@ -182,12 +153,7 @@ Daylight Saving Time: No
 
 ### Example 4: Bangkok, Thailand
 
-**TEXT FORMAT:**
-```
-Time Zone: Indochina Time (ICT)
-UTC Offset: UTC+7
-Daylight Saving Time: No
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -203,12 +169,6 @@ Daylight Saving Time: No
 
 ### Example 5: Bali, Indonesia
 
-**TEXT FORMAT:**
-```
-Time Zone: Western Indonesia Time (WIB)
-UTC Offset: UTC+7
-Daylight Saving Time: No
-```
 
 **JSON FORMAT:**
 ```json
@@ -224,12 +184,7 @@ Daylight Saving Time: No
 
 ### Example 6: London, UK (with DST)
 
-**TEXT FORMAT:**
-```
-Time Zone: Greenwich Mean Time (GMT) / British Summer Time (BST)
-UTC Offset: UTC+0 (GMT) / UTC+1 (BST)
-Daylight Saving Time: Yes - Standard Time: UTC+0 (Oct-Mar), British Summer Time: UTC+1 (Mar-Oct)
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -245,12 +200,6 @@ Daylight Saving Time: Yes - Standard Time: UTC+0 (Oct-Mar), British Summer Time:
 
 ### Example 7: New York, USA (with DST)
 
-**TEXT FORMAT:**
-```
-Time Zone: Eastern Standard Time (EST) / Eastern Daylight Time (EDT)
-UTC Offset: UTC-5 (EST) / UTC-4 (EDT)
-Daylight Saving Time: Yes - Standard Time: UTC-5 (Nov-Mar), Daylight Time: UTC-4 (Mar-Nov)
-```
 
 **JSON FORMAT:**
 ```json
@@ -266,12 +215,6 @@ Daylight Saving Time: Yes - Standard Time: UTC-5 (Nov-Mar), Daylight Time: UTC-4
 
 ### Example 8: Sydney, Australia (with DST)
 
-**TEXT FORMAT:**
-```
-Time Zone: Australian Eastern Standard Time (AEST) / Australian Eastern Daylight Time (AEDT)
-UTC Offset: UTC+10 (AEST) / UTC+11 (AEDT)
-Daylight Saving Time: Yes - Standard Time: UTC+10 (Apr-Oct), Daylight Time: UTC+11 (Oct-Apr)
-```
 
 **JSON FORMAT:**
 ```json
@@ -429,9 +372,8 @@ Daylight Saving Time: No - Queensland does not observe DST
 - [ ] Daylight saving time status indicated (Yes/No)
 - [ ] If DST observed: Details provided (standard and daylight offsets with months)
 - [ ] If multiple zones in country: Specific zone for city identified
-- [ ] **Provided TEXT format output**
 - [ ] **Provided JSON format output**
-- [ ] **Both formats match exactly** (same content, different structure)
+
 
 ---
 
