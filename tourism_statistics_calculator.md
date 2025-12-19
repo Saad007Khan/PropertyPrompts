@@ -174,15 +174,8 @@ Annual tourism-related revenue in local currency
 
 ## OUTPUT FORMAT
 
-**Format 1 - Plain Text:**
-```
-Annual Visitors: X.XM or XXXK
-Foreign Tourists: X.XM or XXXK
-Accommodations: X,XXX
-Tourism Revenue: ₹X,XXXCr or AED XXBn
-```
 
-**Format 2 - JSON:**
+**Format  - JSON:**
 ```json
 {
   "annual_visitors": "X.XM",
@@ -331,7 +324,7 @@ Note: Part of Goa's 8.5M total visitors
 - [ ] All four metrics researched
 - [ ] Data year is same for all metrics
 - [ ] Formatting matches examples (M, K, Cr, Bn, comma separators)
-- [ ] Both text and JSON outputs provided
+- [ ] JSON output provided
 
 ---
 
