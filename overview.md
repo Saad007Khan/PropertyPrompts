@@ -13,13 +13,6 @@ Location: **City/Neighborhood/Area, State/Region, Country**
 
 ## OUTPUT FORMAT
 
-### TEXT FORMAT
-
-```
-Overview
-
-[Single paragraph containing exactly 6 sentences, maximum 120 words total, written in natural conversational human language]
-```
 
 ### JSON FORMAT
 
@@ -201,9 +194,8 @@ Before finalizing output, verify:
 - [ ] No source citations in output
 
 **Format:**
-- [ ] **Provided TEXT format output**
 - [ ] **Provided JSON format output**
-- [ ] **Both formats match exactly**
+
 
 ---
 
@@ -211,12 +203,6 @@ Before finalizing output, verify:
 
 ### Example 1: Anjuna, North Goa, India
 
-**TEXT FORMAT:**
-```
-Overview
-
-Anjuna is a coastal village in North Goa, India, with a population of around 10,000 residents. The beach stretches 2km and is famous for its Wednesday flea market and trance music culture. The area attracts a mix of long-term expats, digital nomads, and seasonal tourists, creating an international community. Visitors and residents enjoy beach clubs, yoga studios, cafes, and the active nightlife scene. The vibe is relaxed and bohemian with a strong creative and alternative culture.
-```
 
 **JSON FORMAT:**
 ```json
@@ -238,13 +224,7 @@ Anjuna is a coastal village in North Goa, India, with a population of around 10,
 
 ### Example 2: Baradesh, India
 
-**TEXT FORMAT:**
-```
-Overview
-Historically known as 'Bara-desh' (twelve lands), Bardez was a crucial territory of Goa, famed for its fertile lands. It came under Portuguese rule in the 16th century, which left an indelible mark on its architecture, culture, and cuisine, evident in the charming churches and colonial-era mansions that dot the landscape. In the 1960s and 70s, it became a haven for the global hippie movement, establishing places like Anjuna as counter-culture icons. This history has shaped Bardez into a unique melting pot, blending traditional Goan heritage with a cosmopolitan, modern vibe, which is central to its appeal today.
 
-
-```
 
 **JSON FORMAT:**
 ```json
@@ -340,8 +320,7 @@ Good: "Visitors and residents enjoy beach clubs, yoga studios, cafes, and the ac
 
 ## OUTPUT DELIVERY REQUIREMENTS
 
-1. **Always provide TWO outputs:**
-   - TEXT format (heading + paragraph)
+1. **Always provide output:**
    - JSON format (single field)
 
 2. **No additional content:**
@@ -351,8 +330,6 @@ Good: "Visitors and residents enjoy beach clubs, yoga studios, cafes, and the ac
    - Just the two formatted outputs
 
 3. **Exact format match:**
-   - Same text in both formats
-   - Heading "Overview" in TEXT format only
    - JSON key is "overview"
 
 ---
