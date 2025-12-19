@@ -140,15 +140,7 @@ State official currency ISO code (INR, AED, SGD, THB, USD, etc.)
 
 **IMPORTANT: Provide ONE-WORD outputs only for each metric.**
 
-**Format 1 - Plain Text:**
-```
-Risk Level: [VeryLowRisk/LowRisk/ModerateRisk/HighRisk/VeryHighRisk]
-Market Type: [EmergingMarket/GrowingMarket/MatureMarket/SaturatedMarket/DecliningMarket]
-Best Season: [Winter/Spring/Summer/Autumn/Monsoon]
-Currency: [INR/AED/SGD/THB/USD/etc]
-```
-
-**Format 2 - JSON:**
+**JSON:**
 ```json
 {
   "risk_level": "[VeryLowRisk/LowRisk/ModerateRisk/HighRisk/VeryHighRisk]",
@@ -173,7 +165,7 @@ Currency: [INR/AED/SGD/THB/USD/etc]
 7. Write in natural human language, avoid AI patterns (no "notably", "primarily", "overall")
 8. If data unavailable, write "Data not available"
 9. Never mention sources in output
-10. Always provide BOTH text and JSON formats
+10. Always provide JSON format
 11. Be concise and factual
 
 ---
@@ -230,14 +222,6 @@ Currency: [INR/AED/SGD/THB/USD/etc]
 ---
 
 ## EXAMPLE OUTPUT
-
-**Plain Text:**
-```
-Risk Level: LowRisk
-Market Type: GrowingMarket
-Best Season: Winter
-Currency: INR
-```
 
 **JSON:**
 ```json
