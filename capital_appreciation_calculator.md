@@ -413,12 +413,6 @@ Average: 8.2% ± 0.4% (7.8% - 8.5%)
 
 ### SIMPLIFIED OUTPUT (Required Format)
 
-**Text Format:**
-```
-Capital Appreciation: X.X%
-Confidence: High/Medium/Low
-```
-
 **JSON Format:**
 ```json
 {
@@ -462,9 +456,8 @@ Comparative Performance: (if available)
 
 ## OUTPUT DELIVERY REQUIREMENTS
 
-1. **Always provide THREE outputs in chat:**
-   - Simplified text format (Capital Appreciation + Confidence)
-   - JSON format
+1. **Always provide TWO outputs in chat:**
+   - Simplified JSON format (Capital Appreciation + Confidence)
    - Detailed analysis (as text)
 
 2. **No file creation required**
@@ -473,9 +466,6 @@ Comparative Performance: (if available)
 
 **Example Chat Output:**
 ```
-Capital Appreciation: 8.2%
-Confidence: High
-
 {
   "capital_appreciation": "8.2%",
   "confidence": "High"
@@ -592,10 +582,10 @@ Bangalore: 8.2% vs India National Average: 6.5%
 - Provide context for negative performance
 
 ### 12. Output Format Compliance
-- **ALWAYS** provide all three outputs in chat (simplified text, JSON, detailed analysis)
+- **ALWAYS** provide both outputs in chat (simplified JSON, detailed analysis)
 - **NO file creation required**
-- Simplified output: one line appreciation, one line confidence
-- Use exact format: "Capital Appreciation: X.X%" and "Confidence: High/Medium/Low"
+- Simplified output: JSON format only
+- Use exact format: "capital_appreciation": "X.X%" and "confidence": "High/Medium/Low"
 
 ### 13. Discrepancy Check (Cross-Source Validation)
 - **MANDATORY**: If the difference between Source A and Source B is greater than 3 percentage points (e.g., 2% vs 5%), you **MUST** mention this divergence in the 'Detailed Analysis' under 'Investment Notes'
@@ -649,8 +639,7 @@ Bangalore: 8.2% vs India National Average: 6.5%
 - [ ] Provided investment context and market drivers
 - [ ] Included segment analysis if data available
 - [ ] Currency specified with USD equivalent if applicable
-- [ ] **Provided simplified text output in chat**
-- [ ] **Provided JSON format output in chat**
+- [ ] **Provided simplified JSON output in chat**
 - [ ] **Provided detailed analysis in chat as text**
 
 ---
@@ -685,9 +674,6 @@ Bangalore: 8.2% vs India National Average: 6.5%
 **Example: Bangalore Capital Appreciation with Source Discrepancy**
 
 ```
-Capital Appreciation: 7.8%
-Confidence: Medium
-
 {
   "capital_appreciation": "7.8%",
   "confidence": "Medium"
