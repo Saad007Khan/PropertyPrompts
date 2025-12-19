@@ -17,25 +17,6 @@ Provide accurate, data-backed climate and environmental information using only v
 
 ## OUTPUT FORMAT
 
-### TEXT FORMAT
-
-```
-Climate
-[Climate classification type]
-
-Season at a Glance
-[Seasonal pattern description with month ranges]
-
-Rainfall
-[Annual rainfall amount with unit]
-
-Temperature
-[Temperature range description]
-
-Air Quality
-[AQI value and quality description]
-```
-
 ### JSON FORMAT
 
 ```json
@@ -390,8 +371,7 @@ Example:
 - Keep description to 1-2 sentences
 
 ### 5. Output Format Compliance
-- **ALWAYS** provide both TEXT and JSON formats
-- **TEXT format**: Must follow exact structure with field labels on separate lines
+- **ALWAYS** provide JSON format only
 - **JSON format**: Use exact field names as specified
 - **NO** extra commentary, sources line, or additional fields
 - Keep each content line to 1-2 short sentences (concise)
@@ -488,24 +468,6 @@ Example:
 
 ### Example 1: Anjuna, Goa, India
 
-**TEXT FORMAT:**
-```
-Climate
-Tropical monsoon climate
-
-Season at a Glance
-Anjuna has a tropical monsoon climate with a dry season from November to March and a monsoon season from June to September.
-
-Rainfall
-Anjuna receives an average annual rainfall of approximately 3000 mm.
-
-Temperature
-The average temperature in Anjuna ranges between 25°C and 30°C.
-
-Air Quality
-The average annual Air Quality Index (AQI) in Anjuna is approximately 45, indicating good air quality.
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -521,24 +483,6 @@ The average annual Air Quality Index (AQI) in Anjuna is approximately 45, indica
 
 ### Example 2: Dubai, UAE
 
-**TEXT FORMAT:**
-```
-Climate
-Hot desert climate
-
-Season at a Glance
-Dubai has a hot desert climate with extremely hot summers from May to September and mild winters from November to March.
-
-Rainfall
-Dubai receives an average annual rainfall of approximately 100 mm.
-
-Temperature
-The average temperature in Dubai ranges between 20°C and 35°C.
-
-Air Quality
-The average annual Air Quality Index (AQI) in Dubai is approximately 85, indicating moderate air quality.
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -553,24 +497,6 @@ The average annual Air Quality Index (AQI) in Dubai is approximately 85, indicat
 ---
 
 ### Example 3: With Missing Data
-
-**TEXT FORMAT:**
-```
-Climate
-Temperate oceanic climate
-
-Season at a Glance
-Not verifiable from preferred climate sources.
-
-Rainfall
-The city receives an average annual rainfall of approximately 1200 mm.
-
-Temperature
-The average temperature ranges between 8°C and 18°C.
-
-Air Quality
-Not verifiable from preferred air quality sources.
-```
 
 **JSON FORMAT:**
 ```json
@@ -600,9 +526,7 @@ Not verifiable from preferred air quality sources.
 - [ ] AQI rounded to nearest whole number
 - [ ] Each content line is 1-2 sentences (concise)
 - [ ] Used "Not verifiable" phrase for any unverifiable data
-- [ ] **Provided TEXT format output**
-- [ ] **Provided JSON format output**
-- [ ] **Both formats match exactly** (same content, different structure)
+- [ ] **Provided JSON format output only**
 - [ ] **NO extra commentary or sources line**
 - [ ] **NO invented or estimated values**
 
@@ -610,15 +534,14 @@ Not verifiable from preferred air quality sources.
 
 ## OUTPUT DELIVERY REQUIREMENTS
 
-1. **Always provide TWO outputs:**
-   - TEXT format (field labels on separate lines)
+1. **Always provide JSON format only:**
    - JSON format (structured data)
 
 2. **No additional content:**
    - No sources listing
    - No data collection notes
    - No confidence statements
-   - Just the formatted outputs
+   - Just the formatted output
 
 3. **Exact field order:**
    - Climate
