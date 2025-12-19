@@ -30,12 +30,6 @@ Based on typical properties in the location (2-3 bedroom apartments/villas, mid-
 
 ## OUTPUT FORMAT
 
-### TEXT FORMAT
-
-```
-Long-Term Rental Yield: X.X%
-Short-Term Rental Yield: X.X%
-```
 
 ### JSON FORMAT
 
@@ -48,9 +42,7 @@ Short-Term Rental Yield: X.X%
 
 **If insufficient data for either type:**
 ```
-Long-Term Rental Yield: X.X%
-Short-Term Rental Yield: Data not available
-```
+
 
 ```json
 {
@@ -348,9 +340,8 @@ Short-Term Rental Yield = (Annual Short-Term Rent / Property Price) × 100
 - Note currency internally (not in output)
 
 ### 9. Output Format Compliance
-- **ALWAYS** provide both TEXT and JSON formats
+- **ALWAYS** provide JSON format
 - **ALWAYS** include both long-term and short-term yields
-- **Both formats must match exactly**
 - Two lines for rental yields
 - No explanations, no sources, no additional commentary in output
 
@@ -360,11 +351,7 @@ Short-Term Rental Yield = (Annual Short-Term Rent / Property Price) × 100
 
 ### Example 1: North Goa, India
 
-**TEXT FORMAT:**
-```
-Long-Term Rental Yield: 4.5%
-Short-Term Rental Yield: 8.2%
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -394,11 +381,8 @@ Short-Term Rental Yield: 8.2%
 
 ### Example 2: Bangalore (Whitefield), India
 
-**TEXT FORMAT:**
-```
-Long-Term Rental Yield: 3.2%
-Short-Term Rental Yield: 5.8%
-```
+
+
 
 **JSON FORMAT:**
 ```json
@@ -427,11 +411,6 @@ Short-Term Rental Yield: 5.8%
 
 ### Example 3: Dubai Marina, UAE
 
-**TEXT FORMAT:**
-```
-Long-Term Rental Yield: 6.5%
-Short-Term Rental Yield: 9.5%
-```
 
 **JSON FORMAT:**
 ```json
@@ -460,11 +439,7 @@ Short-Term Rental Yield: 9.5%
 
 ### Example 4: Singapore City Center
 
-**TEXT FORMAT:**
-```
-Long-Term Rental Yield: 3.0%
-Short-Term Rental Yield: 4.8%
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -492,11 +467,7 @@ Short-Term Rental Yield: 4.8%
 
 ### Example 5: Ubud, Bali, Indonesia
 
-**TEXT FORMAT:**
-```
-Long-Term Rental Yield: 6.8%
-Short-Term Rental Yield: 10.5%
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -526,11 +497,7 @@ Short-Term Rental Yield: 10.5%
 
 ### Example 6: Coorg (Madikeri), Karnataka, India
 
-**TEXT FORMAT:**
-```
-Long-Term Rental Yield: 5.2%
-Short-Term Rental Yield: 8.5%
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -559,11 +526,7 @@ Short-Term Rental Yield: 8.5%
 
 ### Example 7: Bangkok, Thailand
 
-**TEXT FORMAT:**
-```
-Long-Term Rental Yield: 4.8%
-Short-Term Rental Yield: 7.5%
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -592,11 +555,7 @@ Short-Term Rental Yield: 7.5%
 
 ### Example 8: High Variance Location
 
-**TEXT FORMAT:**
-```
-Long-Term Rental Yield: 5.5% - 7.0%
-Short-Term Rental Yield: 8.5% - 11.0%
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -615,11 +574,6 @@ Short-Term Rental Yield: 8.5% - 11.0%
 
 ### Example 9: Insufficient Short-Term Data
 
-**TEXT FORMAT:**
-```
-Long-Term Rental Yield: 4.2%
-Short-Term Rental Yield: Data not available
-```
 
 **JSON FORMAT:**
 ```json
@@ -922,9 +876,7 @@ Short-Term Rental Yield: Data not available
 - [ ] Variance checked (report range if >20%)
 - [ ] Conservative approach applied when uncertain
 - [ ] STR legal restrictions checked and noted if applicable
-- [ ] **Provided TEXT format output with BOTH yields**
 - [ ] **Provided JSON format output with BOTH yields**
-- [ ] **Both formats match exactly**
 - [ ] **If either yield unavailable, stated "Data not available"**
 
 ---
@@ -1009,7 +961,7 @@ Estimated Net Yield: 3.5% - 5.5% (after all operating expenses)
 6. **STR Occupancy** - Use realistic occupancy rates (50-80%) based on location type
 7. **Conservative Approach** - When uncertain, estimate lower for both types
 8. **STR Legal Check** - Verify if short-term rentals are legally permitted
-9. **Output Format** - Strictly two formats (TEXT and JSON), two yield numbers each
+9. **Output Format** - Strictly one formats (JSON), two yield numbers each
 10. **Data Recency** - Must be within 12 months for both types
 11. **Data Unavailable** - If cannot calculate either yield reliably, state "Data not available"
 
@@ -1057,4 +1009,4 @@ AirDNA provides:
 1. **Long-Term Rental Yield** (12-month lease basis)
 2. **Short-Term Rental Yield** (nightly/STR basis after platform fees)
 
-**In both TEXT and JSON formats as specified above.**
+**In JSON formats as specified above.**
