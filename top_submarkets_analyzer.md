@@ -135,22 +135,8 @@ List sub-markets from highest to lowest ROI
 
 ## OUTPUT FORMAT
 
-**Format 1 - Plain Text:**
-```
-Top Sub-Markets
 
-[Sub-market Name 1]                    [ROI]% ROI
-[Description sentence 1. Description sentence 2. Description sentence 3.]
-Avg. Price: ₹[X,XX,XX,XXX]            [XXXX] properties
-
-[Sub-market Name 2]                    [ROI]% ROI
-[Description sentence 1. Description sentence 2. Description sentence 3.]
-Avg. Price: ₹[X,XX,XX,XXX]            [XXXX] properties
-
-[Continue for 4-6 sub-markets...]
-```
-
-**Format 2 - JSON:**
+**Format  - JSON:**
 ```json
 {
   "top_submarkets": [
@@ -178,26 +164,6 @@ Avg. Price: ₹[X,XX,XX,XXX]            [XXXX] properties
 
 ### Example: North Goa, India
 
-**Plain Text:**
-```
-Top Sub-Markets
-
-Calangute & Baga                       16.5% ROI
-The commercial and tourist core. High energy, bustling with hotels, restaurants, and nightlife. Prime for short-term rental properties.
-Avg. Price: ₹2,10,00,000              7500 properties
-
-Anjuna & Vagator                       15.0% ROI
-Bohemian and trendy hub known for its flea markets, beach clubs, and music festivals. Attracts a younger, affluent crowd and long-stay tourists.
-Avg. Price: ₹1,90,00,000              6000 properties
-
-Candolim & Sinquerim                   14.0% ROI
-An upscale and relatively quieter stretch with luxury hotels, fine-dining, and high-end villas. Popular with families and luxury travelers.
-Avg. Price: ₹2,50,00,000              4500 properties
-
-Mapusa & Inland Villages               11.5% ROI
-The administrative and commercial town of Bardez, along with quieter inland villages. Offers more affordable residential options and long-term rentals.
-Avg. Price: ₹90,00,000                10500 properties
-```
 
 **JSON:**
 ```json
@@ -235,28 +201,6 @@ Avg. Price: ₹90,00,000                10500 properties
 }
 ```
 
-### Example: Coorg, Karnataka, India
-
-**Plain Text:**
-```
-Top Sub-Markets
-
-Madikeri Town                          12.0% ROI
-The district headquarters and commercial center. Mix of hotels, homestays, and residential properties. Good for both tourists and long-term residents.
-Avg. Price: ₹75,00,000                2800 properties
-
-Kushalnagar Area                       11.5% ROI
-Gateway town with Tibetan settlement and Namdroling Monastery. Strong tourist traffic from highway route. Budget to mid-range properties dominate.
-Avg. Price: ₹60,00,000                1500 properties
-
-Coffee Estate Properties               10.5% ROI
-Standalone homestays and villas within working coffee plantations. Premium pricing for authentic plantation experience. Popular with nature seekers.
-Avg. Price: ₹1,20,00,000              800 properties
-
-Virajpet & Surrounds                   9.5% ROI
-Agricultural town with developing homestay sector. More affordable entry point. Growing weekend tourist interest from Bangalore and Mysore.
-Avg. Price: ₹50,00,000                1200 properties
-```
 
 ---
 
@@ -270,7 +214,7 @@ Avg. Price: ₹50,00,000                1200 properties
 6. **Use Indian number format** - ₹2,10,00,000 not ₹21,00,000 or ₹2.1Cr
 7. **Property count no commas** - 7500 not 7,500
 8. **ROI realistic** - 8-18% range for most markets, no wild claims
-9. **Both outputs required** - Text and JSON formats
+9. **outputs required** -  JSON formats
 10. **Natural language** - Write like a human analyst
 
 ---
@@ -286,7 +230,7 @@ Avg. Price: ₹50,00,000                1200 properties
 - [ ] Property counts are whole numbers without commas
 - [ ] ROI calculations are realistic (8-18% range)
 - [ ] Each sub-market has distinct character
-- [ ] Both text and JSON outputs provided
+- [ ] JSON output provided
 - [ ] All data verified from property portals/reports
 
 ---
