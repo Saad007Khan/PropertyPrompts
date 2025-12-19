@@ -104,18 +104,7 @@ Example: "Beach culture, Portuguese heritage, and dining scene attract lifestyle
 
 ## OUTPUT FORMAT
 
-**Format 1 - Plain Text:**
-```
-Investment Highlights:
-• [Point 1]
-• [Point 2]
-• [Point 3]
-• [Point 4]
-• [Point 5]
-• [Point 6]
-```
-
-**Format 2 - JSON:**
+**JSON:**
 ```json
 {
   "investment_highlights": [
@@ -135,17 +124,6 @@ Investment Highlights:
 
 ### Example 1: North Goa, India
 
-**Plain Text:**
-```
-Investment Highlights:
-• Tourism economy generates ₹8,500Cr annually, providing stable foundation for property values.
-• Year-round demand for short-term and long-term rentals ensures 70% average occupancy.
-• Coastal Regulation Zone limits new beachfront development, driving 15-20% annual appreciation.
-• International buyers and wealthy Indians from metros create strong villa demand.
-• Mopa International Airport enhances connectivity, reducing travel time from major cities.
-• Beach lifestyle, Portuguese heritage, and dining culture attract lifestyle-focused investors.
-```
-
 **JSON:**
 ```json
 {
@@ -162,17 +140,6 @@ Investment Highlights:
 
 ### Example 2: Coorg, Karnataka, India
 
-**Plain Text:**
-```
-Investment Highlights:
-• 1.2M annual visitors create consistent demand for homestays and vacation rentals.
-• Weekend tourism from Bangalore (240km) supports 58% average occupancy rates.
-• Limited flat land in hilly terrain restricts supply, driving property appreciation.
-• Bangalore professionals seek second homes for retirement and weekend escapes.
-• New highway reduces Bangalore travel time to 4 hours, improving accessibility.
-• Coffee estates, misty hills, and cool climate attract nature-focused buyers.
-```
-
 **JSON:**
 ```json
 {
@@ -188,17 +155,6 @@ Investment Highlights:
 ```
 
 ### Example 3: Dubai Marina, UAE
-
-**Plain Text:**
-```
-Investment Highlights:
-• 17.2M annual visitors to Dubai create strong short-term rental market.
-• Tax-free rental income and 75% average occupancy deliver 6-8% net yields.
-• Waterfront location and marina views maintain premium pricing power.
-• International investors from Europe, Asia, and Middle East ensure liquid market.
-• Metro connectivity and proximity to business districts support long-term demand.
-• Luxury amenities, dining, and beach lifestyle attract high-income tenants.
-```
 
 **JSON:**
 ```json
@@ -225,7 +181,7 @@ Investment Highlights:
 5. **No marketing fluff** - Stick to verifiable facts
 6. **No LLM patterns** - Avoid "moreover", "notably", "robust", etc.
 7. **Investment focus** - Each point must relate to real estate investment rationale
-8. **Both outputs required** - Always provide text and JSON formats
+8. **JSON output required** - Always provide JSON format
 9. **Use present tense** - "Airport enhances connectivity" not "will enhance"
 10. **Natural language** - Write like a human analyst, not an AI
 
@@ -239,7 +195,7 @@ Investment Highlights:
 - [ ] No LLM language (robust, notably, strategic, etc.)
 - [ ] Each point covers different investment aspect
 - [ ] Location-specific details included
-- [ ] Both text and JSON formats provided
+- [ ] JSON format provided
 - [ ] All facts are verifiable from research
 - [ ] No generic/vague statements
 - [ ] Active voice used throughout
@@ -250,28 +206,34 @@ Investment Highlights:
 
 ### Limited Data Available
 Still create 6 points but note limitations:
-```
-Investment Highlights:
-• Emerging tourism destination with 150K annual visitors.
-• Rental market data limited; estimated 45-50% occupancy for new properties.
-• Proximity to [major city] creates second-home demand.
-• Government master plan targets infrastructure improvements by 2026.
-• Undeveloped land offers entry pricing below ₹2,000/sq ft.
-• Natural beauty and cultural sites attract weekend tourists.
-Note: Limited market data for emerging destination.
+```json
+{
+  "investment_highlights": [
+    "Emerging tourism destination with 150K annual visitors.",
+    "Rental market data limited; estimated 45-50% occupancy for new properties.",
+    "Proximity to [major city] creates second-home demand.",
+    "Government master plan targets infrastructure improvements by 2026.",
+    "Undeveloped land offers entry pricing below ₹2,000/sq ft.",
+    "Natural beauty and cultural sites attract weekend tourists."
+  ],
+  "note": "Limited market data for emerging destination."
+}
 ```
 
 ### Negative Investment Case
 If location has weak fundamentals, be honest but balanced:
-```
-Investment Highlights:
-• 250K annual visitors provide baseline rental demand.
-• Long-term residential demand from local employment.
-• Property prices remain stable at ₹3,500-4,500/sq ft range.
-• Highway connectivity to [city] completed in 2022.
-• Local government plans tourism infrastructure upgrades.
-• Lower entry cost compared to nearby [competitor destination].
-Note: Moderate growth market; suitable for conservative investors.
+```json
+{
+  "investment_highlights": [
+    "250K annual visitors provide baseline rental demand.",
+    "Long-term residential demand from local employment.",
+    "Property prices remain stable at ₹3,500-4,500/sq ft range.",
+    "Highway connectivity to [city] completed in 2022.",
+    "Local government plans tourism infrastructure upgrades.",
+    "Lower entry cost compared to nearby [competitor destination]."
+  ],
+  "note": "Moderate growth market; suitable for conservative investors."
+}
 ```
 
 ---
