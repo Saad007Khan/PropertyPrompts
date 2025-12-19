@@ -149,30 +149,7 @@ Examples:
 
 ## OUTPUT FORMAT
 
-**Format 1 - Plain Text:**
-```
-Why [Location] is Popular
-
-[Main Reason 1 Title]
-[50-70 word paragraph]
-
-[Main Reason 2 Title]
-[50-70 word paragraph]
-
-Key Highlight 1
-[10-15 word sentence]
-
-Key Highlight 2
-[10-15 word sentence]
-
-Key Highlight 3
-[10-15 word sentence]
-
-Key Highlight 4
-[10-15 word sentence]
-```
-
-**Format 2 - JSON:**
+**JSON:**
 ```json
 {
   "location": "[Location Name]",
@@ -201,29 +178,6 @@ Key Highlight 4
 
 ### Example: Bardez, North Goa, India
 
-**Plain Text:**
-```
-Why Bardez is Popular
-
-Unmatched Tourism Magnetism
-Bardez is synonymous with Goa tourism. Its world-renowned beaches, legendary nightlife, diverse culinary scene, and cultural landmarks create an irresistible draw for millions of visitors annually, ensuring a constant demand for accommodation.
-
-Lucrative Investment Hub
-The combination of high rental yields from tourism and strong capital appreciation from land scarcity makes Bardez a top-tier real estate investment location. It attracts a wide spectrum of investors, from individuals buying a second home to large institutional funds.
-
-Key Highlight 1
-The highest concentration of Goa's most famous beaches and attractions.
-
-Key Highlight 2
-A unique fusion of Portuguese colonial charm and modern bohemian culture.
-
-Key Highlight 3
-Unparalleled variety in entertainment, from beach shacks to luxury nightclubs.
-
-Key Highlight 4
-A mature market with a proven track record of growth and resilience.
-```
-
 **JSON:**
 ```json
 {
@@ -249,52 +203,52 @@ A mature market with a proven track record of growth and resilience.
 
 ### Example: Coorg, Karnataka, India
 
-**Plain Text:**
-```
-Why Coorg is Popular
-
-Coffee Country Escape
-Coorg combines misty hill station beauty with working coffee plantations that offer authentic homestay experiences. The 1.2M annual visitors seek nature, cool climate, and cultural immersion in this Western Ghats region, creating steady accommodation demand year-round.
-
-Weekend Investment Sweet Spot
-Located 240km from Bangalore, Coorg attracts IT professionals and retirees seeking second homes and weekend retreats. Limited flat land in hilly terrain restricts supply, driving 10-14% annual appreciation while delivering 9-12% rental yields from domestic tourism.
-
-Key Highlight 1
-India's coffee capital with 40% of national production and estate stays.
-
-Key Highlight 2
-Cool climate, waterfalls, and rainforests provide year-round appeal.
-
-Key Highlight 3
-Strong weekend tourism from Bangalore ensures consistent occupancy rates.
-
-Key Highlight 4
-Emerging market with growing infrastructure and rising property values.
+**JSON:**
+```json
+{
+  "location": "Coorg, Karnataka, India",
+  "popularity_analysis": {
+    "main_reason_1": {
+      "title": "Coffee Country Escape",
+      "description": "Coorg combines misty hill station beauty with working coffee plantations that offer authentic homestay experiences. The 1.2M annual visitors seek nature, cool climate, and cultural immersion in this Western Ghats region, creating steady accommodation demand year-round."
+    },
+    "main_reason_2": {
+      "title": "Weekend Investment Sweet Spot",
+      "description": "Located 240km from Bangalore, Coorg attracts IT professionals and retirees seeking second homes and weekend retreats. Limited flat land in hilly terrain restricts supply, driving 10-14% annual appreciation while delivering 9-12% rental yields from domestic tourism."
+    },
+    "key_highlights": [
+      "India's coffee capital with 40% of national production and estate stays.",
+      "Cool climate, waterfalls, and rainforests provide year-round appeal.",
+      "Strong weekend tourism from Bangalore ensures consistent occupancy rates.",
+      "Emerging market with growing infrastructure and rising property values."
+    ]
+  }
+}
 ```
 
 ### Example: Candolim, North Goa, India
 
-**Plain Text:**
-```
-Why Candolim is Popular
-
-Upscale Beach Haven
-Candolim offers a quieter alternative to Calangute and Baga while maintaining proximity to nightlife and restaurants. Its 1.5km beach attracts families, luxury travelers, and long-stay tourists seeking a more relaxed Goa experience with upscale amenities.
-
-Premium Investment Returns
-Higher property prices (₹2.5 Cr average) are offset by 12-15% rental yields from luxury villa and high-end apartment rentals. The area attracts HNI buyers and charter tourists willing to pay premium rates for quality accommodation and peaceful surroundings.
-
-Key Highlight 1
-Walking distance to Fort Aguada and beach shacks without the crowd chaos.
-
-Key Highlight 2
-Higher concentration of 4-star and 5-star hotels than neighboring areas.
-
-Key Highlight 3
-Popular with Russian and European tourists seeking long-term winter stays.
-
-Key Highlight 4
-Stable luxury market with consistent demand and limited new supply.
+**JSON:**
+```json
+{
+  "location": "Candolim, North Goa, India",
+  "popularity_analysis": {
+    "main_reason_1": {
+      "title": "Upscale Beach Haven",
+      "description": "Candolim offers a quieter alternative to Calangute and Baga while maintaining proximity to nightlife and restaurants. Its 1.5km beach attracts families, luxury travelers, and long-stay tourists seeking a more relaxed Goa experience with upscale amenities."
+    },
+    "main_reason_2": {
+      "title": "Premium Investment Returns",
+      "description": "Higher property prices (₹2.5 Cr average) are offset by 12-15% rental yields from luxury villa and high-end apartment rentals. The area attracts HNI buyers and charter tourists willing to pay premium rates for quality accommodation and peaceful surroundings."
+    },
+    "key_highlights": [
+      "Walking distance to Fort Aguada and beach shacks without the crowd chaos.",
+      "Higher concentration of 4-star and 5-star hotels than neighboring areas.",
+      "Popular with Russian and European tourists seeking long-term winter stays.",
+      "Stable luxury market with consistent demand and limited new supply."
+    ]
+  }
+}
 ```
 
 ---
@@ -308,7 +262,7 @@ Stable luxury market with consistent demand and limited new supply.
 5. **No LLM language** - Write naturally and specifically
 6. **Include data** - Numbers, percentages, distances
 7. **Name specific features** - Beaches, landmarks, neighborhoods
-8. **Both outputs required** - Text and JSON formats
+8. **JSON output required** - Provide JSON format
 9. **Location-specific** - Avoid generic statements
 10. **Natural writing** - Human analyst tone, not marketing copy
 
@@ -324,7 +278,7 @@ Stable luxury market with consistent demand and limited new supply.
 - [ ] Numbers/data included (visitors, yields, appreciation)
 - [ ] No LLM language used
 - [ ] Natural, human-like writing
-- [ ] Both text and JSON outputs provided
+- [ ] JSON output provided
 - [ ] All facts verifiable from research
 
 ---
@@ -333,38 +287,50 @@ Stable luxury market with consistent demand and limited new supply.
 
 ### Emerging/Lesser-Known Destination
 Still highlight unique appeal:
-```
-Why [Location] is Popular
-
-Undiscovered Gem Status
-[Location] attracts travelers seeking authentic experiences away from tourist crowds. Its [specific features] and proximity to [major city] create growing interest from domestic tourists and second-home buyers seeking value.
-
-Early-Stage Investment Opportunity
-With property prices 40-60% below [established destination], [location] offers entry-level investment potential. Recent [infrastructure project] and [tourism development] suggest strong appreciation ahead as the market matures.
-
-Key Highlight 1
-[Distance] from [major city] makes it accessible for weekend trips.
-
-Key Highlight 2
-Authentic [cultural element] without commercial tourism development.
-
-Key Highlight 3
-Lower property prices attract first-time buyers and budget investors.
-
-Key Highlight 4
-Government master plan targets major tourism infrastructure by [year].
+```json
+{
+  "location": "[Location]",
+  "popularity_analysis": {
+    "main_reason_1": {
+      "title": "Undiscovered Gem Status",
+      "description": "[Location] attracts travelers seeking authentic experiences away from tourist crowds. Its [specific features] and proximity to [major city] create growing interest from domestic tourists and second-home buyers seeking value."
+    },
+    "main_reason_2": {
+      "title": "Early-Stage Investment Opportunity",
+      "description": "With property prices 40-60% below [established destination], [location] offers entry-level investment potential. Recent [infrastructure project] and [tourism development] suggest strong appreciation ahead as the market matures."
+    },
+    "key_highlights": [
+      "[Distance] from [major city] makes it accessible for weekend trips.",
+      "Authentic [cultural element] without commercial tourism development.",
+      "Lower property prices attract first-time buyers and budget investors.",
+      "Government master plan targets major tourism infrastructure by [year]."
+    ]
+  }
+}
 ```
 
 ### Urban/City Location (Non-Tourism)
 Focus on different strengths:
-```
-Why [Location] is Popular
-
-Business and Lifestyle Hub
-[Location] combines [employment sector] opportunities with [lifestyle elements]. Its [specific features] and cosmopolitan culture attract professionals, expats, and families, creating strong residential and corporate rental demand.
-
-Stable Long-Term Investment
-Unlike seasonal tourist destinations, [location] delivers consistent year-round occupancy of 75-85%. IT sector growth, infrastructure development, and limited land supply drive steady 8-12% appreciation with minimal volatility.
+```json
+{
+  "location": "[Location]",
+  "popularity_analysis": {
+    "main_reason_1": {
+      "title": "Business and Lifestyle Hub",
+      "description": "[Location] combines [employment sector] opportunities with [lifestyle elements]. Its [specific features] and cosmopolitan culture attract professionals, expats, and families, creating strong residential and corporate rental demand."
+    },
+    "main_reason_2": {
+      "title": "Stable Long-Term Investment",
+      "description": "Unlike seasonal tourist destinations, [location] delivers consistent year-round occupancy of 75-85%. IT sector growth, infrastructure development, and limited land supply drive steady 8-12% appreciation with minimal volatility."
+    },
+    "key_highlights": [
+      "[Key feature 1]",
+      "[Key feature 2]",
+      "[Key feature 3]",
+      "[Key feature 4]"
+    ]
+  }
+}
 ```
 
 ---
