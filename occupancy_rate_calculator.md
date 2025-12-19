@@ -25,12 +25,6 @@ Based on typical properties in the location (2-3 bedroom, mid-range, professiona
 
 ## OUTPUT FORMAT
 
-### TEXT FORMAT
-
-```
-Occupancy Rate: XX.X%
-```
-
 ### JSON FORMAT
 
 ```json
@@ -40,10 +34,6 @@ Occupancy Rate: XX.X%
 ```
 
 **If insufficient data:**
-```
-Occupancy Rate: Data not available
-```
-
 ```json
 {
   "occupancy_rate": "Data not available"
@@ -328,8 +318,7 @@ Use location-type benchmark with ±5% adjustment based on:
 - Minimum 10 comparables or authoritative published data required
 
 ### 7. Output Format Compliance
-- **ALWAYS** provide both TEXT and JSON formats
-- **Both formats must match exactly**
+- **ALWAYS** provide JSON format only
 - Single decimal place (72.0% not 72%)
 - Follow exact format specified
 
@@ -338,11 +327,6 @@ Use location-type benchmark with ±5% adjustment based on:
 ## EXAMPLES
 
 ### Example 1: Anjuna, North Goa, India
-
-**TEXT FORMAT:**
-```
-Occupancy Rate: 68.0%
-```
 
 **JSON FORMAT:**
 ```json
@@ -363,11 +347,6 @@ Occupancy Rate: 68.0%
 
 ### Example 2: Madikeri, Coorg, Karnataka, India
 
-**TEXT FORMAT:**
-```
-Occupancy Rate: 58.0%
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -385,11 +364,6 @@ Occupancy Rate: 58.0%
 ---
 
 ### Example 3: Dubai Marina, UAE
-
-**TEXT FORMAT:**
-```
-Occupancy Rate: 75.0%
-```
 
 **JSON FORMAT:**
 ```json
@@ -410,11 +384,6 @@ Occupancy Rate: 75.0%
 
 ### Example 4: Ubud, Bali, Indonesia
 
-**TEXT FORMAT:**
-```
-Occupancy Rate: 65.0%
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -432,11 +401,6 @@ Occupancy Rate: 65.0%
 ---
 
 ### Example 5: Bangalore (Whitefield), India
-
-**TEXT FORMAT:**
-```
-Occupancy Rate: 72.0%
-```
 
 **JSON FORMAT:**
 ```json
@@ -457,11 +421,6 @@ Occupancy Rate: 72.0%
 
 ### Example 6: Shimla, Himachal Pradesh, India
 
-**TEXT FORMAT:**
-```
-Occupancy Rate: 52.0%
-```
-
 **JSON FORMAT:**
 ```json
 {
@@ -479,11 +438,6 @@ Occupancy Rate: 52.0%
 ---
 
 ### Example 7: Bangkok, Thailand
-
-**TEXT FORMAT:**
-```
-Occupancy Rate: 78.0%
-```
 
 **JSON FORMAT:**
 ```json
@@ -503,11 +457,6 @@ Occupancy Rate: 78.0%
 ---
 
 ### Example 8: Insufficient Data (Emerging Area)
-
-**TEXT FORMAT:**
-```
-Occupancy Rate: Data not available
-```
 
 **JSON FORMAT:**
 ```json
@@ -580,9 +529,7 @@ Occupancy Rate: Data not available
 - [ ] Seasonal patterns considered in annual calculation
 - [ ] Conservative approach applied when uncertain
 - [ ] Data within last 6 months
-- [ ] **Provided TEXT format output**
-- [ ] **Provided JSON format output**
-- [ ] **Both formats match exactly**
+- [ ] **Provided JSON format output only**
 - [ ] Single decimal place format (XX.X%)
 
 ---
