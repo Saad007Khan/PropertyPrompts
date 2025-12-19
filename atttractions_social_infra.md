@@ -20,7 +20,7 @@ You are a geospatial and tourism analyst with a focus on map-grounded data. When
 6. **For infrastructure:** Include one-line concise note where requested (1-2 short sentences)
 7. **If cannot confirm:** Write exactly "Not verifiable from preferred sources"
 8. **Keep descriptions concise:** One or two short sentences maximum
-9. **Both outputs required:** Plain text and JSON formats
+9. **JSON output required:** Provide JSON format only
 
 ---
 
@@ -75,49 +75,7 @@ You are a geospatial and tourism analyst with a focus on map-grounded data. When
 
 ## OUTPUT FORMAT
 
-**Format 1 - Plain Text:**
-```
-Nearby Attractions
-
-<Attraction Name>
-<Distance km> | <Description>
-
-<Attraction Name>
-<Distance km> | <Description>
-
-[Continue for 3-5 attractions]
-
-Distance from Social Infrastructure
-
-EDUCATIONAL INSTITUTIONS
-<School Name> – <Distance km>
-<School Name> – <Distance km>
-
-MALLS
-<Mall Name> – <Distance km> | <Note>
-<Mall Name> – <Distance km> | <Note>
-
-SHOPPING STREETS / SHOPPING AREAS
-<Area Name> – <Distance km> | <Note>
-<Area Name> – <Distance km> | <Note>
-
-MARKETS
-<Market Name> – <Distance km>
-
-HOSPITALS
-<Hospital Name> – <Distance km> | <Note>
-<Hospital Name> – <Distance km> | <Note>
-
-TOP RESTAURANTS
-<Restaurant Name> – <Distance km> | <Note>
-<Restaurant Name> – <Distance km> | <Note>
-
-TOP CAFES
-<Cafe Name> – <Distance km> | <Note>
-<Cafe Name> – <Distance km> | <Note>
-```
-
-**Format 2 - JSON:**
+**JSON:**
 ```json
 {
   "nearby_attractions": [
@@ -184,57 +142,6 @@ TOP CAFES
 ## EXAMPLE OUTPUT
 
 ### Example: Anjuna, North Goa, India
-
-**Plain Text:**
-```
-Nearby Attractions
-
-Anjuna Beach
-1 km | Popular beach known for stunning sunsets, Wednesday flea market, and beach shacks. Activities include swimming, sunbathing, water sports, and shopping.
-
-Chapora Fort
-3 km | Historic Portuguese fort famous for panoramic views and Bollywood movie location. Activities include photography, sightseeing, and sunset watching.
-
-Vagator Beach
-4 km | Scenic red cliffs beach with dramatic rock formations and laid-back atmosphere. Popular for cliff jumping, paragliding, and beach parties.
-
-Arambol Beach
-12 km | Northern Goa's bohemian hub with drum circles, yoga, and alternative culture. Activities include swimming, paragliding, live music, and wellness retreats.
-
-Baga Beach
-8 km | Goa's most commercial beach with water sports, nightclubs, and beach shacks. Activities include jet skiing, parasailing, shopping, and nightlife.
-
-Distance from Social Infrastructure
-
-EDUCATIONAL INSTITUTIONS
-St. Michael's High School, Mapusa – 9 km
-Government Polytechnic Goa, Bicholim – 18 km
-
-MALLS
-Caculo Mall, Panaji – 21 km | Small mall with supermarket, clothing stores, and food court.
-
-SHOPPING STREETS / SHOPPING AREAS
-Anjuna Flea Market – 1 km | Weekly Wednesday market with handicrafts, jewelry, clothing, and souvenirs.
-Mapusa Market – 9 km | Traditional Goan market selling fresh produce, spices, textiles, and daily essentials.
-Calangute Market Area – 7 km | Tourist shopping zone with beachwear, handicrafts, and souvenir shops.
-
-MARKETS
-Anjuna Flea Market – 1 km
-Mapusa Friday Market – 9 km
-
-HOSPITALS
-Manipal Hospital, Panaji – 19 km | Multi-speciality hospital with emergency services.
-Asilo Hospital, Mapusa – 10 km | General hospital with basic emergency and in-patient facilities.
-GMC (Goa Medical College), Bambolim – 25 km | Major government teaching hospital with all specialties.
-
-TOP RESTAURANTS
-Artjuna Garden Cafe – 2 km | Organic cafe serving healthy Mediterranean and fusion cuisine, popular with wellness crowd.
-Baba Au Rhum – 2 km | French bakery and bistro known for pastries, breakfast, and European dishes.
-
-TOP CAFES
-German Bakery Anjuna – 1 km | Longtime favorite for baked goods, breakfast, and relaxed garden seating.
-Cafe Lilliput – 3 km | Cozy hilltop cafe with sea views, serves coffee, light meals, and desserts.
-```
 
 **JSON:**
 ```json
@@ -367,9 +274,9 @@ Cafe Lilliput – 3 km | Cozy hilltop cafe with sea views, serves coffee, light 
 - [ ] Infrastructure notes are concise (1-2 sentences)
 - [ ] No fabricated locations or information
 - [ ] "Not verifiable from preferred sources" used when data unavailable
-- [ ] Both plain text and JSON formats provided
+- [ ] JSON format provided
 - [ ] All required sections included (even if some entries missing)
-- [ ] JSON structure matches plain text hierarchy
+- [ ] JSON structure follows specified format
 
 ---
 
@@ -377,31 +284,24 @@ Cafe Lilliput – 3 km | Cozy hilltop cafe with sea views, serves coffee, light 
 
 ### Limited Infrastructure (Rural/Remote Areas)
 If certain categories have no nearby options:
-```
-MALLS
-Not verifiable from preferred sources
-
-SHOPPING STREETS / SHOPPING AREAS
-Local market area – 2 km | Small village market with daily essentials.
+```json
+{
+  "malls": [],
+  "shopping_areas": [
+    {
+      "name": "Local market area",
+      "distance_km": 2,
+      "note": "Small village market with daily essentials."
+    }
+  ]
+}
 ```
 
 ### Urban Dense Areas (Too Many Options)
-Prioritize by proximity and notability:
-```
-TOP RESTAURANTS
-[List only 2-3 closest/most notable]
-
-TOP CAFES
-[List only 2-3 closest/most notable]
-```
+Prioritize by proximity and notability - list only 2-3 closest/most notable
 
 ### Data Gaps
-Be honest about limitations:
-```
-EDUCATIONAL INSTITUTIONS
-ABC School – 5 km
-Note: Limited educational institution data available for this area.
-```
+Be honest about limitations - include note field where applicable
 
 ---
 
