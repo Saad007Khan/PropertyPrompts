@@ -25,11 +25,6 @@ Tags should be:
 
 ## OUTPUT FORMAT
 
-### TEXT FORMAT
-
-```
-Tags: [Tag 1], [Tag 2], [Tag 3], [Tag 4], [Tag 5], [Tag 6], [Tag 7], [Tag 8]
-```
 
 ### JSON FORMAT
 
@@ -107,10 +102,6 @@ Tags: [Tag 1], [Tag 2], [Tag 3], [Tag 4], [Tag 5], [Tag 6], [Tag 7], [Tag 8]
 
 ### Example 1: Coastal Beach Town (Anjuna, Goa)
 
-**TEXT FORMAT:**
-```
-Tags: Beachfront, Digital Nomad Hub, Tourist Hotspot, High Rental Yield, Near Airport, Co-working Spaces, Nightlife, Seasonal Demand
-```
 
 **JSON FORMAT:**
 ```json
@@ -134,10 +125,6 @@ Tags: Beachfront, Digital Nomad Hub, Tourist Hotspot, High Rental Yield, Near Ai
 
 ### Example 2: IT Hub Metro (Whitefield, Bangalore)
 
-**TEXT FORMAT:**
-```
-Tags: IT Hub, Metro Connected, Tech Park Adjacent, International Schools, Investment Hotspot, Gated Community, High Growth
-```
 
 **JSON FORMAT:**
 ```json
@@ -160,10 +147,7 @@ Tags: IT Hub, Metro Connected, Tech Park Adjacent, International Schools, Invest
 
 ### Example 3: Waterfront Luxury (Dubai Marina)
 
-**TEXT FORMAT:**
-```
-Tags: Waterfront, Marina Access, Metro Connected, Luxury Segment, Near Beach, Free Zone, Tax Benefits, High ROI
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -187,10 +171,6 @@ Tags: Waterfront, Marina Access, Metro Connected, Luxury Segment, Near Beach, Fr
 
 ### Example 4: Hill Station (Shimla)
 
-**TEXT FORMAT:**
-```
-Tags: Hill Station, Cool Climate, Scenic Views, Retirement Destination, Tourist Hotspot, Low Pollution, Green Belt
-```
 
 **JSON FORMAT:**
 ```json
@@ -213,10 +193,7 @@ Tags: Hill Station, Cool Climate, Scenic Views, Retirement Destination, Tourist 
 
 ### Example 5: Emerging Suburb (Tier 2 City)
 
-**TEXT FORMAT:**
-```
-Tags: Emerging Area, Affordable Housing, Rapid Growth, Metro Upcoming, Near Highway, Investment Opportunity, RERA Approved
-```
+
 
 **JSON FORMAT:**
 ```json
@@ -284,10 +261,8 @@ Always include the location's unique selling point:
 - Heritage Area (historic districts)
 
 ### 9. Output Format Compliance
-- **ALWAYS** provide both TEXT and JSON formats
-- **TEXT format:** Comma-separated tag list
+- **ALWAYS** provide  JSON formats
 - **JSON format:** Array of strings
-- **Both formats must match exactly** (same tags, same order)
 
 ---
 
@@ -385,9 +360,8 @@ Any unique attributes?
 - [ ] No generic tags ("Good Location", "Nice Area")
 - [ ] All tags are searchable terms (match user search patterns)
 - [ ] Tags separated by commas in TEXT format
-- [ ] **Provided TEXT format output**
 - [ ] **Provided JSON format output**
-- [ ] **Both formats match exactly** (same tags, same order)
+
 
 ---
 
