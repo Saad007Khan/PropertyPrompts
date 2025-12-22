@@ -30,45 +30,56 @@ Research the location and create 6 bullet points covering these aspects:
 - Real estate market analyses (JLL, CBRE, Knight Frank)
 - Infrastructure development announcements
 - Government master plans and policies
-- Property price trend reports
+- Property market trend reports
 - Demographic and buyer behavior studies
 
 **Key Information to Find:**
-- Tourism visitor numbers and growth
-- Rental yield percentages
-- Price appreciation rates (last 3-5 years)
-- Land availability constraints
+- Tourism patterns and seasonality
+- Rental market characteristics
+- Price appreciation trends
+- Land availability and constraints
 - Major infrastructure projects (airports, highways, metro)
 - International buyer presence
-- Lifestyle rankings and awards
+- Lifestyle rankings and reputation
+
+**Important:** Use research to understand the market structure, but present findings in **qualitative, generic terms** without specific numbers.
 
 ---
 
 ## WRITING RULES
 
-1. **Be Specific** - Use numbers, names, percentages
-   - Good: "8.5M annual visitors provide steady rental demand"
-   - Bad: "Strong tourism sector"
+1. **Be Descriptive, Not Numeric** - Focus on market characteristics, not data points
+   - Good: "Perennial tourist destination ensures steady rental demand"
+   - Bad: "8.5M annual visitors provide steady rental demand"
+   - Good: "Limited beachfront supply due to coastal regulations"
+   - Bad: "Coastal Regulation Zone limits supply, driving 15-20% appreciation"
 
-2. **Be Factual** - State verifiable facts, not marketing claims
-   - Good: "Limited coastal land drives 15-22% annual appreciation"
-   - Bad: "Amazing investment opportunity"
+2. **Be Factual About Structure** - State verifiable structural facts
+   - Good: "Coastal regulations limit new beachfront development"
+   - Good: "New international airport improves connectivity to major cities"
+   - Bad: "Amazing investment opportunity with high returns"
 
-3. **Be Concise** - Each point: 12-20 words maximum
+3. **Use Qualitative Strength Indicators** - Describe market strength
+   - Strong, growing, limited, established, mature, emerging
+   - Proven, consistent, resilient, premium, developing
+   - NOT: Robust, thriving, vibrant, strategic, excellent
+
+4. **Be Concise** - Each point: 10-18 words maximum
    - Keep sentences short and direct
    - No fluff or filler words
 
-4. **Avoid LLM Language** - No words like:
+5. **Avoid LLM Language** - No words like:
    - "Moreover", "Furthermore", "Additionally"
    - "Notably", "Significantly", "Particularly"
-   - "Robust", "Thriving", "Vibrant" (unless quoting a source)
+   - "Robust", "Thriving", "Vibrant"
    - "Strategic", "Premier", "Excellent"
+   - "Dynamic", "Compelling", "Attractive"
 
-5. **Use Active Voice** - Make statements direct
-   - Good: "New airport increases property values"
-   - Bad: "Property values are being increased by the new airport"
+6. **Use Active Voice** - Make statements direct
+   - Good: "New airport improves property accessibility"
+   - Bad: "Property accessibility is being improved by the new airport"
 
-6. **Focus on Investment Logic** - Each point should answer "Why invest here?"
+7. **Focus on Investment Logic** - Each point should answer "Why invest here?"
 
 ---
 
@@ -77,28 +88,28 @@ Research the location and create 6 bullet points covering these aspects:
 Each of the 6 points should follow this pattern:
 
 **Point 1 (Economic Foundation):**
-[Core economic strength] + [impact on real estate]
-Example: "Tourism economy generates ₹8,500Cr annually, supporting stable property values."
+[Economic/tourism characteristic] + [impact on real estate]
+Example: "Established tourist destination with year-round visitor flow supporting rental markets."
 
 **Point 2 (Demand Dynamics):**
-[Demand type/strength] + [rental/investment outcome]
-Example: "Year-round rental demand from domestic and foreign tourists ensures 72% occupancy."
+[Demand type/source] + [rental/investment outcome]
+Example: "Growing demand from domestic and international tourists ensures consistent rental income."
 
 **Point 3 (Supply Constraints):**
-[Supply limitation] + [appreciation driver]
-Example: "Coastal Regulation Zone limits new construction, driving 18% annual appreciation."
+[Supply limitation] + [value impact]
+Example: "Limited coastal land due to environmental regulations supports property values."
 
 **Point 4 (Buyer Profile):**
-[Buyer demographic] + [market strength]
-Example: "High-net-worth buyers from Mumbai and Bangalore dominate villa purchases."
+[Buyer demographic] + [market characteristic]
+Example: "Attracts high-net-worth buyers from major metros seeking vacation homes."
 
 **Point 5 (Infrastructure):**
-[Infrastructure project] + [connectivity/value impact]
-Example: "Mopa International Airport cuts travel time to 2 hours from major cities."
+[Infrastructure project/status] + [connectivity impact]
+Example: "New international airport enhances connectivity to major cities and global markets."
 
 **Point 6 (Lifestyle Appeal):**
 [Lifestyle factor] + [target appeal]
-Example: "Beach culture, Portuguese heritage, and dining scene attract lifestyle investors."
+Example: "Beach culture and dining scene appeal to lifestyle-focused investors."
 
 ---
 
@@ -120,7 +131,7 @@ Example: "Beach culture, Portuguese heritage, and dining scene attract lifestyle
 
 ---
 
-## EXAMPLE OUTPUT
+## EXAMPLE OUTPUTS
 
 ### Example 1: North Goa, India
 
@@ -128,12 +139,12 @@ Example: "Beach culture, Portuguese heritage, and dining scene attract lifestyle
 ```json
 {
   "investment_highlights": [
-    "Tourism economy generates ₹8,500Cr annually, providing stable foundation for property values.",
-    "Year-round demand for short-term and long-term rentals ensures 70% average occupancy.",
-    "Coastal Regulation Zone limits new beachfront development, driving 15-20% annual appreciation.",
-    "International buyers and wealthy Indians from metros create strong villa demand.",
-    "Mopa International Airport enhances connectivity, reducing travel time from major cities.",
-    "Beach lifestyle, Portuguese heritage, and dining culture attract lifestyle-focused investors."
+    "Perennial tourist destination ensuring year-round rental demand.",
+    "Limited supply of new beachfront properties due to coastal regulations.",
+    "Established as a premium destination for luxury and wellness tourism.",
+    "Strong connectivity with new international airport and improved highways.",
+    "Attracts high-net-worth buyers from major Indian metros and abroad.",
+    "Beach lifestyle, Portuguese heritage, and dining culture draw lifestyle investors."
   ]
 }
 ```
@@ -144,12 +155,12 @@ Example: "Beach culture, Portuguese heritage, and dining scene attract lifestyle
 ```json
 {
   "investment_highlights": [
-    "1.2M annual visitors create consistent demand for homestays and vacation rentals.",
-    "Weekend tourism from Bangalore (240km) supports 58% average occupancy rates.",
-    "Limited flat land in hilly terrain restricts supply, driving property appreciation.",
-    "Bangalore professionals seek second homes for retirement and weekend escapes.",
-    "New highway reduces Bangalore travel time to 4 hours, improving accessibility.",
-    "Coffee estates, misty hills, and cool climate attract nature-focused buyers."
+    "Popular weekend destination for Bangalore residents seeking second homes.",
+    "Limited flat land in hilly terrain restricts new supply and supports values.",
+    "Growing homestay and vacation rental market driven by nature tourism.",
+    "Improved highway connectivity reduces travel time from major cities.",
+    "Coffee estates and cool climate attract retirement-focused buyers.",
+    "Established reputation as a peaceful retreat with natural beauty."
   ]
 }
 ```
@@ -160,26 +171,76 @@ Example: "Beach culture, Portuguese heritage, and dining scene attract lifestyle
 ```json
 {
   "investment_highlights": [
-    "17.2M annual visitors to Dubai create strong short-term rental market.",
-    "Tax-free rental income and 75% average occupancy deliver 6-8% net yields.",
-    "Waterfront location and marina views maintain premium pricing power.",
-    "International investors from Europe, Asia, and Middle East ensure liquid market.",
-    "Metro connectivity and proximity to business districts support long-term demand.",
-    "Luxury amenities, dining, and beach lifestyle attract high-income tenants."
+    "Tax-free rental income attracts international real estate investors.",
+    "Waterfront location with marina views commands premium pricing.",
+    "Strong short-term rental market supported by high tourist arrivals.",
+    "Metro connectivity and proximity to business districts ensure long-term demand.",
+    "Liquid market with active buyer interest from Europe, Asia, and Middle East.",
+    "Luxury amenities and beach lifestyle appeal to high-income tenants."
+  ]
+}
+```
+
+### Example 4: Alibaug, Maharashtra, India
+
+**JSON:**
+```json
+{
+  "investment_highlights": [
+    "Weekend destination for Mumbai residents seeking coastal retreats within short distance.",
+    "Limited development due to Coastal Regulation Zone maintains property values.",
+    "Growing luxury villa market catering to high-net-worth individuals.",
+    "Ferry services and improved road connectivity enhance accessibility from Mumbai.",
+    "Beach culture and water sports attract vacation home buyers.",
+    "Established market with proven rental demand during weekends and holidays."
   ]
 }
 ```
 
 ---
 
+## QUALITATIVE LANGUAGE GUIDE
+
+### Demand Strength:
+- Strong, growing, consistent, proven, established
+- Emerging, developing, increasing, year-round
+- Steady, reliable, sustained, resilient
+
+### Supply Constraints:
+- Limited, restricted, scarce, constrained
+- Regulated, controlled, finite, exclusive
+- Protected, preserved, rare
+
+### Market Maturity:
+- Established, mature, proven, developed
+- Emerging, growing, developing, evolving
+- Stable, resilient, consistent
+
+### Infrastructure:
+- Enhanced, improved, upgraded, modernized
+- Connected, accessible, linked, integrated
+- Planned, upcoming, under development
+
+### Buyer Appeal:
+- Attracts, draws, appeals to, favored by
+- Popular with, sought by, preferred by
+- Commands interest from, resonates with
+
+### Location Characteristics:
+- Premium, exclusive, prime, desirable
+- Scenic, coastal, waterfront, hillside
+- Cultural, heritage, natural, serene
+
+---
+
 ## CRITICAL RULES
 
 1. **Always 6 points** - No more, no less
-2. **12-20 words each** - Concise and scannable
-3. **Include numbers** - Visitor counts, percentages, distances, timelines
-4. **Be location-specific** - Mention actual place names, projects, demographics
-5. **No marketing fluff** - Stick to verifiable facts
-6. **No LLM patterns** - Avoid "moreover", "notably", "robust", etc.
+2. **10-18 words each** - Concise and scannable
+3. **NO specific numbers** - No visitor counts, percentages, distances, prices
+4. **Be location-specific** - Mention actual place names, projects, characteristics
+5. **No marketing fluff** - Stick to structural market facts
+6. **No LLM patterns** - Avoid "moreover", "notably", "robust", "strategic"
 7. **Investment focus** - Each point must relate to real estate investment rationale
 8. **JSON output required** - Always provide JSON format
 9. **Use present tense** - "Airport enhances connectivity" not "will enhance"
@@ -189,14 +250,16 @@ Example: "Beach culture, Portuguese heritage, and dining scene attract lifestyle
 
 ## VALIDATION CHECKLIST
 
+Before submitting, verify:
+
 - [ ] Exactly 6 points
-- [ ] Each point is 12-20 words
-- [ ] At least 4 points include specific numbers/data
-- [ ] No LLM language (robust, notably, strategic, etc.)
+- [ ] Each point is 10-18 words
+- [ ] ZERO specific numbers (no counts, %, distances, prices)
+- [ ] No LLM language (robust, notably, strategic, compelling)
 - [ ] Each point covers different investment aspect
-- [ ] Location-specific details included
+- [ ] Location-specific details included (place names, features)
 - [ ] JSON format provided
-- [ ] All facts are verifiable from research
+- [ ] All statements are structural facts, not marketing claims
 - [ ] No generic/vague statements
 - [ ] Active voice used throughout
 
@@ -205,36 +268,106 @@ Example: "Beach culture, Portuguese heritage, and dining scene attract lifestyle
 ## EDGE CASES
 
 ### Limited Data Available
-Still create 6 points but note limitations:
+Still create 6 points but keep conservative:
 ```json
 {
   "investment_highlights": [
-    "Emerging tourism destination with 150K annual visitors.",
-    "Rental market data limited; estimated 45-50% occupancy for new properties.",
-    "Proximity to [major city] creates second-home demand.",
-    "Government master plan targets infrastructure improvements by 2026.",
-    "Undeveloped land offers entry pricing below ₹2,000/sq ft.",
+    "Emerging tourism destination with growing visitor interest.",
+    "Developing rental market for vacation properties and homestays.",
+    "Proximity to major city creates second-home demand from urban residents.",
+    "Government focus on infrastructure improvements and tourism development.",
+    "Undeveloped areas offer entry opportunities compared to established destinations.",
     "Natural beauty and cultural sites attract weekend tourists."
-  ],
-  "note": "Limited market data for emerging destination."
+  ]
 }
 ```
 
-### Negative Investment Case
-If location has weak fundamentals, be honest but balanced:
+### Moderate Investment Case
+If location has average fundamentals, be honest but balanced:
 ```json
 {
   "investment_highlights": [
-    "250K annual visitors provide baseline rental demand.",
-    "Long-term residential demand from local employment.",
-    "Property prices remain stable at ₹3,500-4,500/sq ft range.",
-    "Highway connectivity to [city] completed in 2022.",
-    "Local government plans tourism infrastructure upgrades.",
-    "Lower entry cost compared to nearby [competitor destination]."
-  ],
-  "note": "Moderate growth market; suitable for conservative investors."
+    "Steady tourist flow provides baseline rental demand throughout the year.",
+    "Stable residential demand supported by local employment and industries.",
+    "Property market maintains consistent values with gradual appreciation.",
+    "Improved highway connectivity to nearby major cities completed recently.",
+    "Local government plans infrastructure upgrades to support tourism growth.",
+    "Lower entry cost compared to nearby premium destinations in the region."
+  ]
 }
 ```
+
+### Strong Investment Case
+For exceptional locations, maintain factual tone:
+```json
+{
+  "investment_highlights": [
+    "Internationally recognized destination with consistent global tourist interest.",
+    "Strict development regulations create supply scarcity and preserve exclusivity.",
+    "Established luxury market with proven demand from ultra-high-net-worth buyers.",
+    "World-class connectivity via international airport and modern infrastructure.",
+    "Tax incentives and favorable regulations attract significant foreign investment.",
+    "Premium lifestyle amenities and cultural offerings unmatched in the region."
+  ]
+}
+```
+
+---
+
+## COMMON MISTAKES TO AVOID
+
+❌ **Too Specific:**
+"Tourism generates ₹8,500Cr annually supporting property values"
+
+✅ **Correct:**
+"Strong tourism economy provides stable foundation for property values"
+
+---
+
+❌ **Numbers in Any Form:**
+"72% occupancy rates ensure rental income"
+"15-20% annual appreciation over last 5 years"
+
+✅ **Correct:**
+"Consistent occupancy rates ensure reliable rental income"
+"Steady property value appreciation over recent years"
+
+---
+
+❌ **LLM Language:**
+"Strategically positioned with robust infrastructure and compelling returns"
+
+✅ **Correct:**
+"Well-connected location with modern infrastructure supporting investment appeal"
+
+---
+
+❌ **Too Vague:**
+"Great investment opportunity with good returns"
+
+✅ **Correct:**
+"Limited coastal supply due to regulations supports property values"
+
+---
+
+❌ **Marketing Speak:**
+"Premier luxury destination offering unparalleled lifestyle experiences"
+
+✅ **Correct:**
+"Established luxury market with cultural attractions and premium amenities"
+
+---
+
+## FINAL REMINDERS
+
+- Focus on **WHY** the market works, not **HOW MUCH** it returns
+- Describe **structure** (regulations, geography, connectivity)
+- Identify **demand sources** (tourists, metros, buyer profiles)
+- Explain **supply dynamics** (scarcity, constraints, development)
+- Mention **infrastructure** (airports, roads, projects)
+- Highlight **lifestyle factors** (culture, amenities, appeal)
+
+Keep it factual, concise, and investment-focused.
 
 ---
 
