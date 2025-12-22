@@ -33,7 +33,6 @@ Search in this order:
     "cap": "[Maximum amount if applicable]"
   },
   "additional_charges": "[Metro cess, local taxes, etc.]",
-  "total_cost_estimate": "[X-Y]% of property value",
   "last_updated": "[Month Year]",
   "source": "[Primary source used]"
 }
@@ -56,9 +55,6 @@ Search in this order:
    - Metro cess (Maharashtra: 1%)
    - Municipal taxes
    - Documentation charges
-
-4. **Total Range** - Combine all costs
-   - Example: "5-7% of property value"
 
 ---
 
@@ -89,7 +85,6 @@ Search in this order:
     "cap": "No cap"
   },
   "additional_charges": "None",
-  "total_cost_estimate": "4% of property value",
   "last_updated": "January 2024",
   "source": "Goa government notification, MagicBricks"
 }
@@ -109,7 +104,6 @@ Search in this order:
     "cap": "₹30,000"
   },
   "additional_charges": "1% metro cess applicable",
-  "total_cost_estimate": "7-8% of property value",
   "last_updated": "December 2024",
   "source": "IGR Maharashtra, Housing.com"
 }
@@ -129,7 +123,6 @@ Search in this order:
     "cap": "None"
   },
   "additional_charges": "AED 580 trustee office fee, AED 4,000 mortgage registration (if applicable)",
-  "total_cost_estimate": "4-5% of property value",
   "last_updated": "December 2024",
   "source": "Dubai Land Department"
 }
@@ -149,7 +142,6 @@ Search in this order:
     "cap": "N/A"
   },
   "additional_charges": "Legal fees approximately 0.2-0.4% of property value",
-  "total_cost_estimate": "3-7% for citizens, 63-67% for foreigners",
   "last_updated": "December 2024",
   "source": "IRAS Singapore"
 }
@@ -169,7 +161,6 @@ Search in this order:
     "cap": "None"
   },
   "additional_charges": "0.1% withholding tax (varies by holding period)",
-  "total_cost_estimate": "2.5-6% of property value",
   "last_updated": "December 2024",
   "source": "Thai Land Department"
 }
@@ -189,7 +180,6 @@ Search in this order:
     "cap": "Calculated on assessed value minus tax-free threshold"
   },
   "additional_charges": "Notary fees 1%, AJB deed 0.5%, certificate fees 0.1%",
-  "total_cost_estimate": "6-8% of property value",
   "last_updated": "December 2024",
   "source": "Indonesian tax authority, property portals"
 }
@@ -203,7 +193,6 @@ Search in this order:
 - [ ] Gender differences noted (if applicable)
 - [ ] Registration fee clearly stated
 - [ ] Additional charges listed
-- [ ] Total cost estimate provided
 - [ ] Last updated date included
 - [ ] Source mentioned
 - [ ] JSON format provided
@@ -225,7 +214,6 @@ Search in this order:
     "cap": "N/A"
   },
   "additional_charges": "Unknown",
-  "total_cost_estimate": "Data not available",
   "last_updated": "N/A",
   "source": "No reliable source found"
 }
