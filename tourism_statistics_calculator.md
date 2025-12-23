@@ -199,6 +199,7 @@ Annual tourism-related revenue in local currency
 8. **Flag Data Gaps** - If unavailable, state "Data not available"
 9. **Note Pre/Post-COVID** - Mention if using 2019 vs 2023 data
 10. **Currency Clarity** - Always include currency symbol and scale (Cr/Bn)
+11. **NEVER CALCULATE ANYTHING USING YOUR OWN LOGIC, ONLY AGGREGATE DATA**
 
 ---
 
