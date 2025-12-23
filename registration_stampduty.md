@@ -24,9 +24,13 @@ Search in this order:
 ```json
 {
   "stamp_duty": {
-    "male_buyers": "[X]%",
-    "female_buyers": "[X]%",
-    "notes": "[Any concessions/variations]"
+    "structure": "[flat/tiered]",
+    "slabs": [
+      "[Property range: Rate%]"
+    ],
+    "male_buyers": "[Rate% or 'As per slabs above']",
+    "female_buyers": "[Rate% or 'As per slabs above' with discount info]",
+    "notes": "[Gender differential, special concessions, etc.]"
   },
   "registration_fee": {
     "rate": "[X]% or ₹[fixed amount]",
@@ -44,7 +48,8 @@ Search in this order:
 
 1. **Stamp Duty** - Primary tax on property transfer
    - Usually 3-8% of property value (India)
-   - Often lower for female buyers (1-2% discount)
+   - May be **flat rate** (same % for all properties) or **tiered** (different % by property value)
+   - Often lower for female buyers (1-2% discount in some states)
    - May vary by property type (residential/commercial)
 
 2. **Registration Fee** - Administrative charge
@@ -55,71 +60,147 @@ Search in this order:
    - Metro cess (Maharashtra: 1%)
    - Municipal taxes
    - Documentation charges
+   - Franking fees
+
+---
+
+## STRUCTURE TYPES
+
+### Flat Rate Example:
+```json
+{
+  "stamp_duty": {
+    "structure": "flat",
+    "slabs": ["All properties: 5%"],
+    "male_buyers": "5%",
+    "female_buyers": "4% (1% discount for sole female ownership)",
+    "notes": "Maharashtra offers gender differential"
+  }
+}
+```
+
+### Tiered Rate Example:
+```json
+{
+  "stamp_duty": {
+    "structure": "tiered",
+    "slabs": [
+      "Up to ₹50L: 3.5%",
+      "₹50L-₹75L: 4%",
+      "₹75L-₹1Cr: 4.5%",
+      "Above ₹1Cr: 5%"
+    ],
+    "male_buyers": "As per slabs above",
+    "female_buyers": "As per slabs above (no discount in this state)",
+    "notes": "Tiered structure based on property value"
+  }
+}
+```
 
 ---
 
 ## WRITING GUIDELINES
 
 - State rates clearly with % symbol
+- For **tiered rates**, list all slabs in order with property ranges
+- For **flat rates**, simply state the single rate
 - Mention gender differences if applicable
 - Note property type variations (residential vs commercial)
 - Include recent changes or time-limited concessions
 - Cite month/year of data
+- Set structure field to "flat" or "tiered"
 - If data unavailable, state "Data not available - verify with local authority"
 
 ---
 
 ## EXAMPLES
 
-### Example 1: North Goa, India
+### Example 1: Dabolim, Goa, India
 
 ```json
 {
   "stamp_duty": {
-    "male_buyers": "3%",
-    "female_buyers": "3%",
-    "notes": "No gender differential; same rate for all buyers"
+    "structure": "tiered",
+    "slabs": [
+      "Up to ₹50L: 3.5%",
+      "₹50L-₹75L: 4%",
+      "₹75L-₹1Cr: 4.5%",
+      "₹1Cr-₹5Cr: 5%",
+      "Above ₹5Cr: 6%"
+    ],
+    "male_buyers": "As per slabs above",
+    "female_buyers": "As per slabs above (no discount in Goa)",
+    "notes": "Tiered structure; no gender differential"
   },
   "registration_fee": {
     "rate": "1%",
     "cap": "No cap"
   },
-  "additional_charges": "None",
-  "last_updated": "January 2024",
-  "source": "Goa government notification, MagicBricks"
+  "additional_charges": "Franking fees: 0.1% if applicable",
+  "last_updated": "December 2024",
+  "source": "Goa Registration Department, Credit Dharma, OLX"
 }
 ```
 
-### Example 2: Mumbai, Maharashtra
+### Example 2: Whitefield, Bangalore, India
 
 ```json
 {
   "stamp_duty": {
+    "structure": "tiered",
+    "slabs": [
+      "Up to ₹20L: 2%",
+      "₹21L-₹45L: 3%",
+      "Above ₹45L: 5%"
+    ],
+    "male_buyers": "As per slabs above",
+    "female_buyers": "As per slabs above (no discount in Karnataka)",
+    "notes": "Tiered structure; 10% cess on stamp duty + 2% surcharge in urban areas"
+  },
+  "registration_fee": {
+    "rate": "1%",
+    "cap": "No cap (changing to 2% after Aug 31, 2025)"
+  },
+  "additional_charges": "10% cess on stamp duty amount + 2% surcharge for urban areas like Bangalore",
+  "last_updated": "December 2024",
+  "source": "Karnataka IGR, ClearTax, NoBroker"
+}
+```
+
+### Example 3: Mumbai, Maharashtra, India
+
+```json
+{
+  "stamp_duty": {
+    "structure": "flat",
+    "slabs": ["All properties: 5-6% (varies by property value)"],
     "male_buyers": "6%",
-    "female_buyers": "5%",
-    "notes": "1% discount for sole female ownership"
+    "female_buyers": "5% (1% discount for sole female ownership)",
+    "notes": "Metro cess adds additional 1% on stamp duty"
   },
   "registration_fee": {
     "rate": "1%",
     "cap": "₹30,000"
   },
-  "additional_charges": "1% metro cess applicable",
+  "additional_charges": "1% metro cess on stamp duty amount",
   "last_updated": "December 2024",
   "source": "IGR Maharashtra, Housing.com"
 }
 ```
 
-### Example 3: Dubai, UAE
+### Example 4: Dubai, UAE
 
 ```json
 {
   "stamp_duty": {
+    "structure": "flat",
+    "slabs": ["N/A - No stamp duty in Dubai"],
     "male_buyers": "N/A",
     "female_buyers": "N/A",
-    "notes": "No stamp duty; transfer fee applies"
+    "notes": "Dubai does not have stamp duty; 4% transfer fee applies instead"
   },
   "registration_fee": {
-    "rate": "4% Dubai Land Department fee",
+    "rate": "4% Dubai Land Department transfer fee",
     "cap": "None"
   },
   "additional_charges": "AED 580 trustee office fee, AED 4,000 mortgage registration (if applicable)",
@@ -128,14 +209,23 @@ Search in this order:
 }
 ```
 
-### Example 4: Singapore
+### Example 5: Singapore
 
 ```json
 {
   "stamp_duty": {
-    "male_buyers": "Buyer's Stamp Duty (BSD): 1-6% tiered",
-    "female_buyers": "Buyer's Stamp Duty (BSD): 1-6% tiered",
-    "notes": "Additional Buyer's Stamp Duty (ABSD): 60% for foreigners, 0% for citizens (first property)"
+    "structure": "tiered",
+    "slabs": [
+      "First S$180K: 1%",
+      "Next S$180K: 2%",
+      "Next S$640K: 3%",
+      "Next S$500K: 4%",
+      "Next S$1.5M: 5%",
+      "Above S$3M: 6%"
+    ],
+    "male_buyers": "As per slabs above + ABSD",
+    "female_buyers": "As per slabs above + ABSD",
+    "notes": "Additional Buyer's Stamp Duty (ABSD): 60% for foreigners, 0% for citizens (first property). No gender differential."
   },
   "registration_fee": {
     "rate": "Included in legal fees",
@@ -147,14 +237,16 @@ Search in this order:
 }
 ```
 
-### Example 5: Bangkok, Thailand
+### Example 6: Bangkok, Thailand
 
 ```json
 {
   "stamp_duty": {
-    "male_buyers": "0.5% stamp duty",
-    "female_buyers": "0.5% stamp duty",
-    "notes": "Or 3.3% specific business tax if held under 5 years (choose lower)"
+    "structure": "flat",
+    "slabs": ["All properties: 0.5% stamp duty OR 3.3% specific business tax (choose lower)"],
+    "male_buyers": "0.5% stamp duty (or 3.3% business tax if held under 5 years)",
+    "female_buyers": "0.5% stamp duty (or 3.3% business tax if held under 5 years)",
+    "notes": "Buyer chooses between stamp duty or specific business tax based on holding period. No gender differential."
   },
   "registration_fee": {
     "rate": "2% transfer fee",
@@ -166,14 +258,16 @@ Search in this order:
 }
 ```
 
-### Example 6: Bali, Indonesia
+### Example 7: Bali, Indonesia
 
 ```json
 {
   "stamp_duty": {
-    "male_buyers": "N/A",
-    "female_buyers": "N/A",
-    "notes": "No stamp duty; BPHTB land acquisition tax applies"
+    "structure": "flat",
+    "slabs": ["N/A - No stamp duty; BPHTB applies"],
+    "male_buyers": "N/A (5% BPHTB instead)",
+    "female_buyers": "N/A (5% BPHTB instead)",
+    "notes": "Indonesia uses BPHTB (Land and Building Acquisition Duty) instead of stamp duty. No gender differential."
   },
   "registration_fee": {
     "rate": "5% BPHTB (Land and Building Acquisition Duty)",
@@ -185,11 +279,9 @@ Search in this order:
 }
 ```
 
----
-
-## VALIDATION CHECKLIST
-
-- [ ] Stamp duty rates specified with %
+- [ ] Structure field set to "flat" or "tiered"
+- [ ] Slabs array populated with all tiers (or single entry for flat)
+- [ ] Stamp duty rates specified with % symbol
 - [ ] Gender differences noted (if applicable)
 - [ ] Registration fee clearly stated
 - [ ] Additional charges listed
@@ -205,6 +297,8 @@ Search in this order:
 ```json
 {
   "stamp_duty": {
+    "structure": "unknown",
+    "slabs": ["Data not available"],
     "male_buyers": "Data not available",
     "female_buyers": "Data not available",
     "notes": "Verify with local registration office"
